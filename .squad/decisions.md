@@ -182,3 +182,94 @@ Implement standalone HTML files with embedded CSS (~8KB) and minimal vanilla Jav
 - `index.html` - Landing page (16.4KB) with cross-linking
 
 All documents share consistent design system and are fully mobile-responsive.
+
+---
+
+## Directive: Remove All Personal Names from Deliverables
+
+**Date:** 2026-03-01T19:48  
+**Source:** Project owner request  
+**Decision:** Strip all personal names and agent names from all report documents. Retain LLM model names for technical attribution only.
+
+### Rationale
+Privacy directive from project owner — deliverables should contain no individual names or agent attributions, only technical model information and business content.
+
+### Implementation
+All 7 HTML and related markdown documents updated:
+- Removed author/name attribution headers
+- Removed agent names from decision sections (content preserved)
+- Converted personal pronouns and individual credits to neutral language
+- Kept LLM model names where attribution is technical necessity
+- Regenerated all HTML documents with consistent style
+
+**Status:** Completed 2026-03-01T19:48Z
+
+---
+
+## Kaylee — Extended Website Platform Analysis
+
+**Date:** 2026-03-01T19:48  
+**Topic:** Dev Pricing Tier & CRM Integration  
+
+### Decisions Made
+1. **Simplified tier for non-technical founders:** Identified SaaS automation bridges (Zapier, Make) to connect Acuity/Squarespace without custom coding
+2. **CRM selection:** HubSpot CRM free tier (preferred) vs. Pipedrive for early-stage booking + follow-up workflow; includes integration roadmap
+3. **Integration automation:** Acuity → Zapier → HubSpot for guest communication, post-trip upsells, and repeat booking incentives
+
+### Rationale
+- Non-technical founder needs simplified tech stack with maximum automation
+- HubSpot free tier eliminates software cost during launch; Pipedrive if CRM-first workflow preferred
+- Zapier bridges existing tools without requiring backend build
+
+### Artifacts Updated
+- Extended platform decision matrix with non-technical alternatives
+- CRM comparison table (HubSpot, Pipedrive, Keap)
+- Integration workflow diagram with automation rules
+
+---
+
+## Inara — Marketing Strategy Rewrite
+
+**Date:** 2026-03-01T19:48  
+**Topic:** Agency & Group Booking Model  
+
+### Decisions Made
+1. **Dual positioning:** Individual adventure (organic social, Reels, individual storytelling) + team-building/corporate (agency sales, event planner partnerships)
+2. **Agency channel strategy:** Sales roadmap targeting corporate event planners, team-building consultants, HR/recruitment agencies with group discounts (6+ pax at $349/person)
+3. **Content split:** Organic UGC (individual adventure Reels) vs. paid agency prospecting (case study videos, event planner outreach)
+4. **Partnership agreements:** Templates for event planners and tour operators to formalize wholesale channel
+
+### Rationale
+- Group/corporate bookings provide higher lifetime value and lower CAC than individual bookings
+- Team-building positioning differentiates from adventure-only competitors
+- Agency partnerships create recurring booking pipeline without direct consumer acquisition cost
+
+### Artifacts Updated
+- Revised messaging framework (individual + group)
+- Agency sales funnel with prospecting playbook
+- Content calendar split between organic and paid channels
+- Partnership agreement templates
+
+---
+
+## Zoe — Verified Competitive Research
+
+**Date:** 2026-03-01T19:48  
+**Topic:** Live Competitor Links & Pricing Verification  
+
+### Decisions Made
+1. **Verified competitor set:** All 12 primary competitors with live website URLs, current pricing, and booking methods
+2. **Pricing verification:** Confirmed day-tour range $199–$379; private group rates $800–$2,400; overnight packages $1,100–$2,800 (where offered)
+3. **Social media benchmarking:** Follower audit across Instagram/Facebook for competitive reach assessment
+4. **Booking UX audit:** Conversion paths, deposit requirements, payment methods documented for each competitor
+
+### Rationale
+- Live links enable real-time pricing monitoring and booking page UX comparison
+- Verified data supports positioning and pricing justification
+- Social media follower audit informs influencer seeding strategy
+
+### Artifacts Updated
+- Live competitor link directory with verification timestamps
+- Pricing screenshot archive (dated 2026-03-01)
+- Social media engagement benchmarks
+- Booking page UX comparison matrix
