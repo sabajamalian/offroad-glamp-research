@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "assignments": [
+    {
+      "assignment_id": "firefly-offroad-glamp-001",
+      "universe": "Firefly",
+      "created_at": "2026-03-01T17:36:00Z",
+      "agents": [
+        { "name": "Mal", "role": "Lead / Strategist" },
+        { "name": "Zoe", "role": "Market Researcher" },
+        { "name": "Inara", "role": "Marketing Specialist" },
+        { "name": "Kaylee", "role": "Web/Tech Advisor" },
+        { "name": "Book", "role": "Business Writer" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "agents": [
+    {
+      "persistent_name": "Mal",
+      "role": "Lead / Strategist",
+      "universe": "Firefly",
+      "created_at": "2026-03-01T17:36:00Z",
+      "legacy_named": false,
+      "status": "active"
+    },
+    {
+      "persistent_name": "Zoe",
+      "role": "Market Researcher",
+      "universe": "Firefly",
+      "created_at": "2026-03-01T17:36:00Z",
+      "legacy_named": false,
+      "status": "active"
+    },
+    {
+      "persistent_name": "Inara",
+      "role": "Marketing Specialist",
+      "universe": "Firefly",
+      "created_at": "2026-03-01T17:36:00Z",
+      "legacy_named": false,
+      "status": "active"
+    },
+    {
+      "persistent_name": "Kaylee",
+      "role": "Web/Tech Advisor",
+      "universe": "Firefly",
+      "created_at": "2026-03-01T17:36:00Z",
+      "legacy_named": false,
+      "status": "active"
+    },
+    {
+      "persistent_name": "Book",
+      "role": "Business Writer",
+      "universe": "Firefly",
+      "created_at": "2026-03-01T17:36:00Z",
+      "legacy_named": false,
+      "status": "active"
+    },
+    {
+      "persistent_name": "Wash",
+      "role": "Frontend Dev",
+      "universe": "Firefly",
+      "created_at": "2026-03-01T17:50:00Z",
+      "legacy_named": false,
+      "status": "active"
+    }
+  ]
+}
