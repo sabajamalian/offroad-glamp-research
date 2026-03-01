@@ -3,17 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing Strategy Research: Off-Road Glamping Vancouver</title>
+    <title>Marketing Strategy: Agency-Led Execution</title>
     <style>
         /* ===== CSS RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            /* Outdoorsy color palette */
             --forest-green: #2d5016;
             --sage: #7a9b76;
             --earth-brown: #8b7355;
@@ -25,32 +19,16 @@
             --text-light: #666;
             --border-color: #ddd;
         }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        html { scroll-behavior: smooth; font-size: 16px; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.7;
             color: var(--text-dark);
             background-color: var(--cream);
         }
-
         /* ===== LAYOUT ===== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .content-wrapper {
-            display: flex;
-            gap: 40px;
-            margin-top: 20px;
-        }
-
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .content-wrapper { display: flex; gap: 40px; margin-top: 20px; }
         /* ===== HEADER ===== */
         header {
             background: linear-gradient(135deg, var(--forest-green) 0%, var(--sage) 100%);
@@ -59,711 +37,299 @@
             text-align: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-
-        header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        header .subtitle {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            margin-bottom: 5px;
-        }
-
-        header .meta {
-            font-size: 0.9rem;
-            opacity: 0.85;
-            margin-top: 15px;
-        }
-
+        header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+        header .subtitle { font-size: 1.25rem; opacity: 0.95; margin-bottom: 5px; }
+        header .meta { font-size: 0.9rem; opacity: 0.85; margin-top: 15px; }
         /* ===== NAVIGATION / TOC ===== */
         nav {
-            position: sticky;
-            top: 20px;
-            min-width: 260px;
-            max-width: 280px;
-            height: fit-content;
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky; top: 20px; min-width: 260px; max-width: 280px; height: fit-content;
+            background: white; border: 1px solid var(--border-color); border-radius: 8px;
+            padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-
-        nav h2 {
-            font-size: 1rem;
-            color: var(--forest-green);
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        nav ul {
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-bottom: 8px;
-        }
-
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: block;
-            padding: 4px 0;
-            transition: color 0.2s;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active {
-            color: var(--forest-green);
-            font-weight: 600;
-        }
-
-        /* Mobile: hamburger menu */
-        .menu-toggle {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--forest-green);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-        }
-
+        nav h2 { font-size: 1rem; color: var(--forest-green); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        nav ul { list-style: none; }
+        nav ul li { margin-bottom: 8px; }
+        nav ul li a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; display: block; padding: 4px 0; transition: color 0.2s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--forest-green); font-weight: 600; }
         /* ===== MAIN CONTENT ===== */
-        main {
-            flex: 1;
-            max-width: 800px;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
+        main { flex: 1; max-width: 800px; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--forest-green);
-            font-weight: 700;
-            line-height: 1.3;
-            margin-top: 1.5em;
-            margin-bottom: 0.75em;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            border-bottom: 3px solid var(--sage);
-            padding-bottom: 10px;
-            margin-top: 2.5em;
-        }
-
-        h3 {
-            font-size: 1.4rem;
-            color: var(--earth-brown);
-        }
-
-        h4 {
-            font-size: 1.15rem;
-        }
-
-        p {
-            margin-bottom: 1.2em;
-        }
-
-        strong {
-            color: var(--forest-green);
-            font-weight: 600;
-        }
-
-        ul, ol {
-            margin-left: 1.5em;
-            margin-bottom: 1.2em;
-        }
-
-        li {
-            margin-bottom: 0.5em;
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid var(--border-color);
-            margin: 2.5em 0;
-        }
-
-        /* ===== CALLOUT BOXES ===== */
-        .callout {
-            background: var(--light-gray);
-            border-left: 4px solid var(--accent-orange);
-            padding: 20px;
-            margin: 1.5em 0;
-            border-radius: 4px;
-        }
-
-        .callout h4,
-        .callout h3 {
-            margin-top: 0;
-            color: var(--accent-orange);
-        }
-
-        .callout.key-finding {
-            border-left-color: var(--forest-green);
-        }
-
-        .callout.key-finding h4,
-        .callout.key-finding h3 {
-            color: var(--forest-green);
-        }
-
+        h1, h2, h3, h4, h5, h6 { color: var(--forest-green); font-weight: 700; line-height: 1.3; margin-top: 1.5em; margin-bottom: 0.75em; }
+        h2 { font-size: 1.8rem; border-bottom: 3px solid var(--sage); padding-bottom: 10px; margin-top: 2.5em; }
+        h3 { font-size: 1.4rem; color: var(--earth-brown); }
+        p { margin-bottom: 1.2em; }
+        strong { color: var(--forest-green); font-weight: 600; }
+        ul, ol { margin-left: 1.5em; margin-bottom: 1.2em; }
+        li { margin-bottom: 0.5em; }
+        hr { border: none; border-top: 1px solid var(--border-color); margin: 2.5em 0; }
         /* ===== TABLES ===== */
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 1.5em 0;
-            border-radius: 4px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-        }
-
-        table {
-            width: 100%;
-            min-width: 600px;
-            border-collapse: collapse;
-            background: white;
-        }
-
-        th {
-            background: var(--forest-green);
-            color: white;
-            font-weight: 600;
-            text-align: left;
-            padding: 12px;
-            font-size: 0.9rem;
-        }
-
-        td {
-            padding: 12px;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 0.9rem;
-        }
-
-        tr:nth-child(even) {
-            background: var(--light-gray);
-        }
-
-        tr:hover {
-            background: #f0ede5;
-        }
-
-        /* ===== BACK TO TOP ===== */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--forest-green);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: var(--sage);
-        }
-
-        /* ===== RESPONSIVE: TABLET ===== */
-        @media (max-width: 1024px) {
-            .content-wrapper {
-                flex-direction: column;
-            }
-
-            nav {
-                position: relative;
-                top: 0;
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
-
-            main {
-                padding: 30px;
-            }
-        }
-
-        /* ===== RESPONSIVE: MOBILE ===== */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-
-            header .subtitle {
-                font-size: 1.1rem;
-            }
-
-            main {
-                padding: 20px;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            h3 {
-                font-size: 1.2rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                overflow-y: auto;
-                transition: right 0.3s;
-                z-index: 999;
-                border-radius: 0;
-                padding: 80px 20px 20px 20px;
-            }
-
-            nav.open {
-                right: 0;
-            }
-
-            table {
-                min-width: 500px;
-            }
-        }
-
-        /* ===== PRINT STYLES ===== */
-        @media print {
-            body {
-                background: white;
-            }
-
-            .menu-toggle,
-            .back-to-top,
-            nav {
-                display: none;
-            }
-
-            main {
-                box-shadow: none;
-                max-width: 100%;
-            }
-
-            h2 {
-                page-break-before: always;
-            }
-
-            h2:first-of-type {
-                page-break-before: avoid;
-            }
-
-            .callout,
-            table {
-                page-break-inside: avoid;
-            }
-        }
+        .table-wrapper { overflow-x: auto; margin: 1.5em 0; border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        table { width: 100%; min-width: 600px; border-collapse: collapse; background: white; }
+        th { background: var(--forest-green); color: white; font-weight: 600; text-align: left; padding: 12px; font-size: 0.9rem; }
+        td { padding: 12px; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
+        tr:nth-child(even) { background: var(--light-gray); }
+        tr:hover { background: #f0ede5; }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) { .content-wrapper { flex-direction: column; } nav { position: relative; top: 0; max-width: 100%; margin-bottom: 20px; } }
     </style>
 </head>
 <body>
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-
     <header>
-        <div class="container">
-            <h1>Marketing Strategy Research: Off-Road Glamping Vancouver</h1>
-            <div class="subtitle">Customer Acquisition & Growth Plan</div>
-            <div class="meta">
-                <strong>Developed by:</strong> Inara, Marketing Specialist<br>
-                <strong>Date:</strong> October 26, 2023<br>
-                <strong>Context:</strong> Launching an off-road driving + car camping experience business in Vancouver, BC (max 5 guests/trip)
-            </div>
-        </div>
+        <h1>Marketing Strategy: Agency-Led Execution</h1>
+        <div class="subtitle">Off-Road Glamping Experience - Vancouver, BC</div>
+        <div class="meta">Developed by: Marketing Strategy AI | Date: October 26, 2023</div>
     </header>
 
     <div class="container">
         <div class="content-wrapper">
-            <nav id="toc">
-                <h2>Contents</h2>
+            <nav>
+                <h2>Table of Contents</h2>
                 <ul>
-                    <li><a href="#customer-acquisition">1. Best Customer Acquisition Channels</a></li>
-                    <li><a href="#social-media">2. Social Media Marketing Deep Dive</a></li>
-                    <li><a href="#seo-strategy">3. SEO Strategy</a></li>
-                    <li><a href="#partnerships">4. Partnership & Referral Strategies</a></li>
-                    <li><a href="#paid-advertising">5. Paid Advertising (PPC)</a></li>
-                    <li><a href="#budget-allocation">6. Marketing Budget Allocation</a></li>
-                    <li><a href="#recommended-path">7. Recommended Marketing Path</a></li>
+                    <li><a href="#strategy-shift">1. Strategy Shift</a></li>
+                    <li><a href="#agency-landscape">2. Agency Landscape</a></li>
+                    <li><a href="#scope-of-work">3. Scope of Work</a></li>
+                    <li><a href="#financial-breakdown">4. Financial Breakdown</a></li>
+                    <li><a href="#engagement-model">5. Engagement Model</a></li>
+                    <li><a href="#diy-vs-agency">6. DIY vs. Agency</a></li>
+                    <li><a href="#channel-strategy">7. Channel Strategy</a></li>
+                    <li><a href="#recommendation">8. Final Recommendation</a></li>
                 </ul>
             </nav>
 
             <main>
-                <section id="customer-acquisition">
-                    <h2>1. Best Customer Acquisition Channels for Adventure Tourism</h2>
+                <section id="strategy-shift">
+                    <h2>1. Strategy Shift: Professional Execution</h2>
+                    <p>This strategy assumes the client is <strong>NOT</strong> a DIY marketer. Success for a premium experience business relies on high-quality storytelling, consistent engagement, and technical ad management. The client's role is <strong>Operator</strong> (delivering the experience); the Agency's role is <strong>Growth</strong> (filling the bookings).</p>
+                    <p><strong>Core Philosophy:</strong> "You drive the trucks; they drive the traffic."</p>
+                </section>
 
-                    <p>Ranked by effectiveness for experiential adventure tourism in British Columbia.</p>
+                <section id="agency-landscape">
+                    <h2>2. Vancouver Marketing Agency Landscape</h2>
+                    <p>For an adventure tourism business, you need an agency that understands "stoke," seasonality, and the local outdoor culture. Avoid generic B2B agencies.</p>
+                    
+                    <h3>Top Tier: Full-Service Adventure Specialists</h3>
+                    <p><em>Best for: All-inclusive handling of brand, ads, and content.</em></p>
+                    <ul>
+                        <li><strong>Aventur Marketing:</strong> Vancouver-based, specializes strictly in tourism and outdoor recreation. Strong track record with tour operators.</li>
+                        <li><strong>EM Adventure Marketing:</strong> Deep focus on PR and influencer relations within the outdoor industry. Good for brand building.</li>
+                        <li><strong>Top Rope Media:</strong> Boutique agency with deep roots in climbing/skiing/outdoor culture. Authentic voice.</li>
+                        <li><strong>Cost Range:</strong> $4,000 - $8,000 / month retainer.</li>
+                    </ul>
 
+                    <h3>Mid Tier: Boutique Digital Agencies</h3>
+                    <p><em>Best for: Specific channel management (Ads + Social).</em></p>
+                    <ul>
+                        <li><strong>Major Tom (Small Biz arm):</strong> Larger agency with a polished approach to performance marketing.</li>
+                        <li><strong>Local Freelance Collectives:</strong> Teams of 2-3 freelancers (one copywriter, one ad buyer, one designer) working together.</li>
+                        <li><strong>Cost Range:</strong> $2,500 - $4,500 / month retainer.</li>
+                    </ul>
+
+                    <h3>Alternative: Senior Freelance Consultant</h3>
+                    <p><em>Best for: Budget-conscious specialized help.</em></p>
+                    <ul>
+                        <li>One senior marketer handling strategy + contractors for execution.</li>
+                        <li><strong>Cost Range:</strong> $80 - $150 / hour or $1,500 - $3,000 / month retainer.</li>
+                    </ul>
+                </section>
+
+                <section id="scope-of-work">
+                    <h2>3. Agency Scope of Work</h2>
+                    <p>The agency is not just "posting on Instagram." They are the revenue engine.</p>
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Rank</th>
-                                    <th>Channel</th>
-                                    <th>Est. Cost</th>
-                                    <th>ROI Potential</th>
-                                    <th>Time to Results</th>
-                                    <th>Effort</th>
-                                    <th>Why it wins</th>
+                                    <th>Responsibility</th>
+                                    <th>Agency Deliverables</th>
+                                    <th>Client Responsibility</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>1</strong></td>
-                                    <td><strong>Social Media (Instagram/TikTok)</strong></td>
-                                    <td>Low - Med</td>
-                                    <td>High</td>
-                                    <td>Fast - Med</td>
-                                    <td>High</td>
-                                    <td>Visuals drive desire. The product is inherently "instagrammable." Essential for discovery.</td>
+                                    <td><strong>Social Media</strong></td>
+                                    <td>Content calendar, caption writing, reel editing, community management (replying to comments), scheduling.</td>
+                                    <td>Capture raw iPhone video/photos during trips. Send "content dump" to agency weekly.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>2</strong></td>
-                                    <td><strong>SEO & Content Marketing</strong></td>
-                                    <td>Low (Time)</td>
-                                    <td>High</td>
-                                    <td>Slow (3-6 mo)</td>
-                                    <td>High</td>
-                                    <td>Captures high-intent searches ("off road camping Vancouver"). Long-term compound growth.</td>
+                                    <td><strong>Paid Ads</strong></td>
+                                    <td>Setup & management of Google Ads (Search) and Meta Ads (IG/FB). Audience targeting, A/B testing, budget optimization.</td>
+                                    <td>Approve ad spend budget. Provide high-res images for ads.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>3</strong></td>
-                                    <td><strong>Strategic Partnerships</strong></td>
-                                    <td>Low</td>
-                                    <td>Med - High</td>
-                                    <td>Med</td>
-                                    <td>Med</td>
-                                    <td>Trust transfer from established local brands (hotels, tourism boards) accelerates credibility.</td>
+                                    <td><strong>Influencers</strong></td>
+                                    <td>Identify targets, negotiate contracts, manage deliverables, track ROI.</td>
+                                    <td>Host the influencers on the trip. Treat them like VIPs.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>4</strong></td>
-                                    <td><strong>Google Ads (Search)</strong></td>
-                                    <td>Med - High</td>
-                                    <td>Med</td>
-                                    <td>Immediate</td>
-                                    <td>Low</td>
-                                    <td>Captures "buy now" intent. Expensive per click but high conversion if targeted correctly.</td>
+                                    <td><strong>Email Marketing</strong></td>
+                                    <td>Design newsletters, set up automated booking flows (pre-trip/post-trip sequences).</td>
+                                    <td>Provide customer lists (if any) and operational updates.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>5</strong></td>
-                                    <td><strong>Influencer Marketing</strong></td>
-                                    <td>Med</td>
-                                    <td>Variable</td>
-                                    <td>Fast</td>
-                                    <td>Med</td>
-                                    <td>Micro-influencers provide social proof and reach niche outdoor audiences effectively.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>6</strong></td>
-                                    <td><strong>OTAs (Viator/TripAdvisor)</strong></td>
-                                    <td>Commission (20-30%)</td>
-                                    <td>Med</td>
-                                    <td>Med</td>
-                                    <td>Low</td>
-                                    <td>Volume driver but eats margins. Good for filling last-minute capacity.</td>
+                                    <td><strong>Reporting</strong></td>
+                                    <td>Monthly dashboard: CAC (Customer Acquisition Cost), ROAS (Return on Ad Spend), booking volume.</td>
+                                    <td>Review reports and approve next month's focus.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
-                <hr>
+                <section id="financial-breakdown">
+                    <h2>4. Financial Breakdown</h2>
+                    <p>Budgeting for an agency is an investment, not an expense.</p>
 
-                <section id="social-media">
-                    <h2>2. Social Media Marketing Deep Dive</h2>
-
-                    <p>The strategy relies on <strong>"FOMO" (Fear Of Missing Out)</strong> and <strong>Visual Storytelling</strong>.</p>
-
-                    <h3>📸 Instagram (The Shop Window)</h3>
+                    <h3>Monthly Retainer Estimates (Small Experience Business)</h3>
                     <ul>
-                        <li><strong>Content Strategy:</strong> High-quality aesthetic shots of the vehicles in epic BC locations. "Point of view" (POV) content from the driver's seat or tent window.</li>
-                        <li><strong>Reels vs. Feed:</strong>
-                            <ul>
-                                <li><strong>Reels (Growth):</strong> 70% of effort. Trending audio + dramatic landscapes + quick cuts. <em>Goal: Reach new eyes.</em></li>
-                                <li><strong>Feed (Gallery):</strong> 20% of effort. Carousel posts showing the "step-by-step" experience (The drive → The setup → The dinner → The view). <em>Goal: Depth & Education.</em></li>
-                                <li><strong>Stories (Community):</strong> 10% of effort. Daily BTS, Q&A, reposting guest content. <em>Goal: Trust & Booking.</em></li>
-                            </ul>
+                        <li><strong>Management Fee:</strong> $3,000 - $5,000 / month
+                            <ul><li><em>Includes:</em> Social management (3-4 posts/week), Ad management, Monthly reporting, Email newsletter.</li></ul>
                         </li>
-                        <li><strong>Hashtags:</strong> Mix of broad (#ExploreBC #BeautifulBritishColumbia) and niche (#OverlandBC #RoofTopTentLiving #VancouverOffRoad).</li>
-                        <li><strong>Posting Schedule:</strong> 3-4 Reels/week, 2 Static posts/week, Daily Stories.</li>
-                    </ul>
-
-                    <h3>🎥 TikTok (The Viral Engine)</h3>
-                    <ul>
-                        <li><strong>Content Types:</strong>
-                            <ul>
-                                <li><em>Raw & Unfiltered:</em> "Things that went wrong" or "Reality of camping" (humanizes the brand).</li>
-                                <li><em>Educational:</em> "How to set up a roof top tent in 60 seconds."</li>
-                                <li><em>ASMR:</em> Sounds of rain on the tent, crackling fire, gravel crunching.</li>
-                            </ul>
+                        <li><strong>Ad Spend Budget:</strong> $1,500 - $3,000 / month
+                            <ul><li><em>Paid directly to Google/Meta.</em> This is the fuel for the engine. Start lower, scale as bookings come in.</li></ul>
                         </li>
-                        <li><strong>Growth Tactic:</strong> Hop on travel trends immediately. Use text overlays like "Did you know this spot is only 2 hours from Vancouver?" to hook locals.</li>
-                    </ul>
-
-                    <h3>▶️ YouTube (The Search Engine)</h3>
-                    <ul>
-                        <li><strong>Strategy:</strong> "Hybrid Vlogs." Part cinematic travel film, part informational guide.</li>
-                        <li><strong>Content Ideas:</strong> "Complete Guide to Off-Roading near Squamish," "Toyota [Model] Overland Build Tour," "Camping in the Rain: Vancouver Edition."</li>
-                        <li><strong>SEO:</strong> Titles must answer specific questions users type into Google.</li>
-                    </ul>
-
-                    <h3>👥 Facebook & Google Business Profile</h3>
-                    <ul>
-                        <li><strong>Facebook:</strong> Join groups like "Camping BC," "4WD ABC," and "Overland Canada." Share helpful advice, not just ads.</li>
-                        <li><strong>Google Business Profile (GBP):</strong> <strong>CRITICAL for Local SEO.</strong>
-                            <ul>
-                                <li>Post weekly updates (photos/offers).</li>
-                                <li>Get 5-star reviews immediately. Reply to every single one.</li>
-                                <li>Add "Products" with pricing for your tours directly on the profile.</li>
-                            </ul>
+                        <li><strong>Content Production:</strong> $500 - $1,500 / month (Variable)
+                            <ul><li><em>Includes:</em> Periodic professional shoots or paying for user-generated content (UGC).</li></ul>
                         </li>
                     </ul>
+
+                    <h3>One-Time Project Costs (Launch)</h3>
+                    <ul>
+                        <li><strong>Brand Identity & Asset Kit:</strong> $3,000 - $5,000 (Logo, fonts, color palette, social templates).</li>
+                        <li><strong>Website Copy & SEO Setup:</strong> $2,000 - $4,000.</li>
+                        <li><strong>Launch Video Production:</strong> $3,000 - $6,000 (Professional promo video for website/ads).</li>
+                    </ul>
+
+                    <h3><strong>Total Estimated Monthly Burn:</strong></h3>
+                    <p><strong>$4,500 - $8,000 (Agency Fee + Ad Spend)</strong></p>
                 </section>
 
-                <hr>
+                <section id="engagement-model">
+                    <h2>5. Engagement Model: The 90-Day Roadmap</h2>
+                    <p>Do not sign a 12-month contract immediately. Start with a 3-month trial or "Launch Phase."</p>
 
-                <section id="seo-strategy">
-                    <h2>3. SEO Strategy (Search Engine Optimization)</h2>
-
-                    <p>Focus on <strong>Local Intent</strong> and <strong>Niche Specificity</strong>.</p>
-
-                    <h3>Key Search Terms (Keywords)</h3>
+                    <h3>Phase 1: Pre-Launch (Months -2 to -1)</h3>
                     <ul>
-                        <li><em>Primary:</em> "Off road tours Vancouver," "Car camping rental Vancouver," "Overland trips BC," "Guided 4x4 tours Vancouver."</li>
-                        <li><em>Secondary:</em> "Rooftop tent camping BC," "Adventure getaways from Vancouver," "Unique camping experiences BC."</li>
-                    </ul>
-
-                    <h3>Content Marketing Topics (Blog)</h3>
-                    <ol>
-                        <li>"5 Best Off-Road Trails Near Vancouver for Beginners" (Capture top-of-funnel interest)</li>
-                        <li>"What to Pack for an Overland Trip in BC" (Helpful utility content)</li>
-                        <li>"Roof Top Tent vs. Ground Tent: Why We Choose RTTs" (Product education)</li>
-                        <li>"Hidden Gem Campsites in Squamish Valley" (Local authority)</li>
-                    </ol>
-
-                    <h3>Local SEO Checklist</h3>
-                    <ul>
-                        <li>Claim GBP and verify address.</li>
-                        <li>Ensure NAP (Name, Address, Phone) consistency across all directories (TripAdvisor, Yelp, YellowPages).</li>
-                        <li>Embed a Google Map of "Meeting Point" on the contact page.</li>
-                    </ul>
-                </section>
-
-                <hr>
-
-                <section id="partnerships">
-                    <h2>4. Partnership & Referral Strategies</h2>
-
-                    <h3>🤝 Tourism Boards</h3>
-                    <ul>
-                        <li><strong>Destination Vancouver & Destination BC:</strong> Apply for membership. Goal: Get listed on their "Things to Do" pages.</li>
-                        <li><strong>Indigenous Tourism BC:</strong> Explore alignment and potential for cultural storytelling integration if appropriate.</li>
-                    </ul>
-
-                    <h3>🏨 Hotel/Hostel Partnerships</h3>
-                    <ul>
-                        <li>Target boutique hotels and high-end hostels (e.g., The Burrard, Samesun).</li>
-                        <li><strong>Offer:</strong> "Concierge Commission" (10-15% per booking) or exclusive guest discount codes.</li>
-                        <li><strong>Pitch:</strong> "We offer the 'Wild BC' experience your guests ask for, without you needing to manage gear."</li>
-                    </ul>
-
-                    <h3>🏢 Corporate & Gift Market</h3>
-                    <ul>
-                        <li><strong>Corporate:</strong> Position as "Executive Team Building" or "Leadership Retreats." Focus on disconnection and resilience.</li>
-                        <li><strong>Gifts:</strong> Create beautiful digital/physical gift cards. "Give the gift of Adventure." Push heavily in Nov/Dec.</li>
-                    </ul>
-                </section>
-
-                <hr>
-
-                <section id="paid-advertising">
-                    <h2>5. Paid Advertising (PPC)</h2>
-
-                    <h3>Google Ads</h3>
-                    <ul>
-                        <li><strong>Strategy:</strong> "Sniper" targeting. Only bid on high-intent keywords (e.g., "book off road tour"). Avoid broad terms like "camping" (too competitive/vague).</li>
-                        <li><strong>Budget:</strong> Start small ($500/mo).</li>
-                        <li><strong>CPC Target:</strong> $2.00 - $5.00.</li>
-                        <li><strong>Retargeting:</strong> Essential. Show ads to people who visited the "Booking" page but didn't pay.</li>
-                    </ul>
-
-                    <h3>Social Ads (Meta)</h3>
-                    <ul>
-                        <li><strong>Creative:</strong> Video is non-negotiable. Use UGC-style clips (looks like a friend's story, not an ad).</li>
-                        <li><strong>Targeting:</strong>
+                        <li><strong>Focus:</strong> Brand Foundation & Teaser.</li>
+                        <li><strong>Agency Action:</strong>
                             <ul>
-                                <li><em>Interests:</em> North Face, Patagonia, REI, MEC, Toyota 4Runner, Overlanding.</li>
-                                <li><em>Location:</em> Vancouver + 50km radius (for locals) AND Seattle/Portland (for tourists).</li>
-                                <li><em>Lookalikes:</em> Create audiences similar to your Instagram engagers.</li>
+                                <li>Audit/Build Website SEO foundation.</li>
+                                <li>Set up social handles and "Coming Soon" landing page.</li>
+                                <li>Run small "Lead Gen" ads to build an email waiting list.</li>
                             </ul>
                         </li>
+                        <li><strong>Cost:</strong> Project fees (~$5k) + Small retainer (~$2k).</li>
+                    </ul>
+
+                    <h3>Phase 2: Launch (Months 1-3)</h3>
+                    <ul>
+                        <li><strong>Focus:</strong> Noise & Bookings.</li>
+                        <li><strong>Agency Action:</strong>
+                            <ul>
+                                <li>High-frequency posting (daily).
+                                <li>Influencer campaign execution (getting 5-10 influencers on trips).</li>
+                                <li>Google Ads: aggressive bidding on "Vancouver adventure tours."</li>
+                            </ul>
+                        </li>
+                        <li><strong>Cost:</strong> Full Retainer ($4k) + High Ad Spend ($3k).</li>
+                    </ul>
+
+                    <h3>Phase 3: Stabilization (Months 4+)</h3>
+                    <ul>
+                        <li><strong>Focus:</strong> Efficiency & ROI.</li>
+                        <li><strong>Agency Action:</strong>
+                            <ul>
+                                <li>Optimize ads to lower CAC.</li>
+                                <li>Reduce posting frequency to sustainable levels (3x/week).</li>
+                                <li>Focus on email automation for reviews and referrals.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Cost:</strong> Full Retainer ($4k) + Maintenance Ad Spend ($1.5k).</li>
                     </ul>
                 </section>
 
-                <hr>
-
-                <section id="budget-allocation">
-                    <h2>6. Marketing Budget Allocation</h2>
-
-                    <h3>Phase 1: Launch (Months 1-6)</h3>
-                    <p><strong>Goal:</strong> Awareness & Initial Social Proof.<br>
-                    <strong>Budget:</strong> ~15-20% of projected revenue (Aggressive).</p>
-
-                    <ul>
-                        <li><strong>Content Production (40%):</strong> Photography, videography, editing. You need assets to sell.</li>
-                        <li><strong>Social Ads (30%):</strong> Jumpstarting reach.</li>
-                        <li><strong>Influencer/Collabs (20%):</strong> Barter trips for posts. (Cost is mostly fuel/time).</li>
-                        <li><strong>Software/Tools (10%):</strong> Booking platform, email marketing tool, Canva.</li>
-                    </ul>
-
-                    <h3>Phase 2: Growth (Months 6-18)</h3>
-                    <p><strong>Goal:</strong> Efficiency & Scale.<br>
-                    <strong>Budget:</strong> ~10-12% of revenue.</p>
-
-                    <ul>
-                        <li><strong>Paid Ads (50%):</strong> Scaling what works (Google & Social).</li>
-                        <li><strong>SEO/Content (25%):</strong> Blogging, link building.</li>
-                        <li><strong>Partnerships (15%):</strong> Commissions, printed materials for hotels.</li>
-                        <li><strong>Retention/Email (10%):</strong> Driving repeat bookings and referrals.</li>
-                    </ul>
-                </section>
-
-                <hr>
-
-                <section id="recommended-path">
-                    <h2>7. Recommended Marketing Path (The "Inara" Plan)</h2>
-
-                    <div class="callout key-finding">
-                        <h3>Top 3 Channels to Start</h3>
-                        <ol>
-                            <li><strong>Instagram (Organic + Reels):</strong> It's your portfolio. If it doesn't look cool here, it doesn't exist.</li>
-                            <li><strong>Google Business Profile:</strong> The lowest hanging fruit for trust and local search.</li>
-                            <li><strong>Micro-Influencer Seeding:</strong> Trade midweek trips for content. You need real people in your tents to prove it's safe and fun.</li>
-                        </ol>
+                <section id="diy-vs-agency">
+                    <h2>6. DIY vs. Agency Comparison</h2>
+                    <p>Why spend the money?</p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>DIY (Client Handles It)</th>
+                                    <th>Agency (Professional)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Time Cost</strong></td>
+                                    <td>15-20 hours/week. Distracts from operations/safety.</td>
+                                    <td>1 hour/week (Strategy call).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ad Performance</strong></td>
+                                    <td>"Boost Post" button (Inefficient, wastes money).</td>
+                                    <td>Business Manager, Pixel tracking, Retargeting funnels (High ROI).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Content Quality</strong></td>
+                                    <td>Inconsistent phone photos, typos, missed posting days.</td>
+                                    <td>Curated aesthetic, on-brand voice, consistent schedule.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Stress Level</strong></td>
+                                    <td>High. "I forgot to post today."</td>
+                                    <td>Low. "I just need to run the tour."</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Scalability</strong></td>
+                                    <td>Limited by owner's burnout.</td>
+                                    <td>Unlimited. Agency scales spend as revenue grows.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                </section>
 
-                    <h3>90-Day Launch Plan</h3>
-
-                    <h4>Month 1: Foundation & Hype</h4>
+                <section id="channel-strategy">
+                    <h2>7. Recommended Channel Strategy (Agency Executed)</h2>
+                    
+                    <h3>1. Instagram & TikTok (The Showroom)</h3>
                     <ul>
-                        <li>[ ] Build "link in bio" with mailing list signup (Lead Magnet: "BC Off-Road Packing List").</li>
-                        <li>[ ] Film 10 "Stock" Reels (scenery, gear, setup).</li>
-                        <li>[ ] Claim & Optimize Google Business Profile.</li>
-                        <li>[ ] Soft Launch: Invite friends/family for "test runs" in exchange for Google Reviews & Photos.</li>
+                        <li><strong>Agency Role:</strong> Edits raw footage into trending Reels. Engages with every comment. Hunts for potential customers via hashtags.</li>
+                        <li><strong>Client Role:</strong> "Documentarian." Film the mud, the laughs, the campfire. Upload to shared Google Drive.</li>
                     </ul>
 
-                    <h4>Month 2: The "Noise" Phase</h4>
+                    <h3>2. Google Ads & SEO (The Cash Register)</h3>
                     <ul>
-                        <li>[ ] Launch website.</li>
-                        <li>[ ] Daily posting on Instagram/TikTok.</li>
-                        <li>[ ] Host 3 local micro-influencers (5k-50k followers).</li>
-                        <li>[ ] Turn on Google Ads (Low budget, high intent).</li>
+                        <li><strong>Agency Role:</strong> Bids on high-intent keywords like "4x4 rentals Vancouver" or "unique camping BC." Manages Negative Keywords to save money.</li>
+                        <li><strong>Client Role:</strong> None. Just answer the phone/bookings.</li>
                     </ul>
 
-                    <h4>Month 3: Optimization & Partnerships</h4>
+                    <h3>3. Influencer Partnerships (The Social Proof)</h3>
                     <ul>
-                        <li>[ ] Analyze social metrics: What content got the most saves/shares? Make more of that.</li>
-                        <li>[ ] Visit 5 local boutique hotels to drop off rack cards/pitch concierges.</li>
-                        <li>[ ] Launch "Summer Booking" Early Bird email campaign.</li>
+                        <li><strong>Agency Role:</strong> Vets influencers (checks for fake followers). Negotiates deliverables (e.g., "1 Reel + 3 Stories"). Sends contracts.</li>
+                        <li><strong>Client Role:</strong> Host the experience. Ensure the influencer has a great time so their review is genuine.</li>
                     </ul>
+                </section>
 
-                    <h3>Key Metrics to Track</h3>
+                <section id="recommendation">
+                    <h2>8. Final Recommendation</h2>
+                    <p><strong>Hire a "Boutique Adventure Specialist" Agency.</strong></p>
                     <ul>
-                        <li><strong>CAC (Customer Acquisition Cost):</strong> Total Ad Spend / # of New Bookings.</li>
-                        <li><strong>Engagement Rate:</strong> (Likes + Comments + Shares) / Followers.</li>
-                        <li><strong>Website Conversion Rate:</strong> Bookings / Website Visitors.</li>
-                        <li><strong>Review Volume:</strong> Number of new 5-star reviews per month.</li>
+                        <li><strong>Why:</strong> You need someone who understands the <em>product</em> (overlanding is niche). A generic agency will waste money targeting "hotel tourists."</li>
+                        <li><strong>Budget Allocation:</strong> Set aside <strong>$20,000</strong> for the first 3 months of marketing (Agency + Spend). This is startup capital, not operating expense.</li>
+                        <li><strong>Red Flags:</strong>
+                            <ul>
+                                <li>Agencies that promise specific booking numbers (impossible to guarantee).</li>
+                                <li>Agencies that don't ask about your profit margins.</li>
+                                <li>Agencies that want to own your ad account (YOU must own your data).</li>
+                            </ul>
+                        </li>
                     </ul>
+                    <p><strong>Next Step:</strong> Issue an RFP (Request for Proposal) to <strong>Aventur</strong>, <strong>Top Rope</strong>, and <strong>EM Adventure</strong> asking for a "Launch Package for a Premium Off-Road Tour Operator."</p>
                 </section>
             </main>
         </div>
     </div>
-
-    <button class="back-to-top" aria-label="Back to top">↑</button>
-
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('open');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-                nav.classList.remove('open');
-            }
-        });
-
-        // Back to top button
-        const backToTop = document.querySelector('.back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Active nav link on scroll
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav ul li a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>

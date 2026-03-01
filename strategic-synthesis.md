@@ -1,8 +1,5 @@
 # Strategic Synthesis: Off-Road Glamping Experience — Vancouver, BC
 
-**Prepared by:** Mal, Lead Strategist
-**Sources:** Competitive Analysis (Zoe), Marketing Strategy (Inara), Website/Tech Analysis (Kaylee)
-
 ---
 
 ## 1. Executive Summary

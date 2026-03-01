@@ -2,7 +2,6 @@
 ## Vancouver, British Columbia
 
 **Business Name:** [Your Business Name]  
-**Owner:** Saba  
 **Business Type:** Adventure Tourism / Experiential Travel  
 **Location:** Vancouver, BC (Greater Vancouver/Sea-to-Sky Corridor)  
 **Date:** March 2025
@@ -1275,5 +1274,4 @@ The opportunity is real. The playbook is proven. Now it's time to execute.
 
 **Document Version:** 1.0  
 **Last Updated:** March 2025  
-**Prepared by:** Book (Business Writer) for Saba  
 **Contact:** [Your Contact Information]

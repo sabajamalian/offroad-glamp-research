@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Development Options for the Off-Road + Rooftop Tent Experience</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Website Development Options for the Off-Road + Rooftop Tent Experience</title>
+<style>
         /* ===== CSS RESET & BASE ===== */
         * {
             margin: 0;
@@ -390,470 +391,489 @@
     </style>
 </head>
 <body>
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-
-    <header>
-        <div class="container">
-            <h1>Website Development Options for the Off-Road + Rooftop Tent Experience</h1>
-            <div class="subtitle">Technical & Platform Analysis</div>
+<button aria-label="Toggle menu" class="menu-toggle">☰</button>
+<header>
+<div class="container">
+<h1>Website Development Options for the Off-Road + Rooftop Tent Experience</h1>
+<div class="subtitle">Technical &amp; Platform Analysis</div>
             <div class="meta">
-                <strong>Prepared by:</strong> Kaylee, Tech Analyst
+                <strong>Prepared for:</strong> Off-Road + Rooftop Tent Experience Team
             </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="content-wrapper">
-            <nav id="toc">
-                <h2>Contents</h2>
-                <ul>
-                    <li><a href="#build-from-scratch">1. Build-From-Scratch Analysis</a></li>
-                    <li><a href="#platform-comparison">2. Off-the-Shelf Platform Comparison</a></li>
-                    <li><a href="#booking-systems">3. Booking System Analysis</a></li>
-                    <li><a href="#payment-processing">4. Payment Processing & Booking Policy</a></li>
-                    <li><a href="#essential-features">5. Essential Website Features</a></li>
-                    <li><a href="#cost-comparison">6. Cost Comparison Table</a></li>
-                    <li><a href="#recommendation">7. Recommendation & Phased Approach</a></li>
-                </ul>
-            </nav>
-
-            <main>
-                <section id="build-from-scratch">
-                    <h2>1. Build-From-Scratch Analysis</h2>
-                    
-                    <h3>Recommended Tech Stack</h3>
-                    <ul>
-                        <li><strong>Frontend:</strong> Next.js or Remix with React, TypeScript, Tailwind CSS, and a component kit (e.g., Radix + Framer Motion) for highly branded storytelling pages.</li>
-                        <li><strong>Backend:</strong> Node.js (NestJS) or a lightweight serverless API (AWS Lambda / Vercel Functions) to handle booking logic, waivers, and integrations with Stripe/Square.</li>
-                        <li><strong>CMS + Content:</strong> Headless CMS such as Sanity or Contentful so non-technical teammates can update itineraries, packing lists, and blog content without redeploying code.</li>
-                        <li><strong>Infrastructure:</strong> Vercel or Netlify for hosting + CI/CD, Cloudflare for caching/edge rules, AWS S3 for media assets, and a managed database (Supabase/Postgres) for bookings/waitlists.</li>
-                    </ul>
-
-                    <h3>Cost & Timeline Estimates (CAD)</h3>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Approach</th>
-                                    <th>Upfront Build</th>
-                                    <th>Timeline</th>
-                                    <th>Notes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>DIY (owner builds with templates/components)</td>
-                                    <td>$300–$1,000 (domain, premium components, SaaS)</td>
-                                    <td>4–8 weeks of part-time effort</td>
-                                    <td>Lowest cash cost but highest learning curve and maintenance burden.</td>
-                                </tr>
-                                <tr>
-                                    <td>Freelance developer</td>
-                                    <td>$1,500–$5,000 for brochure site; $5,000–$8,000 if booking flows/custom API needed</td>
-                                    <td>2–6 weeks for a small site; 6–10 weeks if custom booking integrations are included</td>
-                                    <td>Rates of $30–$75/hr are common in Canada for independent devs/designers. <a href="https://www.spaceo.ca/blog/website-development-cost/" target="_blank">SpaceO</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Boutique agency</td>
-                                    <td>$5,000–$20,000+ depending on depth of UX, branding, and complex integrations</td>
-                                    <td>6–12+ weeks due to discovery, design, development, QA</td>
-                                    <td>Agencies charge $100–$175/hr and bring specialists (UX, brand, SEO) at higher cost. <a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/" target="_blank">DigitalWebPort</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3>Pros</h3>
-                    <ul>
-                        <li>Full control over performance, custom booking flows, custom React components to showcase off-road shots, and unique brand storytelling.</li>
-                        <li>Own your stack (no vendor lock-in, data stays in your DB) and avoid escalating SaaS fees once volume grows.</li>
-                        <li>Easier to integrate novel experiences later (e.g., telemetry dashboards, route planners, custom waiver flows).</li>
-                    </ul>
-
-                    <h3>Cons</h3>
-                    <ul>
-                        <li>Requires upfront capital or significant founder time. Build + maintenance + DevOps will compete with running trips.</li>
-                        <li>You must manage security patches, dependency upgrades, uptime, and analytics instrumentation.</li>
-                        <li>Booking, CRM, and marketing tooling must be integrated manually (vs. turn-key tools on Squarespace/Wix).</li>
-                    </ul>
-
-                    <h3>When It Makes Sense</h3>
-                    <ul>
-                        <li>You have validated demand, need advanced workflows (dynamic pricing, real-time fleet availability, complex upsells), or plan to raise capital and scale beyond a regional operator.</li>
-                        <li>You want a premium brand experience (immersive storytelling, hero video, 3D route map) that standard templates cannot deliver.</li>
-                        <li>You have in-house technical talent or a long-term agency partner budgeted for maintenance.</li>
-                    </ul>
-                </section>
-
-                <hr>
-
-                <section id="platform-comparison">
-                    <h2>2. Off-the-Shelf Platform Comparison</h2>
-                    
-                    <h3>Snapshot</h3>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Platform</th>
-                                    <th>Monthly Cost (CAD, annual billing)</th>
-                                    <th>Booking Options</th>
-                                    <th>Payments</th>
-                                    <th>Mobile/SEO</th>
-                                    <th>Ease of Updates</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Squarespace</strong></td>
-                                    <td>$30.95 Business / $45 Basic Commerce</td>
-                                    <td>Native Acuity Scheduling ($20–$61 CAD/mo) for real-time booking, group slots, reminders. <a href="https://www.forbes.com/advisor/ca/business/software/squarespace-pricing/" target="_blank">Forbes Advisor CA</a></td>
-                                    <td>Stripe, PayPal via Acuity; taxes + deposits configurable. <a href="https://support.squarespace.com/hc/en-us/articles/360034944391-Acuity-Scheduling-pricing-billing-and-invoices" target="_blank">Squarespace Support</a></td>
-                                    <td>Responsive templates, built-in SEO metadata controls, OpenGraph settings.</td>
-                                    <td>Visual editor, sections, and campaign tools make changes simple for non-devs.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>WordPress.org + Plugins</strong></td>
-                                    <td>Hosting $3–$35+; premium booking plugins $59–$249 USD/year</td>
-                                    <td>WooCommerce Bookings, Travel Tour Booking, WP Travel Engine for capacity, tiered pricing, deposits. <a href="https://woocommerce.com/products/travel-tour-booking/" target="_blank">WooCommerce</a></td>
-                                    <td>Depends on gateway (Stripe, Square, PayPal). Full control over payment mix.</td>
-                                    <td>SEO powerhouse (Yoast/RankMath), mobile responsive themes for adventure tourism. <a href="https://wordpress.org/themes/adventure-tourism/" target="_blank">WordPress Themes</a></td>
-                                    <td>Requires maintenance (updates/backups). Page builders (Elementor, Gutenberg) simplify editing once set up.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Wix</strong></td>
-                                    <td>Core $29.77 / Business $39.77 CAD with Wix Bookings included. <a href="https://www.wix.com/plans" target="_blank">Wix Pricing</a></td>
-                                    <td>Built-in Wix Bookings handles classes, group trips, deposits, staff calendars. <a href="https://www.wix.com/website/templates/html/travel-tourism/travel-services" target="_blank">Wix Bookings</a></td>
-                                    <td>Wix Payments, Stripe, PayPal; POS add-ons.</td>
-                                    <td>Strong mobile editor, SEO Wiz for structured data.</td>
-                                    <td>Drag-and-drop editor, AI text assistant, app market add-ons.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Shopify</strong></td>
-                                    <td>Basic $49 CAD/mo ($37 CAD if annual). <a href="https://www.shopify.com/ca/pricing" target="_blank">Shopify Pricing</a></td>
-                                    <td>Booking apps such as Experiences ($9–$129/mo + %), BookThatApp, Sesami for tours with reminders & POS. <a href="https://apps.shopify.com/experiences" target="_blank">Shopify App Store</a></td>
-                                    <td>Shopify Payments (2.8% + $0.30 online, 2.6% POS) or 3rd-party (extra 2%). <a href="https://avada.io/blog/shopify-pricing-canada/" target="_blank">AVADA</a></td>
-                                    <td>Mobile-first themes, robust SEO settings, fast CDN.</td>
-                                    <td>Familiar admin, easy product/experience duplication, but booking UX relies on app.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Webflow</strong></td>
-                                    <td>CMS $23 USD/mo; Ecommerce Standard $29 USD/mo (annual). <a href="https://webflow.com/pricing" target="_blank">Webflow Pricing</a></td>
-                                    <td>Requires embed/integration with booking tools (Calendly, Acuity, Checkfront). No native booking.</td>
-                                    <td>Stripe for ecommerce; 2% fee on Standard until upgrading to Plus ($74 USD/mo) for 0% fee. <a href="https://tech.co/website-builders/webflow-pricing" target="_blank">Tech.co</a></td>
-                                    <td>Pixel-perfect control, fast hosting, CMS for itineraries/blog, clean SEO controls.</td>
-                                    <td>Designer has a learning curve; Editor mode makes copy updates easy once built.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3>Platform Deep Dives</h3>
-                    <ul>
-                        <li><strong>Squarespace:</strong> Fluid Engine layouts + tourism templates showcase rigs, itineraries, and testimonials fast. Acuity Scheduling (free to $61 CAD/mo) plugs in for group bookings, intake forms, and automated reminders with Stripe/PayPal payments. <a href="https://support.squarespace.com/hc/en-us/articles/360034944391-Acuity-Scheduling-pricing-billing-and-invoices" target="_blank">Squarespace Support</a> Upgrading to Commerce removes the 3% transaction fee on Business plans.</li>
-                        <li><strong>WordPress + Plugins:</strong> Pair managed hosting (SiteGround promo $2.99 CAD/mo, renews $17.99; WP Engine $34 CAD/mo steady) <a href="https://www.siteground.com/wordpress-hosting.htm" target="_blank">SiteGround</a> <a href="https://wpengine.com/ca/plans/" target="_blank">WP Engine</a> with adventure tourism themes (Adventure Tourism, Adventure Tour) that already include galleries, FAQs, and CTA blocks. <a href="https://wordpress.org/themes/adventure-tourism/" target="_blank">WordPress Themes</a> WooCommerce Bookings ($249 USD/yr), Travel Tour Booking ($59 USD/yr), or WpTravelly ($69 USD/yr) add per-person pricing, deposits, and automated emails. <a href="https://woocommerce.com/products/travel-tour-booking/" target="_blank">WooCommerce</a> <a href="https://mage-people.com/product/woocommerce-tour-and-travel-booking-manager-pro/" target="_blank">MagePeople</a></li>
-                        <li><strong>Wix:</strong> Core/Business plans ($29.77–$39.77 CAD/mo) include Wix Bookings for capacity caps, deposits, staff calendars, SMS reminders, and membership packs. <a href="https://www.wix.com/plans" target="_blank">Wix Pricing</a> Huge template marketplace (Adventure Tour Company, Outdoor Rentals) lets you personalize quickly. <a href="https://www.wix.com/website/templates/html/travel-tourism/travel-services" target="_blank">Wix Templates</a></li>
-                        <li><strong>Shopify:</strong> Choose Basic ($49 CAD/mo) and add a booking app (Experiences $9–$129/mo + % or BookThatApp). These apps pump bookings into Shopify orders, support POS check-in, SMS/email reminders, Zapier workflows, and calendar sync. <a href="https://apps.shopify.com/experiences" target="_blank">Shopify App Store</a> Shopify Payments fees apply (2.8% + $0.30 CAD online; 2.6% POS; +2% if you use PayPal externally). <a href="https://avada.io/blog/shopify-pricing-canada/" target="_blank">AVADA</a></li>
-                        <li><strong>Webflow:</strong> CMS ($23 USD/mo) or Ecommerce ($29–$74 USD/mo) plans give total design control, CMS collections for itineraries/blogs, and fast AWS hosting. <a href="https://webflow.com/pricing" target="_blank">Webflow Pricing</a> There's no native booking, so embed Checkfront, FareHarbor, Calendly, or Acuity via HTML/CMS, or connect to Zapier/Make for automation.</li>
-                    </ul>
-
-                    <h3>Integrated vs. Standalone Booking Approaches</h3>
-                    <ul>
-                        <li><strong>Integrated (Squarespace + Acuity, Wix Bookings, Shopify apps, WordPress plugins):</strong> Best when you want everything under one login. Ideal for one-to-two tour offerings because pricing is predictable and setup is wizard-driven. Limitation: if you later need OTA distribution, multi-day manifesting, or wholesale partners, these tools cap out quickly.</li>
-                        <li><strong>Standalone (Checkfront, FareHarbor, Peek Pro, Bookeo, Rezdy):</strong> Purpose-built for tours/activities with robust manifests, reseller networks, reseller accounts, waivers, and channel management. They embed into any site and connect to POS/payment processors. Costs are higher (monthly fee or booking commission), but they future-proof scaling.</li>
-                    </ul>
-                </section>
-
-                <section id="booking-systems">
-                    <h2>3. Booking System Analysis</h2>
-                    
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>System</th>
-                                    <th>Pricing Model</th>
-                                    <th>Features for Off-Road Tours</th>
-                                    <th>Integrations & Fit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Checkfront</strong></td>
-                                    <td>$149/month + 3% online booking fee (pass to guest or absorb). No setup/OTA fees. <a href="https://www.checkfront.com/pricing/" target="_blank">Checkfront</a></td>
-                                    <td>Custom packages, automated waivers, dynamic availability, multi-day inventory, flexible payments, Apple/Google Pay support. Strong automation keeps waivers + reminders tight.</td>
-                                    <td>Embeds on any site, Zapier/Make, deep WordPress plugin, partner APIs. Great long-term option if you outgrow Acuity/Wix because data portability is solid.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>FareHarbor</strong></td>
-                                    <td>No subscription; up to ~6% booking fee (usually passed to customer) + ~1.9% + $0.30 processing fee absorbed by operator. <a href="https://www.bokun.io/fareharbor-pricing" target="_blank">Bokun</a></td>
-                                    <td>Extensive OTA distribution, resource management, guide scheduling, waivers, multilingual checkouts.</td>
-                                    <td>Works via embeddable widgets + hosted checkout. Ideal when you want marketing reach and don't mind visible service fees to guests.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Peek Pro</strong></td>
-                                    <td>6–8% per booking + ~2.3% + $0.30 card fee; negotiable but opaque. <a href="https://www.bokun.io/peek-pro-pricing" target="_blank">Peek</a></td>
-                                    <td>Slick mobile UI, resource calendars, upsells, Zapier, text reminders, tipping, kiosk mode.</td>
-                                    <td>Embeds into any site + branded checkout links. Good if aesthetics + upsells matter, but fees are among the highest.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Bookeo (Tours & Activities)</strong></td>
-                                    <td>Flat $39.95 / $79.95 / $119.95 USD per month tiers, 30-day trial, optional waivers add-on from $9/mo. <a href="https://www.bookeo.com/tours/pricing/" target="_blank">Bookeo</a></td>
-                                    <td>Up to 60 guides/vehicles, 3,000 bookings/mo, vouchers, packages, recurring trips, SMS reminders.</td>
-                                    <td>Embed widgets, integrates with WordPress, Squarespace (code block), Shopify (app), Zapier. Predictable cost for small operators.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Rezdy</strong></td>
-                                    <td>$49 / $99 / $249 USD per month + 3% booking fee + $1-$0.70 offline booking fee. <a href="https://rezdy.com/pricing/" target="_blank">Rezdy</a></td>
-                                    <td>Channel manager to 40k+ resellers, packages/extras, API/webhooks, advanced reporting, waivers, manifesting.</td>
-                                    <td>Embeds anywhere, syncs with Google Things To Do, OTAs, and payment gateways. Strong choice for scaling + B2B wholesale.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="callout">
-                        <h4>Feature Gaps to Watch:</h4>
-                        <p>Checkfront + Rezdy handle multi-day trips and multi-vehicle inventory best. FareHarbor/Peek help with OTA sales but add customer-visible fees. Bookeo is cost-effective but lighter on automation + reseller channels.</p>
-                    </div>
-                </section>
-
-                <section id="payment-processing">
-                    <h2>4. Payment Processing & Booking Policy Considerations</h2>
-                    
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Processor</th>
-                                    <th>Standard Canadian Fees</th>
-                                    <th>Why/When to use</th>
-                                    <th>Deposit vs Full Payment</th>
-                                    <th>Cancellation & Refund Handling</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Stripe</strong></td>
-                                    <td>2.9% + $0.30 CAD online; +0.8% for international cards; 2.7% + $0.05 in-person; 0.5% extra for keyed transactions. <a href="https://stripe.com/en-ca/pricing" target="_blank">Stripe</a></td>
-                                    <td>Pairs with Squarespace/Acuity, WordPress, Shopify apps, Checkfront, Rezdy. Offers Payment Links, subscriptions, BNPL, and Tap to Pay.</td>
-                                    <td>Acuity, WooCommerce, and Checkfront let you capture deposits (e.g., 30%) and auto-charge balances via Stripe.</td>
-                                    <td>Dashboard supports partial refunds, automated cancellation emails, and dispute workflows (CA$15 fee if customer files a chargeback).</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Square</strong></td>
-                                    <td>2.5% tap/chip credit, 0.75% + $0.07 Interac debit, 2.8% + $0.30 online, 3.3% + $0.15 keyed, +1.5% for international cards. <a href="https://squareup.com/ca/en/payments/our-fees" target="_blank">Square</a></td>
-                                    <td>Strong if you want Square POS for merch or on-site add-ons; integrates with Wix (native), Squarespace (via Acuity), and WordPress through plugins.</td>
-                                    <td>Square Online Checkout + Square Appointments support deposits or pay-in-full toggles.</td>
-                                    <td>Offers instant refunds to cards, cancellation automation through Square Appointments, and easy export for GST/HST accounting.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>PayPal</strong></td>
-                                    <td>2.9% + $0.30 CAD domestic commercial; +0.8% (US) or +1% (other countries) cross-border; 3–4% FX spread. <a href="https://www.paypalobjects.com/marketing/ua/pdf/CA/en/ca-en-merchant-fees-15-oct-2024.pdf" target="_blank">PayPal</a></td>
-                                    <td>Needed if your audience prefers PayPal or buys from overseas; embeds on Squarespace, Shopify, WordPress, Wix.</td>
-                                    <td>PayPal buttons can request deposits but management is clunkier vs. Stripe/Square.</td>
-                                    <td>Partial refunds cost nothing; instant bank withdrawals cost 1.75%. Make sure cancellation windows are spelled out to avoid disputes.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3>Policy Tips:</h3>
-                    <ul>
-                        <li>Use deposits (25–50%) to secure bookings while keeping flexibility for weather; capture balances 7 days before departure via Stripe/Square automation.</li>
-                        <li>Publish cancellation tiers (e.g., full refund >14 days, 50% refund 7–13 days, no refund <7 days) and sync them with booking software so refunds trigger automatically.</li>
-                        <li>Automate reminder + prep emails (what to pack, meeting point GPS, waiver link) 48 hours in advance.</li>
-                    </ul>
-                </section>
-
-                <section id="essential-features">
-                    <h2>5. Essential Website Features for This Business</h2>
-                    
-                    <ol>
-                        <li><strong>Hero media + gallery</strong> – High-resolution shots of Toyota rigs, rooftop tents, night skies, recovery gear, and happy guests to build trust.</li>
-                        <li><strong>Availability calendar + booking CTA</strong> – Show open weekends/months with live inventory embedded above the fold; allow group selection up to five seats.</li>
-                        <li><strong>Experience breakdowns</strong> – Detail itinerary, driving difficulty, camp amenities, menu, what's included / optional add-ons, and min/max skill level.</li>
-                        <li><strong>Safety & prep section</strong> – Gear checklist, licensing requirements, waivers, insurance coverage, weather considerations, and guide credentials.</li>
-                        <li><strong>Testimonials & social proof</strong> – Embed Google/TripAdvisor reviews, Instagram reels, and UGC featuring the vehicles.</li>
-                        <li><strong>FAQ + policies</strong> – Answer top concerns (bathrooms, weather cancellations, dietary needs, alcohol, wildlife) and list cancellation/deposit rules.</li>
-                        <li><strong>Blog / field notes</strong> – Publish trip recaps, trail spotlights, maintenance tips, and seasonal planning to drive SEO for "off-road tours Vancouver," etc.</li>
-                        <li><strong>Contact + inquiry form</strong> – Offer WhatsApp/text CTA for quick questions plus email form with dropdown for private group requests.</li>
-                        <li><strong>Mobile-first UX</strong> – Optimize for social traffic (Instagram, TikTok) with sticky book button and quick-dial link.</li>
-                    </ol>
-                </section>
-
-                <section id="cost-comparison">
-                    <h2>6. Cost Comparison Table (CAD unless noted)</h2>
-                    
-                    <p>Assumptions: Prices use annual billing when available and USD amounts converted at 1 USD ≈ 1.35 CAD for comparison. Payment processing fees are per-transaction (variable) but noted for awareness.</p>
-
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Option</th>
-                                    <th>Year 1 Fixed Cost</th>
-                                    <th>Year 2+ Fixed Cost</th>
-                                    <th>Booking Stack</th>
-                                    <th>Payment Fees</th>
-                                    <th>Owner Time</th>
-                                    <th>Notes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Custom DIY (Next.js + headless)</strong></td>
-                                    <td>~$600 (domain, Vercel pro, headless CMS seats, design assets) + sweat equity</td>
-                                    <td>~$600</td>
-                                    <td>Stripe or Square via custom integration</td>
-                                    <td>Stripe 2.9% + $0.30</td>
-                                    <td>120–160 hrs build + maintenance</td>
-                                    <td>Highest control, but opportunity cost is high while business is pre-launch.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Custom via Freelancer</strong></td>
-                                    <td>$3,000–$8,000 upfront + ~$600 hosting/tooling</td>
-                                    <td>$600–$1,200 maintenance retainers</td>
-                                    <td>Same as above</td>
-                                    <td>Stripe/Square negotiated</td>
-                                    <td>20–30 hrs for approvals/content</td>
-                                    <td>Pay once for bespoke UX; budget for ongoing bug fixes + updates. <a href="https://www.spaceo.ca/blog/website-development-cost/" target="_blank">SpaceO</a></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Custom via Agency</strong></td>
-                                    <td>$10,000–$25,000+ including strategy + content + QA</td>
-                                    <td>$2,000–$5,000/yr support</td>
-                                    <td>Enterprise booking (Checkfront/Rezdy) layered on</td>
-                                    <td>Stripe/Square enterprise rates</td>
-                                    <td>30–50 hrs stakeholder time</td>
-                                    <td>Best for funded phase or national expansion. <a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/" target="_blank">DigitalWebPort</a></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Squarespace Business + Acuity Growing</strong></td>
-                                    <td>$30.95×12 + ~$36×12 ≈ <strong>$804</strong></td>
-                                    <td>Same</td>
-                                    <td>Acuity Scheduling</td>
-                                    <td>Stripe/PayPal 2.9% + $0.30</td>
-                                    <td>20–30 hrs setup & copy</td>
-                                    <td>Fastest to market, includes email + analytics. Transaction fee 3% on Business unless you upgrade to Commerce plan.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Squarespace Commerce Basic + Acuity Growing</strong></td>
-                                    <td>($45×12) + ($36×12) ≈ <strong>$972</strong></td>
-                                    <td>Same</td>
-                                    <td>Acuity Scheduling</td>
-                                    <td>Stripe/PayPal</td>
-                                    <td>20–30 hrs</td>
-                                    <td>Removes 3% transaction fee, worth it once bookings ramp.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>WordPress (SiteGround year 1) + WooCommerce Bookings</strong></td>
-                                    <td>Hosting promo ($2.99×12 ≈ $36) + plugin $249 USD (~$336 CAD) + premium theme ~$100 CAD ⇒ <strong>~$472</strong></td>
-                                    <td>Renewal hosting $216 + plugin renewal $336 + theme renewals (~$100) ⇒ <strong>~$652</strong></td>
-                                    <td>WooCommerce Bookings / Travel Tour Booking</td>
-                                    <td>Stripe/Square/PayPal</td>
-                                    <td>40–60 hrs setup + plugin tuning</td>
-                                    <td>Low cash but higher time. Switch to WP Engine ($34/mo) for better uptime once traffic grows. <a href="https://www.siteground.com/wordpress-hosting.htm" target="_blank">SiteGround</a> <a href="https://woocommerce.com/products/travel-tour-booking/" target="_blank">WooCommerce</a></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Wix Business</strong></td>
-                                    <td>$39.77×12 ≈ <strong>$477</strong></td>
-                                    <td>Same</td>
-                                    <td>Wix Bookings (included)</td>
-                                    <td>Wix Payments / Stripe 2.9% + $0.30</td>
-                                    <td>15–20 hrs</td>
-                                    <td>No hidden booking fees; app market add-ons optional. <a href="https://www.wix.com/plans" target="_blank">Wix Pricing</a></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Shopify Basic + Experiences app</strong></td>
-                                    <td>$49×12 = <strong>$588</strong> + Experiences Premium $39×12 ≈ $468 + rev share (0.75%–1%)</td>
-                                    <td>Same</td>
-                                    <td>Experiences / BookThatApp / Sesami</td>
-                                    <td>Shopify Payments 2.8% + $0.30 (+2% if external gateway)</td>
-                                    <td>25–35 hrs</td>
-                                    <td>Factor extra % fee on every booking. Strong path if you also sell merch.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Webflow CMS + Checkfront</strong></td>
-                                    <td>($23 USD×12 ≈ $372 CAD) + Checkfront ($149×12 = $1,788) + 3% booking fee</td>
-                                    <td>Same</td>
-                                    <td>Checkfront embedded</td>
-                                    <td>Stripe/Square via Checkfront</td>
-                                    <td>40–60 hrs (designer + setup)</td>
-                                    <td>Premium look + enterprise-grade booking. Fees higher but scalable.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Bookeo + existing site</strong></td>
-                                    <td>Bookeo Standard $39.95 USD/mo (~$54 CAD) ⇒ <strong>$648</strong></td>
-                                    <td>Same</td>
-                                    <td>Bookeo embed</td>
-                                    <td>Stripe/Square/PayPal</td>
-                                    <td>10–15 hrs to embed</td>
-                                    <td>Predictable SaaS; pair with Squarespace/Wix if you need more automation than native booking.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Rezdy + existing site</strong></td>
-                                    <td>$49 USD/mo (~$66 CAD) + 3% fee + offline per-booking fee</td>
-                                    <td>Same</td>
-                                    <td>Rezdy embed</td>
-                                    <td>Stripe/Square etc.</td>
-                                    <td>20–30 hrs to configure</td>
-                                    <td>Adds OTA distribution + reseller network when you're ready for scale.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <p><em>Time cost is estimated owner effort for copy, media, and QA; it excludes photography/video shoots.</em></p>
-                </section>
-
-                <section id="recommendation">
-                    <h2>7. Recommendation & Phased Approach</h2>
-                    
-                    <div class="callout key-finding">
-                        <h3>Recommendation:</h3>
-                        <p>Launch on <strong>Squarespace Commerce Basic + Acuity Growing</strong> now, then graduate to <strong>WordPress or Webflow + Checkfront/Rezdy</strong> once demand and partnerships justify higher investment.</p>
-                    </div>
-
-                    <h3>Why Squarespace + Acuity first?</h3>
-                    <ul>
-                        <li>Fastest build: you can repurpose brand photography, drop in itinerary blocks, and enable bookings without code.</li>
-                        <li>Canadian-friendly payments via Stripe/PayPal with CAD pricing and tax collection.</li>
-                        <li>Acuity handles up to five guests per outing, automated reminders, waiver/intake forms, coupon codes, packages, and deposits—all critical for weather-dependent tours.</li>
-                        <li>Built-in email campaigns + blog + analytics keep marketing simple while you validate pricing and operations.</li>
-                    </ul>
-
-                    <h3>Phase Plan</h3>
-                    <ol>
-                        <li><strong>Phase 0 (Week 1–2)</strong> – Gather assets, finalize itinerary copy, choose Squarespace template, configure Commerce Basic plan, hook up Stripe + PayPal, and embed Acuity offerings (public + private group). Publish essential pages (Home, Trips, About/Guides, Safety, FAQ, Blog intro, Contact). Enable Google Analytics + Search Console.</li>
-                        <li><strong>Phase 1 (Month 1–2)</strong> – Add blog posts (trail spotlights), publish a packing checklist download, integrate social proof (Google reviews, Instagram feed), and launch paid ads / partnerships. Use Acuity packages for multi-day trips and enable 30% deposits with balance auto-charge.</li>
-                        <li><strong>Phase 2 (Month 3–6)</strong> – Introduce Bookeo or Checkfront if you need richer manifests, reseller logins, or OTA distribution. Embed the widget on Squarespace or build a lightweight WordPress landing hub while keeping Squarespace live for content.</li>
-                        <li><strong>Phase 3 (Year 2)</strong> – Once bookings exceed ~400/year or you expand to multi-vehicle fleets, migrate to a custom WordPress or Webflow build backed by Checkfront/Rezdy. Use headless CMS content migration tools or Webflow's CSV importer to bring over itineraries/blog posts. Keep Acuity as a waitlist/consultation scheduler even after adopting a dedicated booking engine.</li>
-                    </ol>
-
-                    <h3>Migration Path Considerations</h3>
-                    <ul>
-                        <li>Maintain all copy + assets in a shared CMS (Notion, headless) so moving platforms is mostly a front-end rebuild.</li>
-                        <li>Choose a booking system (Checkfront or Rezdy) that offers embed codes + API; you can swap website platforms without touching customer history.</li>
-                        <li>Continue using Stripe or Square across platforms to avoid re-onboarding and to keep historical payout data intact.</li>
-                        <li>When moving to WordPress/Webflow, start with a subdomain pilot (e.g., beta.offroadglamp.ca) to ensure SEO + tracking survive cutover.</li>
-                    </ul>
-
-                    <h3>When to Reconsider</h3>
-                    <ul>
-                        <li>If you plan to wholesale through OTAs quickly (e.g., TripAdvisor, GetYourGuide), consider going straight to WordPress/Webflow + Rezdy/Checkfront so you don't rebuild twice.</li>
-                        <li>If merchandise/gear becomes a major revenue stream, Shopify + Experiences might be better despite stacking app fees because its inventory + POS story is strongest.</li>
-                    </ul>
-
-                    <p>With this path you get a branded, mobile-first, SEO-friendly site live in weeks, validate packages/pricing, and retain the option to graduate to a more complex stack once revenue supports it.</p>
-                </section>
-            </main>
-        </div>
-    </div>
-
-    <button class="back-to-top" aria-label="Back to top">↑</button>
-
-    <script>
+</div>
+</header>
+<div class="container">
+<div class="content-wrapper">
+<nav id="toc">
+<h2>Contents</h2>
+<ul><li><a href="#1-build-from-scratch-analysis">1. Build-From-Scratch Analysis</a></li><li><a href="#2-off-the-shelf-platform-comparison">2. Off-the-Shelf Platform Comparison</a></li><li><a href="#development-design-pricing-non-technical-client">Development &amp; Design Pricing (Non-Technical Client)</a></li><li><a href="#3-booking-system-analysis">3. Booking System Analysis</a></li><li><a href="#4-payment-processing-booking-policy-considerations">4. Payment Processing &amp; Booking Policy Considerations</a></li><li><a href="#5-essential-website-features-for-this-business">5. Essential Website Features for This Business</a></li><li><a href="#6-cost-comparison-table-cad-unless-noted">6. Cost Comparison Table (CAD unless noted)</a></li><li><a href="#7-recommendation-phased-approach">7. Recommendation &amp; Phased Approach</a></li><li><a href="#crm-tools-for-adventure-tourism-businesses">CRM Tools for Adventure Tourism Businesses</a></li></ul>
+</nav>
+<main><section id="1-build-from-scratch-analysis"><h2 id="1-build-from-scratch-analysis">1. Build-From-Scratch Analysis</h2><h3 id="recommended-tech-stack">Recommended Tech Stack</h3><ul>
+<li><strong>Frontend:</strong> Next.js or Remix with React, TypeScript, Tailwind CSS, and a component kit (e.g., Radix + Framer Motion) for highly branded storytelling pages.</li>
+<li><strong>Backend:</strong> Node.js (NestJS) or a lightweight serverless API (AWS Lambda / Vercel Functions) to handle booking logic, waivers, and integrations with Stripe/Square.</li>
+<li><strong>CMS + Content:</strong> Headless CMS such as Sanity or Contentful so non-technical teammates can update itineraries, packing lists, and blog content without redeploying code.</li>
+<li><strong>Infrastructure:</strong> Vercel or Netlify for hosting + CI/CD, Cloudflare for caching/edge rules, AWS S3 for media assets, and a managed database (Supabase/Postgres) for bookings/waitlists.</li>
+</ul><h3 id="cost-timeline-estimates-cad">Cost &amp; Timeline Estimates (CAD)</h3><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Upfront Build</th>
+<th>Timeline</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DIY (owner builds with templates/components)</td>
+<td>$300–$1,000 (domain, premium components, SaaS)</td>
+<td>4–8 weeks of part-time effort</td>
+<td>Lowest cash cost but highest learning curve and maintenance burden.</td>
+</tr>
+<tr>
+<td>Freelance developer</td>
+<td>$1,500–$5,000 for brochure site; $5,000–$8,000 if booking flows/custom API needed</td>
+<td>2–6 weeks for a small site; 6–10 weeks if custom booking integrations are included</td>
+<td>Rates of $30–$75/hr are common in Canada for independent devs/designers.<a href="https://www.spaceo.ca/blog/website-development-cost/">SpaceO</a></td>
+</tr>
+<tr>
+<td>Boutique agency</td>
+<td>$5,000–$20,000+ depending on depth of UX, branding, and complex integrations</td>
+<td>6–12+ weeks due to discovery, design, development, QA</td>
+<td>Agencies charge $100–$175/hr and bring specialists (UX, brand, SEO) at higher cost.<a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/">DigitalWebPort</a></td>
+</tr>
+</tbody>
+</table></div><h3 id="pros">Pros</h3><ul>
+<li>Full control over performance, custom booking flows, custom React components to showcase off-road shots, and unique brand storytelling.</li>
+<li>Own your stack (no vendor lock-in, data stays in your DB) and avoid escalating SaaS fees once volume grows.</li>
+<li>Easier to integrate novel experiences later (e.g., telemetry dashboards, route planners, custom waiver flows).</li>
+</ul><h3 id="cons">Cons</h3><ul>
+<li>Requires upfront capital or significant founder time. Build + maintenance + DevOps will compete with running trips.</li>
+<li>You must manage security patches, dependency upgrades, uptime, and analytics instrumentation.</li>
+<li>Booking, CRM, and marketing tooling must be integrated manually (vs. turn-key tools on Squarespace/Wix).</li>
+</ul><h3 id="when-it-makes-sense">When It Makes Sense</h3><ul>
+<li>You have validated demand, need advanced workflows (dynamic pricing, real-time fleet availability, complex upsells), or plan to raise capital and scale beyond a regional operator.</li>
+<li>You want a premium brand experience (immersive storytelling, hero video, 3D route map) that standard templates cannot deliver.</li>
+<li>You have in-house technical talent or a long-term agency partner budgeted for maintenance.</li>
+</ul><hr/></section><hr/><section id="2-off-the-shelf-platform-comparison"><h2 id="2-off-the-shelf-platform-comparison">2. Off-the-Shelf Platform Comparison</h2><h3 id="snapshot">Snapshot</h3><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Monthly Cost (CAD, annual billing)</th>
+<th>Booking Options</th>
+<th>Payments</th>
+<th>Mobile/SEO</th>
+<th>Ease of Updates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Squarespace</strong></td>
+<td>$30.95 Business / $45 Basic Commerce</td>
+<td>Native Acuity Scheduling ($20–$61 CAD/mo) for real-time booking, group slots, reminders.<a href="https://www.forbes.com/advisor/ca/business/software/squarespace-pricing/">Forbes Advisor CA</a></td>
+<td>Stripe, PayPal via Acuity; taxes + deposits configurable.<a href="https://support.squarespace.com/hc/en-us/articles/360034944391-Acuity-Scheduling-pricing-billing-and-invoices">Squarespace Support</a></td>
+<td>Responsive templates, built-in SEO metadata controls, OpenGraph settings.</td>
+<td>Visual editor, sections, and campaign tools make changes simple for non-devs.</td>
+</tr>
+<tr>
+<td><strong>WordPress.org + Plugins</strong></td>
+<td>Hosting $3–$35+; premium booking plugins $59–$249 USD/year</td>
+<td>WooCommerce Bookings, Travel Tour Booking, WP Travel Engine for capacity, tiered pricing, deposits.<a href="https://woocommerce.com/products/travel-tour-booking/">WooCommerce</a></td>
+<td>Depends on gateway (Stripe, Square, PayPal). Full control over payment mix.</td>
+<td>SEO powerhouse (Yoast/RankMath), mobile responsive themes for adventure tourism.<a href="https://wordpress.org/themes/adventure-tourism/">WordPress Themes</a></td>
+<td>Requires maintenance (updates/backups). Page builders (Elementor, Gutenberg) simplify editing once set up.</td>
+</tr>
+<tr>
+<td><strong>Wix</strong></td>
+<td>Core $29.77 / Business $39.77 CAD with Wix Bookings included.<a href="https://www.wix.com/plans">Wix Pricing</a></td>
+<td>Built-in Wix Bookings handles classes, group trips, deposits, staff calendars.<a href="https://www.wix.com/website/templates/html/travel-tourism/travel-services">Wix Bookings</a></td>
+<td>Wix Payments, Stripe, PayPal; POS add-ons.</td>
+<td>Strong mobile editor, SEO Wiz for structured data.</td>
+<td>Drag-and-drop editor, AI text assistant, app market add-ons.</td>
+</tr>
+<tr>
+<td><strong>Shopify</strong></td>
+<td>Basic $49 CAD/mo ($37 CAD if annual).<a href="https://www.shopify.com/ca/pricing">Shopify Pricing</a></td>
+<td>Booking apps such as Experiences ($9–$129/mo + %), BookThatApp, Sesami for tours with reminders &amp; POS.<a href="https://apps.shopify.com/experiences">Shopify App Store</a></td>
+<td>Shopify Payments (2.8% + $0.30 online, 2.6% POS) or 3rd-party (extra 2%).<a href="https://avada.io/blog/shopify-pricing-canada/">AVADA</a></td>
+<td>Mobile-first themes, robust SEO settings, fast CDN.</td>
+<td>Familiar admin, easy product/experience duplication, but booking UX relies on app.</td>
+</tr>
+<tr>
+<td><strong>Webflow</strong></td>
+<td>CMS $23 USD/mo; Ecommerce Standard $29 USD/mo (annual).<a href="https://webflow.com/pricing">Webflow Pricing</a></td>
+<td>Requires embed/integration with booking tools (Calendly, Acuity, Checkfront). No native booking.</td>
+<td>Stripe for ecommerce; 2% fee on Standard until upgrading to Plus ($74 USD/mo) for 0% fee.<a href="https://tech.co/website-builders/webflow-pricing">Tech.co</a></td>
+<td>Pixel-perfect control, fast hosting, CMS for itineraries/blog, clean SEO controls.</td>
+<td>Designer has a learning curve; Editor mode makes copy updates easy once built.</td>
+</tr>
+</tbody>
+</table></div><h3 id="platform-deep-dives">Platform Deep Dives</h3><ul>
+<li><strong>Squarespace:</strong> Fluid Engine layouts + tourism templates showcase rigs, itineraries, and testimonials fast. Acuity Scheduling (free to $61 CAD/mo) plugs in for group bookings, intake forms, and automated reminders with Stripe/PayPal payments.<a href="https://support.squarespace.com/hc/en-us/articles/360034944391-Acuity-Scheduling-pricing-billing-and-invoices">Squarespace Support</a> Upgrading to Commerce removes the 3% transaction fee on Business plans.</li>
+<li><strong>WordPress + Plugins:</strong> Pair managed hosting (SiteGround promo $2.99 CAD/mo, renews $17.99; WP Engine $34 CAD/mo steady)<a href="https://www.siteground.com/wordpress-hosting.htm">SiteGround</a><a href="https://wpengine.com/ca/plans/">WP Engine</a> with adventure tourism themes (Adventure Tourism, Adventure Tour) that already include galleries, FAQs, and CTA blocks.<a href="https://wordpress.org/themes/adventure-tourism/">WordPress Themes</a> WooCommerce Bookings ($249 USD/yr), Travel Tour Booking ($59 USD/yr), or WpTravelly ($69 USD/yr) add per-person pricing, deposits, and automated emails.<a href="https://woocommerce.com/products/travel-tour-booking/">WooCommerce</a><a href="https://mage-people.com/product/woocommerce-tour-and-travel-booking-manager-pro/">MagePeople</a></li>
+<li><strong>Wix:</strong> Core/Business plans ($29.77–$39.77 CAD/mo) include Wix Bookings for capacity caps, deposits, staff calendars, SMS reminders, and membership packs.<a href="https://www.wix.com/plans">Wix Pricing</a> Huge template marketplace (Adventure Tour Company, Outdoor Rentals) lets you personalize quickly.<a href="https://www.wix.com/website/templates/html/travel-tourism/travel-services">Wix Templates</a></li>
+<li><strong>Shopify:</strong> Choose Basic ($49 CAD/mo) and add a booking app (Experiences $9–$129/mo + % or BookThatApp). These apps pump bookings into Shopify orders, support POS check-in, SMS/email reminders, Zapier workflows, and calendar sync.<a href="https://apps.shopify.com/experiences">Shopify App Store</a> Shopify Payments fees apply (2.8% + $0.30 CAD online; 2.6% POS; +2% if you use PayPal externally).<a href="https://avada.io/blog/shopify-pricing-canada/">AVADA</a></li>
+<li><strong>Webflow:</strong> CMS ($23 USD/mo) or Ecommerce ($29–$74 USD/mo) plans give total design control, CMS collections for itineraries/blogs, and fast AWS hosting.<a href="https://webflow.com/pricing">Webflow Pricing</a> There’s no native booking, so embed Checkfront, FareHarbor, Calendly, or Acuity via HTML/CMS, or connect to Zapier/Make for automation.</li>
+</ul></section><hr/><section id="development-design-pricing-non-technical-client"><h2 id="development-design-pricing-non-technical-client">Development &amp; Design Pricing (Non-Technical Client)</h2><p>Even with user-friendly platforms, a non-technical owner needs professional help for brand-consistent design, booking flows, QA, and post-launch upkeep. The ranges below reflect current Vancouver/Canadian quotes so you can budget realistically.</p><h3 id="vancouver-market-snapshot">Vancouver market snapshot</h3><ul>
+<li><strong>Freelancer economics:</strong> Vancouver-based freelancers list $18–$50/hr (specialists $75–$100+) on marketplaces such as Upwork and Fiverr, translating into $1,000–$5,000 brochure builds and $3,000–$9,000+ for eCommerce or advanced booking scopes.<a href="https://www.upwork.com/hire/web-designers/ca/vancouver-bc/">Upwork</a><a href="https://www.fiverr.com/resources/guides/business/web-designer-costs">Fiverr</a><a href="https://www.elegantthemes.com/blog/design/how-much-does-web-design-cost">Elegant Themes</a></li>
+<li><strong>Agency pricing:</strong> Local agencies quote $100–$199/hr with $5,000–$25,000 minimum projects and $200–$2,000+/month retainers for CRO, SEO, and site management.<a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li><strong>Typical timeline:</strong> Expect 3–5 week turnarounds for Squarespace/Wix/Webflow builds and 5–8+ weeks for WordPress/Shopify once copy and assets are ready.<a href="https://www.rebeccagracedesigns.com/blog/squarespace-design-process-timeline">Rebecca Grace Designs</a><a href="https://www.moonbiteagency.com/wordpress-development-timeline-2-weeks/">Moonbite Agency</a><a href="https://atlasstudios.com/how-long-does-it-take-to-build-a-website-timeline-breakdown-for-business-owners/">Atlas Studios</a></li>
+</ul><h4 id="squarespace">Squarespace</h4><ul>
+<li><strong>Freelance build:</strong> $1,000–$4,000 CAD for a 5–7 page Squarespace Commerce site with Acuity scheduling, based on $30–$75/hr rates and 40–60 hours of effort.<a href="https://www.developers.dev/tech-talk/breaking-down-squarespace-web-design-cost.html">Squarespace Cost Breakdown</a><a href="https://www.upwork.com/hire/web-designers/ca/vancouver-bc/">Upwork</a></li>
+<li><strong>Agency build:</strong> $4,000–$10,000+ when a Vancouver studio handles brand strategy, copywriting, photography coordination, and QA.<a href="https://www.developers.dev/tech-talk/breaking-down-squarespace-web-design-cost.html">Squarespace Cost Breakdown</a><a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li><strong>Maintenance retainers:</strong> $250–$750/month for content swaps and promos; $1,000–$2,000/month if you bundle SEO/email support.<a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li><strong>Timeline:</strong> 3–5 weeks from kickoff through launch when copy/photos are ready; add 1–2 weeks for photoshoots or booking QA.<a href="https://www.rebeccagracedesigns.com/blog/squarespace-design-process-timeline">Rebecca Grace Designs</a></li>
+<li><strong>Where to hire:</strong> <a href="https://www.squarespace.com/marketplace">Squarespace Marketplace</a>, <a href="https://www.upwork.com/hire/web-designers/ca/vancouver-bc/">Upwork</a>, and boutique Vancouver agencies on <a href="https://clutch.co/ca/agencies/web-design/vancouver">Clutch</a>.</li>
+</ul><h4 id="wordpress-managed-hosting-booking-plugins">WordPress (managed hosting + booking plugins)</h4><ul>
+<li><strong>Freelance build:</strong> $1,500–$7,000+ for a premium theme, WooCommerce Bookings, and capacity for multi-day trips (60–120 hours of work).<a href="https://www.elegantthemes.com/blog/design/how-much-does-web-design-cost">Elegant Themes</a><a href="https://www.spaceo.ca/blog/website-development-cost/">SpaceO</a></li>
+<li><strong>Agency build:</strong> $5,000–$25,000+ when you include UX, content, plugin hardening, and QA.<a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/">DigitalWebPort</a><a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li><strong>Maintenance retainers:</strong> $400–$1,000/month for plugin/theme updates, security patches, backups, and CRO experiments.<a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li><strong>Timeline:</strong> 5–8+ weeks depending on whether you customize an existing theme or build bespoke blocks.<a href="https://www.moonbiteagency.com/wordpress-development-timeline-2-weeks/">Moonbite Agency</a></li>
+<li><strong>Where to hire:</strong> <a href="https://codeable.io">Codeable</a>, <a href="https://www.upwork.com/hire/web-designers/ca/vancouver-bc/">Upwork</a>, or BC WordPress agencies vetted on <a href="https://clutch.co/ca/developers/wordpress/vancouver">Clutch</a>.</li>
+</ul><h4 id="wix">Wix</h4><ul>
+<li><strong>Freelance build:</strong> $1,000–$3,500 CAD for a Core/Business plan site with Wix Bookings and automations, per Wix Studio’s 2024 rate study.<a href="https://www.wix.com/studio/blog/how-much-to-charge-for-a-website">Wix Studio</a></li>
+<li><strong>Agency build:</strong> $4,000–$10,000 for full-brand executions, copywriting, and photography planning.<a href="https://www.wix.com/studio/blog/how-much-to-charge-for-a-website">Wix Studio</a><a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li><strong>Maintenance retainers:</strong> $200–$600/month to refresh itineraries, promos, and analytics dashboards.<a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li><strong>Timeline:</strong> Similar to Squarespace—3–5 weeks assuming assets are ready, slightly longer for heavy app marketplace integrations.<a href="https://www.rebeccagracedesigns.com/blog/squarespace-design-process-timeline">Rebecca Grace Designs</a><a href="https://atlasstudios.com/how-long-does-it-take-to-build-a-website-timeline-breakdown-for-business-owners/">Atlas Studios</a></li>
+<li><strong>Where to hire:</strong> <a href="https://www.wix.com/marketplace">Wix Marketplace</a>, <a href="https://www.upwork.com/hire/web-designers/ca/vancouver-bc/">Upwork</a>, or local studios listed on <a href="https://clutch.co/ca/agencies/web-design/vancouver">Clutch</a>.</li>
+</ul><h4 id="shopify">Shopify</h4><ul>
+<li><strong>Freelance build:</strong> $2,000–$7,500 CAD for a Basic/Shopify plan store layered with booking apps, based on $50–$150/hr Canadian rate surveys.<a href="https://jeffsocialmarketing.com/2024/08/how-much-does-website-design-cost-in-canada/">Jeff Social Marketing</a><a href="https://www.hulkapps.com/blogs/shopify-hub/the-complete-guide-to-shopify-website-design-pricing-in-2024">HulkApps</a></li>
+<li><strong>Agency build:</strong> $10,000–$25,000 for branded storefronts with strategy, photography, CRO, and post-launch support; Shopify Plus or complex automation projects regularly exceed $30,000.<a href="https://www.designrush.com/agency/ecommerce/trends/how-much-does-it-cost-to-build-a-shopify-website">DesignRush</a><a href="https://www.ecommercedevelopmentpros.ca/shopify-website-design-cost/">Ecommerce Development Pros</a></li>
+<li><strong>Maintenance retainers:</strong> $500–$1,500/month for merchandising, CRO tests, booking app ops, and analytics.<a href="https://www.designrush.com/agency/ecommerce/trends/how-much-does-it-cost-to-build-a-shopify-website">DesignRush</a></li>
+<li><strong>Timeline:</strong> 6–8 weeks for copywriting, booking app wiring, QA, and launch; longer if you add merch drops or ERP integrations.<a href="https://atlasstudios.com/how-long-does-it-take-to-build-a-website-timeline-breakdown-for-business-owners/">Atlas Studios</a></li>
+<li><strong>Where to hire:</strong> <a href="https://experts.shopify.com/">Shopify Experts Marketplace</a>, <a href="https://www.upwork.com/hire/web-designers/ca/vancouver-bc/">Upwork</a>, and Canadian Shopify partners on <a href="https://clutch.co/ca/agencies/shopify">Clutch</a>.</li>
+</ul><h4 id="webflow">Webflow</h4><ul>
+<li><strong>Freelance build:</strong> $1,800–$7,000+ for visually rich marketing sites leveraging CMS collections and interactions.<a href="https://www.designmonks.co/blog/webflow-design-cost">DesignMonks</a></li>
+<li><strong>Agency build:</strong> $7,500–$25,000+ for motion-heavy storytelling sites with CMS architecture and content support.<a href="https://www.designmonks.co/blog/webflow-design-cost">DesignMonks</a><a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li><strong>Maintenance retainers:</strong> $300–$900/month for collection updates, schema tweaks, and automation monitoring.<a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li><strong>Timeline:</strong> 4–7 weeks because designers can assemble responsive layouts quickly once components and CMS collections are mapped.<a href="https://www.zachsean.com/post/best-website-builders-2024-comparing-webflow-wordpress-wix-and-squarespace-for-small-business-success">Zach Sean Web Design</a></li>
+<li><strong>Where to hire:</strong> <a href="https://experts.webflow.com/">Webflow Experts Marketplace</a>, <a href="https://dribbble.com/hire/webflow">Dribbble Hiring</a>, or Vancouver studios on <a href="https://clutch.co/ca/agencies/web-design/vancouver">Clutch</a>.</li>
+</ul><h4 id="custom-reactnextjs-build">Custom React/Next.js build</h4><ul>
+<li><strong>Freelance build:</strong> $5,000–$12,000+ when contracting a senior full-stack dev for 150–200 hours to ship a bespoke Next.js front end plus headless CMS.<a href="https://www.spaceo.ca/blog/website-development-cost/">SpaceO</a></li>
+<li><strong>Agency build:</strong> $15,000–$40,000+ for discovery, UX research, component library creation, and API development.<a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/">DigitalWebPort</a></li>
+<li><strong>Maintenance retainers:</strong> $1,000–$3,000/month for DevOps, dependency updates, and roadmap iterations.<a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/">DigitalWebPort</a></li>
+<li><strong>Timeline:</strong> 8–12+ weeks (discovery, design, sprints, QA) before launch, depending on booking/CRM integrations.</li>
+<li><strong>Where to hire:</strong> Senior freelancers via <a href="https://www.upwork.com/hire/web-designers/ca/vancouver-bc/">Upwork</a> or BC product studios listed on <a href="https://clutch.co/ca/developers/vancouver">Clutch</a>.</li>
+</ul><h3 id="recommended-approach-for-a-non-technical-owner">Recommended approach for a non-technical owner</h3><ol>
+<li>Launch on Squarespace Commerce + Acuity with a $3,000–$5,000 freelance engagement so you get pro visuals and working booking flows without enterprise overhead.<a href="https://www.developers.dev/tech-talk/breaking-down-squarespace-web-design-cost.html">Squarespace Cost Breakdown</a></li>
+<li>Reserve $300–$750/month for a lightweight maintenance retainer so seasonal itineraries, promos, and email funnels stay updated while you run trips.<a href="https://www.thebestvancouver.com/best-web-design-vancouver/">The Best Vancouver</a></li>
+<li>Set aside $10,000–$25,000 for the eventual migration to WordPress/Webflow + a dedicated tour CRM once bookings scale, giving you time to plan content migration and automation instead of reacting under pressure.<a href="https://www.designmonks.co/blog/webflow-design-cost">DesignMonks</a><a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/">DigitalWebPort</a></li>
+</ol><h3 id="integrated-vs-standalone-booking-approaches">Integrated vs. Standalone Booking Approaches</h3><ul>
+<li><strong>Integrated (Squarespace + Acuity, Wix Bookings, Shopify apps, WordPress plugins):</strong> Best when you want everything under one login. Ideal for one-to-two tour offerings because pricing is predictable and setup is wizard-driven. Limitation: if you later need OTA distribution, multi-day manifesting, or wholesale partners, these tools cap out quickly.</li>
+<li><strong>Standalone (Checkfront, FareHarbor, Peek Pro, Bookeo, Rezdy):</strong> Purpose-built for tours/activities with robust manifests, reseller networks, reseller accounts, waivers, and channel management. They embed into any site and connect to POS/payment processors. Costs are higher (monthly fee or booking commission), but they future-proof scaling.</li>
+</ul></section><hr/><section id="3-booking-system-analysis"><h2 id="3-booking-system-analysis">3. Booking System Analysis</h2><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>System</th>
+<th>Pricing Model</th>
+<th>Features for Off-Road Tours</th>
+<th>Integrations &amp; Fit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Checkfront</strong></td>
+<td>$149/month + 3% online booking fee (pass to guest or absorb). No setup/OTA fees.<a href="https://www.checkfront.com/pricing/">Checkfront</a></td>
+<td>Custom packages, automated waivers, dynamic availability, multi-day inventory, flexible payments, Apple/Google Pay support. Strong automation keeps waivers + reminders tight.</td>
+<td>Embeds on any site, Zapier/Make, deep WordPress plugin, partner APIs. Great long-term option if you outgrow Acuity/Wix because data portability is solid.</td>
+</tr>
+<tr>
+<td><strong>FareHarbor</strong></td>
+<td>No subscription; up to ~6% booking fee (usually passed to customer) + ~1.9% + $0.30 processing fee absorbed by operator.<a href="https://www.bokun.io/fareharbor-pricing">Bokun</a></td>
+<td>Extensive OTA distribution, resource management, guide scheduling, waivers, multilingual checkouts.</td>
+<td>Works via embeddable widgets + hosted checkout. Ideal when you want marketing reach and don’t mind visible service fees to guests.</td>
+</tr>
+<tr>
+<td><strong>Peek Pro</strong></td>
+<td>6–8% per booking + ~2.3% + $0.30 card fee; negotiable but opaque.<a href="https://www.bokun.io/peek-pro-pricing">Peek</a></td>
+<td>Slick mobile UI, resource calendars, upsells, Zapier, text reminders, tipping, kiosk mode.</td>
+<td>Embeds into any site + branded checkout links. Good if aesthetics + upsells matter, but fees are among the highest.</td>
+</tr>
+<tr>
+<td><strong>Bookeo (Tours &amp; Activities)</strong></td>
+<td>Flat $39.95 / $79.95 / $119.95 USD per month tiers, 30-day trial, optional waivers add-on from $9/mo.<a href="https://www.bookeo.com/tours/pricing/">Bookeo</a></td>
+<td>Up to 60 guides/vehicles, 3,000 bookings/mo, vouchers, packages, recurring trips, SMS reminders.</td>
+<td>Embed widgets, integrates with WordPress, Squarespace (code block), Shopify (app), Zapier. Predictable cost for small operators.</td>
+</tr>
+<tr>
+<td><strong>Rezdy</strong></td>
+<td>$49 / $99 / $249 USD per month + 3% booking fee + $1-$0.70 offline booking fee.<a href="https://rezdy.com/pricing/">Rezdy</a></td>
+<td>Channel manager to 40k+ resellers, packages/extras, API/webhooks, advanced reporting, waivers, manifesting.</td>
+<td>Embeds anywhere, syncs with Google Things To Do, OTAs, and payment gateways. Strong choice for scaling + B2B wholesale.</td>
+</tr>
+</tbody>
+</table></div><p><strong>Feature Gaps to Watch:</strong> Checkfront + Rezdy handle multi-day trips and multi-vehicle inventory best. FareHarbor/Peek help with OTA sales but add customer-visible fees. Bookeo is cost-effective but lighter on automation + reseller channels.</p></section><hr/><section id="4-payment-processing-booking-policy-considerations"><h2 id="4-payment-processing-booking-policy-considerations">4. Payment Processing &amp; Booking Policy Considerations</h2><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Processor</th>
+<th>Standard Canadian Fees</th>
+<th>Why/H when to use</th>
+<th>Deposit vs Full Payment</th>
+<th>Cancellation &amp; Refund Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stripe</strong></td>
+<td>2.9% + $0.30 CAD online; +0.8% for international cards; 2.7% + $0.05 in-person; 0.5% extra for keyed transactions.<a href="https://stripe.com/en-ca/pricing">Stripe</a></td>
+<td>Pairs with Squarespace/Acuity, WordPress, Shopify apps, Checkfront, Rezdy. Offers Payment Links, subscriptions, BNPL, and Tap to Pay.</td>
+<td>Acuity, WooCommerce, and Checkfront let you capture deposits (e.g., 30%) and auto-charge balances via Stripe.</td>
+<td>Dashboard supports partial refunds, automated cancellation emails, and dispute workflows (CA$15 fee if customer files a chargeback).</td>
+</tr>
+<tr>
+<td><strong>Square</strong></td>
+<td>2.5% tap/chip credit, 0.75% + $0.07 Interac debit, 2.8% + $0.30 online, 3.3% + $0.15 keyed, +1.5% for international cards.<a href="https://squareup.com/ca/en/payments/our-fees">Square</a></td>
+<td>Strong if you want Square POS for merch or on-site add-ons; integrates with Wix (native), Squarespace (via Acuity), and WordPress through plugins.</td>
+<td>Square Online Checkout + Square Appointments support deposits or pay-in-full toggles.</td>
+<td>Offers instant refunds to cards, cancellation automation through Square Appointments, and easy export for GST/HST accounting.</td>
+</tr>
+<tr>
+<td><strong>PayPal</strong></td>
+<td>2.9% + $0.30 CAD domestic commercial; +0.8% (US) or +1% (other countries) cross-border; 3–4% FX spread.<a href="https://www.paypalobjects.com/marketing/ua/pdf/CA/en/ca-en-merchant-fees-15-oct-2024.pdf">PayPal</a></td>
+<td>Needed if your audience prefers PayPal or buys from overseas; embeds on Squarespace, Shopify, WordPress, Wix.</td>
+<td>PayPal buttons can request deposits but management is clunkier vs. Stripe/Square.</td>
+<td>Partial refunds cost nothing; instant bank withdrawals cost 1.75%. Make sure cancellation windows are spelled out to avoid disputes.</td>
+</tr>
+</tbody>
+</table></div><p><strong>Policy Tips:</strong>
+- Use deposits (25–50%) to secure bookings while keeping flexibility for weather; capture balances 7 days before departure via Stripe/Square automation.
+- Publish cancellation tiers (e.g., full refund &gt;14 days, 50% refund 7–13 days, no refund &lt;7 days) and sync them with booking software so refunds trigger automatically.
+- Automate reminder + prep emails (what to pack, meeting point GPS, waiver link) 48 hours in advance.</p></section><hr/><section id="5-essential-website-features-for-this-business"><h2 id="5-essential-website-features-for-this-business">5. Essential Website Features for This Business</h2><ol>
+<li><strong>Hero media + gallery</strong> – High-resolution shots of Toyota rigs, rooftop tents, night skies, recovery gear, and happy guests to build trust.</li>
+<li><strong>Availability calendar + booking CTA</strong> – Show open weekends/months with live inventory embedded above the fold; allow group selection up to five seats.</li>
+<li><strong>Experience breakdowns</strong> – Detail itinerary, driving difficulty, camp amenities, menu, what’s included / optional add-ons, and min/max skill level.</li>
+<li><strong>Safety &amp; prep section</strong> – Gear checklist, licensing requirements, waivers, insurance coverage, weather considerations, and guide credentials.</li>
+<li><strong>Testimonials &amp; social proof</strong> – Embed Google/TripAdvisor reviews, Instagram reels, and UGC featuring the vehicles.</li>
+<li><strong>FAQ + policies</strong> – Answer top concerns (bathrooms, weather cancellations, dietary needs, alcohol, wildlife) and list cancellation/deposit rules.</li>
+<li><strong>Blog / field notes</strong> – Publish trip recaps, trail spotlights, maintenance tips, and seasonal planning to drive SEO for “off-road tours Vancouver,” etc.</li>
+<li><strong>Contact + inquiry form</strong> – Offer WhatsApp/text CTA for quick questions plus email form with dropdown for private group requests.</li>
+<li><strong>Mobile-first UX</strong> – Optimize for social traffic (Instagram, TikTok) with sticky book button and quick-dial link.</li>
+</ol></section><hr/><section id="6-cost-comparison-table-cad-unless-noted"><h2 id="6-cost-comparison-table-cad-unless-noted">6. Cost Comparison Table (CAD unless noted)</h2><p>Assumptions: Prices use annual billing when available and USD amounts converted at 1 USD ≈ 1.35 CAD for comparison. Payment processing fees are per-transaction (variable) but noted for awareness.</p><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Year 1 Fixed Cost</th>
+<th>Year 2+ Fixed Cost</th>
+<th>Freelance Build Cost</th>
+<th>Agency Build Cost</th>
+<th>Booking Stack</th>
+<th>Payment Fees</th>
+<th>Owner Time</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Custom DIY (Next.js + headless)</strong></td>
+<td>~$600 (domain, Vercel pro, headless CMS seats, design assets) + sweat equity</td>
+<td>~$600</td>
+<td>Owner-built (0 cash, 120–160 hrs)</td>
+<td>N/A</td>
+<td>Stripe or Square via custom integration</td>
+<td>Stripe 2.9% + $0.30</td>
+<td>120–160 hrs build + maintenance</td>
+<td>Highest control, but opportunity cost is high while business is pre-launch.</td>
+</tr>
+<tr>
+<td><strong>Custom via Freelancer</strong></td>
+<td>$3,000–$8,000 upfront + ~$600 hosting/tooling</td>
+<td>$600–$1,200 maintenance retainers</td>
+<td>$3,000–$8,000 project fee</td>
+<td>N/A</td>
+<td>Same as above</td>
+<td>Stripe/Square negotiated</td>
+<td>20–30 hrs for approvals/content</td>
+<td>Pay once for bespoke UX; budget for ongoing bug fixes + updates.<a href="https://www.spaceo.ca/blog/website-development-cost/">SpaceO</a></td>
+</tr>
+<tr>
+<td><strong>Custom via Agency</strong></td>
+<td>$10,000–$25,000+ including strategy + content + QA</td>
+<td>$2,000–$5,000/yr support</td>
+<td>N/A</td>
+<td>$10,000–$25,000+</td>
+<td>Enterprise booking (Checkfront/Rezdy) layered on</td>
+<td>Stripe/Square enterprise rates</td>
+<td>30–50 hrs stakeholder time</td>
+<td>Best for funded phase or national expansion.<a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/">DigitalWebPort</a></td>
+</tr>
+<tr>
+<td><strong>Squarespace Business + Acuity Growing</strong></td>
+<td>$30.95×12 + ~$36×12 ≈ <strong>$804</strong></td>
+<td>Same</td>
+<td>$1,000–$4,000</td>
+<td>$4,000–$10,000+</td>
+<td>Acuity Scheduling</td>
+<td>Stripe/PayPal 2.9% + $0.30</td>
+<td>20–30 hrs setup &amp; copy</td>
+<td>Fastest to market, includes email + analytics. Transaction fee 3% on Business unless you upgrade to Commerce plan.</td>
+</tr>
+<tr>
+<td><strong>Squarespace Commerce Basic + Acuity Growing</strong></td>
+<td>($45×12) + ($36×12) ≈ <strong>$972</strong></td>
+<td>Same</td>
+<td>$1,000–$4,000</td>
+<td>$4,000–$10,000+</td>
+<td>Acuity Scheduling</td>
+<td>Stripe/PayPal</td>
+<td>20–30 hrs</td>
+<td>Removes 3% transaction fee, worth it once bookings ramp.</td>
+</tr>
+<tr>
+<td><strong>WordPress (SiteGround year 1) + WooCommerce Bookings</strong></td>
+<td>Hosting promo ($2.99×12 ≈ $36) + plugin $249 USD (~$336 CAD) + premium theme ~$100 CAD ⇒ <strong>~$472</strong></td>
+<td>Renewal hosting $216 + plugin renewal $336 + theme renewals (~$100) ⇒ <strong>~$652</strong></td>
+<td>$1,500–$7,000+</td>
+<td>$5,000–$25,000+</td>
+<td>WooCommerce Bookings / Travel Tour Booking</td>
+<td>Stripe/Square/PayPal</td>
+<td>40–60 hrs setup + plugin tuning</td>
+<td>Low cash but higher time. Switch to WP Engine ($34/mo) for better uptime once traffic grows.<a href="https://www.siteground.com/wordpress-hosting.htm">SiteGround</a><a href="https://woocommerce.com/products/travel-tour-booking/">WooCommerce</a></td>
+</tr>
+<tr>
+<td><strong>Wix Business</strong></td>
+<td>$39.77×12 ≈ <strong>$477</strong></td>
+<td>Same</td>
+<td>$1,000–$3,500</td>
+<td>$4,000–$10,000</td>
+<td>Wix Bookings (included)</td>
+<td>Wix Payments / Stripe 2.9% + $0.30</td>
+<td>15–20 hrs</td>
+<td>No hidden booking fees; app market add-ons optional.<a href="https://www.wix.com/plans">Wix Pricing</a></td>
+</tr>
+<tr>
+<td><strong>Shopify Basic + Experiences app</strong></td>
+<td>$49×12 = <strong>$588</strong> + Experiences Premium $39×12 ≈ $468 + rev share (0.75%–1%)</td>
+<td>Same</td>
+<td>$2,000–$7,500</td>
+<td>$10,000–$25,000+</td>
+<td>Experiences / BookThatApp / Sesami</td>
+<td>Shopify Payments 2.8% + $0.30 (+2% if external gateway)</td>
+<td>25–35 hrs</td>
+<td>Factor extra % fee on every booking. Strong path if you also sell merch.</td>
+</tr>
+<tr>
+<td><strong>Webflow CMS + Checkfront</strong></td>
+<td>($23 USD×12 ≈ $372 CAD) + Checkfront ($149×12 = $1,788) + 3% booking fee</td>
+<td>Same</td>
+<td>$1,800–$7,000+</td>
+<td>$7,500–$25,000+</td>
+<td>Checkfront embedded</td>
+<td>Stripe/Square via Checkfront</td>
+<td>40–60 hrs (designer + setup)</td>
+<td>Premium look + enterprise-grade booking. Fees higher but scalable.</td>
+</tr>
+<tr>
+<td><strong>Bookeo + existing site</strong></td>
+<td>Bookeo Standard $39.95 USD/mo (~$54 CAD) ⇒ <strong>$648</strong></td>
+<td>Same</td>
+<td>$1,000–$4,000 (Squarespace/Wix host site)</td>
+<td>$4,000–$10,000 (agency-built host)</td>
+<td>Bookeo embed</td>
+<td>Stripe/Square/PayPal</td>
+<td>10–15 hrs to embed</td>
+<td>Predictable SaaS; pair with Squarespace/Wix if you need more automation than native booking.</td>
+</tr>
+<tr>
+<td><strong>Rezdy + existing site</strong></td>
+<td>$49 USD/mo (~$66 CAD) + 3% fee + offline per-booking fee</td>
+<td>Same</td>
+<td>$2,000–$7,000 (WordPress/Webflow refresh)</td>
+<td>$10,000–$25,000 (agency rebuild)</td>
+<td>Rezdy embed</td>
+<td>Stripe/Square etc.</td>
+<td>20–30 hrs to configure</td>
+<td>Adds OTA distribution + reseller network when you’re ready for scale.</td>
+</tr>
+</tbody>
+</table></div><p><em>Time cost is estimated owner effort for copy, media, and QA; it excludes photography/video shoots.</em></p></section><hr/><section id="7-recommendation-phased-approach"><h2 id="7-recommendation-phased-approach">7. Recommendation &amp; Phased Approach</h2><p><strong>Recommendation:</strong> Launch on <strong>Squarespace Commerce Basic + Acuity Growing</strong> now, then graduate to <strong>WordPress or Webflow + Checkfront/Rezdy</strong> once demand and partnerships justify higher investment.</p><h3 id="why-squarespace-acuity-first">Why Squarespace + Acuity first?</h3><ul>
+<li>Fastest build: you can repurpose brand photography, drop in itinerary blocks, and enable bookings without code.</li>
+<li>Canadian-friendly payments via Stripe/PayPal with CAD pricing and tax collection.</li>
+<li>Acuity handles up to five guests per outing, automated reminders, waiver/intake forms, coupon codes, packages, and deposits—all critical for weather-dependent tours.</li>
+<li>Built-in email campaigns + blog + analytics keep marketing simple while you validate pricing and operations.</li>
+</ul><h3 id="phase-plan">Phase Plan</h3><ol>
+<li><strong>Phase 0 (Week 1–2)</strong> – Gather assets, finalize itinerary copy, choose Squarespace template, configure Commerce Basic plan, hook up Stripe + PayPal, and embed Acuity offerings (public + private group). Publish essential pages (Home, Trips, About/Guides, Safety, FAQ, Blog intro, Contact). Enable Google Analytics + Search Console.</li>
+<li><strong>Phase 1 (Month 1–2)</strong> – Add blog posts (trail spotlights), publish a packing checklist download, integrate social proof (Google reviews, Instagram feed), and launch paid ads / partnerships. Use Acuity packages for multi-day trips and enable 30% deposits with balance auto-charge.</li>
+<li><strong>Phase 2 (Month 3–6)</strong> – Introduce Bookeo or Checkfront if you need richer manifests, reseller logins, or OTA distribution. Embed the widget on Squarespace or build a lightweight WordPress landing hub while keeping Squarespace live for content.</li>
+<li><strong>Phase 3 (Year 2)</strong> – Once bookings exceed ~400/year or you expand to multi-vehicle fleets, migrate to a custom WordPress or Webflow build backed by Checkfront/Rezdy. Use headless CMS content migration tools or Webflow’s CSV importer to bring over itineraries/blog posts. Keep Acuity as a waitlist/consultation scheduler even after adopting a dedicated booking engine.</li>
+</ol><h3 id="migration-path-considerations">Migration Path Considerations</h3><ul>
+<li>Maintain all copy + assets in a shared CMS (Notion, headless) so moving platforms is mostly a front-end rebuild.</li>
+<li>Choose a booking system (Checkfront or Rezdy) that offers embed codes + API; you can swap website platforms without touching customer history.</li>
+<li>Continue using Stripe or Square across platforms to avoid re-onboarding and to keep historical payout data intact.</li>
+<li>When moving to WordPress/Webflow, start with a subdomain pilot (e.g., beta.offroadglamp.ca) to ensure SEO + tracking survive cutover.</li>
+</ul><h3 id="when-to-reconsider">When to Reconsider</h3><ul>
+<li>If you plan to wholesale through OTAs quickly (e.g., TripAdvisor, GetYourGuide), consider going straight to WordPress/Webflow + Rezdy/Checkfront so you don’t rebuild twice.</li>
+<li>If merchandise/gear becomes a major revenue stream, Shopify + Experiences might be better despite stacking app fees because its inventory + POS story is strongest.</li>
+</ul><p>With this path you get a branded, mobile-first, SEO-friendly site live in weeks, validate packages/pricing, and retain the option to graduate to a more complex stack once revenue supports it.</p></section><hr/><section id="crm-tools-for-adventure-tourism-businesses"><h2 id="crm-tools-for-adventure-tourism-businesses">CRM Tools for Adventure Tourism Businesses</h2><p>Backcountry tour companies need more than a booking calendar—they need living customer profiles, automated prep/reminder flows, review prompts, and group management that survives guide turnover. The tools below focus on Canadian-friendly pricing, website embeds, and features a small team can actually run.</p><h3 id="purpose-built-tour-crms-booking-suites">Purpose-built tour CRMs &amp; booking suites</h3><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Pricing &amp; Fees</th>
+<th>CRM + Guest Nurture Capabilities</th>
+<th>Website / Platform Integration</th>
+<th>Best Fit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Checkfront</strong></td>
+<td>$99–$225 USD/mo + 3% online booking fee (can be passed to guests); 21-day free trial.<a href="https://www.checkfront.com/pricing/">Checkfront</a><a href="https://www.bokun.io/tour-and-activity-booking-system-pricing">Bokun</a></td>
+<td>Stores guest profiles, flags repeat visitors, automates waiver requests, drip emails, SMS reminders, resource calendars, and guide manifests.<a href="https://www.checkfront.com/pricing/">Checkfront</a><a href="https://www.checkfront.com/checkfront-vs-peek-pro/">Checkfront vs Peek</a></td>
+<td>Native WordPress plugin plus code embeds for Squarespace, Wix, Shopify, and Webflow; Zapier/Make + Stripe/Square integrations.<a href="https://www.checkfront.com/pricing/">Checkfront</a></td>
+<td>Vancouver/BC operators wanting Canadian support, multi-day inventory, and the option to upsell add-ons without switching stacks later.</td>
+</tr>
+<tr>
+<td><strong>Rezdy</strong></td>
+<td>$49 / $99 / $249 USD/mo + 3% online fee + $1–$0.70 offline fee.<a href="https://rezdy.com/pricing/">Rezdy</a><a href="https://www.bokun.io/tour-and-activity-booking-system-pricing">Bokun</a></td>
+<td>CRM with reseller tagging, customer history, automated emails, vouchers, and channel manager to 40k+ OTAs.<a href="https://rezdy.com/pricing/">Rezdy</a></td>
+<td>Embeds on any CMS; pushes availability into Google Things To Do, Expedia, GetYourGuide, Stripe, Square, Xero.<a href="https://rezdy.com/pricing/">Rezdy</a></td>
+<td>Best when you plan to wholesale tours to OTAs or corporate partners and need manifests + payout tracking.</td>
+</tr>
+<tr>
+<td><strong>Peek Pro</strong></td>
+<td>Typically $149 USD/mo + 6–8% booking fee + ~2.3% + $0.30 processing; negotiable by volume.<a href="https://www.checkfront.com/checkfront-vs-peek-pro/">Checkfront vs Peek</a><a href="https://www.taloflow.ai/guides/comparisons/peekpro-vs-xola-adventure">Taloflow</a></td>
+<td>Mobile-first CRM, guest notes, upsell prompts, post-trip review requests, text reminders, tipping workflows.<a href="https://www.checkfront.com/checkfront-vs-peek-pro/">Checkfront vs Peek</a></td>
+<td>Embeddable checkout, branded microsites, Zapier, Stripe/Square, POS kiosks, OTA push.<a href="https://www.taloflow.ai/guides/comparisons/peekpro-vs-xola-adventure">Taloflow</a></td>
+<td>Design-conscious brands that value sleek checkout and on-site POS/tipping more than minimizing fees.</td>
+</tr>
+<tr>
+<td><strong>Xola</strong></td>
+<td>Flex plan with no subscription and 2.39% + $0.30 per online transaction (≈6% if you opt to pass fees to guests).<a href="https://www.taloflow.ai/guides/comparisons/peekpro-vs-xola-adventure">Taloflow</a><a href="https://www.g2.com/compare/peek-pro-vs-xola">G2</a></td>
+<td>Lead management, CRM notes, drip emails, repeat guest tagging, group manifests, abandoned cart recovery.<a href="https://www.taloflow.ai/guides/comparisons/peekpro-vs-xola-adventure">Taloflow</a></td>
+<td>Widgets for WordPress, Squarespace, Shopify, Wix; integrates with Stripe, Square, Mailchimp, Zapier.<a href="https://www.g2.com/compare/peek-pro-vs-xola">G2</a></td>
+<td>Cash-conscious startups that prefer pay-as-you-go pricing over monthly SaaS bills.</td>
+</tr>
+<tr>
+<td><strong>Bookeo (Tours &amp; Activities)</strong></td>
+<td>$39.95 / $79.95 / $119.95 USD/mo with no per-booking fee; waivers add-on from $9/mo.<a href="https://www.bookeo.com/tours/pricing/">Bookeo</a><a href="https://www.bokun.io/tour-and-activity-booking-system-pricing">Bokun</a></td>
+<td>Customer database, membership packs, SMS/email reminders, coupon tracking, repeat booking history.<a href="https://www.bookeo.com/tours/pricing/">Bookeo</a></td>
+<td>Embeds via code blocks (Squarespace/Wix/Webflow) or plugins/apps (WordPress/Shopify); connects to Zapier, Mailchimp, Stripe, Square.<a href="https://www.bookeo.com/tours/pricing/">Bookeo</a></td>
+<td>Predictable-fee option when you only need one or two guides and want to keep costs flat at low volume.</td>
+</tr>
+<tr>
+<td><strong>TrekkSoft</strong></td>
+<td>€49 / €149 / €249 per month + 2–3% booking fees + €0.50–€1 offline fees; integrated gateway 2.5% + €0.25 (3% outside EU).<a href="https://www.trekksoft.com/en/pricing">TrekkSoft</a><a href="https://www.bokun.io/trekksoft-pricing">Bokun</a></td>
+<td>Deep CRM with reseller accounts, partner portal, quote tools, deposits, online waivers, and OTA/channel management.<a href="https://www.trekksoft.com/en/pricing">TrekkSoft</a><a href="https://www.capterra.com/p/126665/Tour-Activity-Booking-System/">Capterra</a></td>
+<td>Widgets + hosted checkouts for any CMS, Zapier, API access, multiple gateways, multilingual checkout.<a href="https://www.trekksoft.com/en/pricing">TrekkSoft</a></td>
+<td>Best for multi-day expedition operators targeting European travellers or managing reseller networks.</td>
+</tr>
+</tbody>
+</table></div><h3 id="general-purpose-crms-to-pair-with-booking-widgets">General-purpose CRMs to pair with booking widgets</h3><ul>
+<li><strong>HubSpot CRM (Free → Starter ~$20 CAD/user/mo):</strong> Quick to deploy with forms, pipelines, and marketing automation, but key workflow automation/reporting lands in higher tiers; pair via Zapier or Checkfront/Bookeo webhooks to push leads and trigger nurture emails.<a href="https://www.customerization.ca/hubspot-vs-zoho-crm-vs-monday-crm/">Customerization</a><a href="https://www.forbes.com/advisor/business/software/hubspot-vs-zoho/">Forbes Advisor</a> </li>
+<li><strong>Zoho CRM (Free for 3 users, Standard $14 CAD/user/mo, Enterprise $40):</strong> Most affordable way to get workflows, lead scoring, AI nudges (Zia), and custom modules for repeat guests or fleet assets; integrates with Booking CRMs via API or Zapier and keeps cost predictable as you scale guides.<a href="https://www.customerization.ca/hubspot-vs-zoho-crm-vs-monday-crm/">Customerization</a><a href="https://www.capitalsconsulting.com/resources/zoho-crm-vs-hubspot-2025">Capital S Consulting</a></li>
+<li><strong>Monday Sales CRM (Free for 2 seats, Basic $14 CAD/user/mo, Standard $24):</strong> Board-based view makes it easy to track leads from Instagram DMs, corporate groups, and concierge partners; automations push tasks for waiver follow-ups or post-trip review emails once a booking is marked complete.<a href="https://www.customerization.ca/hubspot-vs-zoho-crm-vs-monday-crm/">Customerization</a><a href="https://eriksguide.com/best-crm-software-monday">Erik’s Guide</a></li>
+</ul><h3 id="feature-checklist-for-this-business">Feature checklist for this business</h3><ul>
+<li><strong>Unified guest profiles:</strong> Each traveller, driver, or corporate buyer needs history (dietary needs, vehicle preferences, waiver status) that syncs with booking manifests.<a href="https://www.checkfront.com/pricing/">Checkfront</a><a href="https://rezdy.com/pricing/">Rezdy</a></li>
+<li><strong>Lifecycle messaging:</strong> Automate booking confirmations, prep checklists, waiver reminders, review prompts, and rebooking offers via email/SMS.<a href="https://www.checkfront.com/checkfront-vs-peek-pro/">Peek Pro</a><a href="https://www.bookeo.com/tours/pricing/">Bookeo</a></li>
+<li><strong>Group + resource management:</strong> Assign guides, rigs, rooftop tents, and trail permits while tracking max headcount per departure.<a href="https://www.trekksoft.com/en/pricing">TrekkSoft</a><a href="https://www.checkfront.com/pricing/">Checkfront</a></li>
+<li><strong>Revenue + channel attribution:</strong> Pull dashboards that show which web pages, ads, or OTAs triggered the booking so you can reinvest in effective channels.<a href="https://rezdy.com/pricing/">Rezdy</a><a href="https://www.trekksoft.com/en/pricing/">TrekkSoft</a></li>
+<li><strong>CRM + website integration:</strong> Ensure widgets or APIs can drop onto Squarespace/Wix now and later migrate to WordPress/Webflow without rebuilding the booking engine.<a href="https://www.bookeo.com/tours/pricing/">Bookeo</a><a href="https://www.checkfront.com/pricing/">Checkfront</a></li>
+</ul><h3 id="recommended-crm-approach">Recommended CRM approach</h3><ol>
+<li><strong>Launch phase:</strong> Embed Bookeo or Checkfront on Squarespace and sync contacts into Zoho CRM (Standard tier) via Zapier so every booking spawns prep tasks and segmented email lists without extra SaaS overhead.<a href="https://www.bookeo.com/tours/pricing/">Bookeo</a><a href="https://www.checkfront.com/pricing/">Checkfront</a><a href="https://www.customerization.ca/hubspot-vs-zoho-crm-vs-monday-crm/">Customerization</a></li>
+<li><strong>Scale phase:</strong> Graduate to Rezdy or TrekkSoft when you add OTA distribution, corporate groups, or multi-day expeditions; keep Zoho/Monday as the sales pipeline to manage partnerships and upsells.<a href="https://rezdy.com/pricing/">Rezdy</a><a href="https://www.trekksoft.com/en/pricing/">TrekkSoft</a></li>
+<li><strong>Automation phase:</strong> Layer HubSpot or Monday automations on top of your booking CRM to trigger review requests, loyalty offers, and paid media audiences based on actual trip history rather than guesswork.<a href="https://www.forbes.com/advisor/business/software/hubspot-vs-zoho/">HubSpot vs Zoho</a><a href="https://www.customerization.ca/hubspot-vs-zoho-crm-vs-monday-crm/">Customerization</a></li>
+</ol></section></main>
+</div>
+</div>
+<button aria-label="Back to top" class="back-to-top">↑</button>
+<script>
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');

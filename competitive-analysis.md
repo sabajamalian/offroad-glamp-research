@@ -1,7 +1,6 @@
 # Competitive Analysis: Off-Road Glamping Experience
 ## Vancouver, British Columbia
 
-**Prepared for:** Saba  
 **Date:** March 2025  
 **Business Concept:** Guided off-road driving + overnight camping experience in the Vancouver/Sea-to-Sky region
 
