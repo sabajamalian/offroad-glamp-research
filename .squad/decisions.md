@@ -121,3 +121,64 @@
 - **Comprehensive but scannable:** Tables, bullet points, bold key numbers for easy navigation
 - **Phased implementation:** Timeline broken into manageable chunks with clear triggers
 - **Risk-balanced:** SWOT and risk analysis provide realistic view, not just optimism
+
+---
+
+## Wash — HTML Design System for Business Documents
+
+**Date:** 2026-03-01  
+**Decision Maker:** Wash (Frontend Dev)  
+**Status:** Implemented  
+
+### Decision: Single-File HTML with Embedded CSS/JS
+
+Implement standalone HTML files with embedded CSS (~8KB) and minimal vanilla JavaScript for business documents. All files work offline via file:// protocol with no external dependencies.
+
+### Design System Choices
+
+1. **Color Palette: "Outdoorsy Professional"**
+   - Forest Green (#2d5016) - primary brand
+   - Sage (#7a9b76) - secondary
+   - Earth Brown (#8b7355) - tertiary
+   - Warm Gray (#4a4a4a) - text
+   - Cream (#faf8f3) - background
+   - Accent Orange (#d97941) - highlights
+
+2. **Typography: System Font Stack** (~1.7 line-height for readability)
+3. **Layout: Desktop sidebar TOC + mobile hamburger overlay**
+4. **Responsive: Mobile-first (375px → 768px → 1024px breakpoints)**
+5. **Tables: Horizontal scroll wrapper for mobile**
+
+### Rationale
+
+- Offline capability required (no network)
+- System fonts load instantly (no web font downloads)
+- Single-file avoids build processes and deployment complexity
+- Mobile-responsive without framework overhead
+- Clean, professional aesthetic suitable for business documents
+
+### Consequences
+
+**Positive:**
+- Works offline indefinitely
+- Instant load (no network requests)
+- Prints cleanly to PDF
+- Mobile-friendly
+- Easy to maintain (edit HTML directly)
+
+**Negative:**
+- CSS duplication across files (~8KB per)
+- Manual updates required (no templating)
+- File size larger than markdown (~40–100KB per file vs. 27–59KB markdown)
+
+### Implementation
+
+- `competitive-analysis.html` - 72KB
+- `business-plan.html` - 96KB
+- `competitive-research-raw.html` - 40.6KB
+- `marketing-strategy-raw.html` - 29.9KB
+- `website-analysis-raw.html` - 51.2KB
+- `strategic-synthesis.html` - 43.3KB
+- `index.html` - Landing page (16.4KB) with cross-linking
+
+All documents share consistent design system and are fully mobile-responsive.
