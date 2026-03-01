@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitive Analysis — Off-Road Driving & Adventure Tourism - Vancouver, BC</title>
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Outdoorsy color palette */
+            --forest-green: #2d5016;
+            --sage: #7a9b76;
+            --earth-brown: #8b7355;
+            --warm-gray: #4a4a4a;
+            --light-gray: #f5f5f0;
+            --cream: #faf8f3;
+            --accent-orange: #d97941;
+            --text-dark: #2a2a2a;
+            --text-light: #666;
+            --border-color: #ddd;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--cream);
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--sage) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        header .meta {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 15px;
+        }
+
+        /* ===== NAVIGATION / TOC ===== */
+        nav {
+            position: sticky;
+            top: 20px;
+            min-width: 260px;
+            max-width: 280px;
+            height: fit-content;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        nav h2 {
+            font-size: 1rem;
+            color: var(--forest-green);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-bottom: 8px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--forest-green);
+            font-weight: 600;
+        }
+
+        /* Mobile: hamburger menu */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--forest-green);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            flex: 1;
+            max-width: 800px;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--forest-green);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--sage);
+            padding-bottom: 10px;
+            margin-top: 2.5em;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--earth-brown);
+        }
+
+        h4 {
+            font-size: 1.15rem;
+        }
+
+        p {
+            margin-bottom: 1.2em;
+        }
+
+        strong {
+            color: var(--forest-green);
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1.2em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 2.5em 0;
+        }
+
+        /* ===== CALLOUT BOXES ===== */
+        .callout {
+            background: var(--light-gray);
+            border-left: 4px solid var(--accent-orange);
+            padding: 20px;
+            margin: 1.5em 0;
+            border-radius: 4px;
+        }
+
+        .callout h4,
+        .callout h3 {
+            margin-top: 0;
+            color: var(--accent-orange);
+        }
+
+        .callout.key-finding {
+            border-left-color: var(--forest-green);
+        }
+
+        .callout.key-finding h4,
+        .callout.key-finding h3 {
+            color: var(--forest-green);
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5em 0;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        tr:hover {
+            background: #f0ede5;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--forest-green);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--sage);
+        }
+
+        /* ===== RESPONSIVE: TABLET ===== */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            nav {
+                position: relative;
+                top: 0;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            main {
+                padding: 30px;
+            }
+        }
+
+        /* ===== RESPONSIVE: MOBILE ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                overflow-y: auto;
+                transition: right 0.3s;
+                z-index: 999;
+                border-radius: 0;
+                padding: 80px 20px 20px 20px;
+            }
+
+            nav.open {
+                right: 0;
+            }
+
+            table {
+                min-width: 500px;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .menu-toggle,
+            .back-to-top,
+            nav {
+                display: none;
+            }
+
+            main {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            h2 {
+                page-break-before: always;
+            }
+
+            h2:first-of-type {
+                page-break-before: avoid;
+            }
+
+            .callout,
+            table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    <header>
+        <div class="container">
+            <h1>Competitive Analysis — Off‑Road Driving & Adventure Tourism</h1>
+            <div class="subtitle">Vancouver, BC</div>
+            <div class="meta">
+                <strong>Scope:</strong> Off-road driving experiences, overlanding/4x4 tours, and adjacent adventure tourism offerings in the Vancouver/Sea‑to‑Sky region and wider BC market
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <nav id="toc">
+                <h2>Contents</h2>
+                <ul>
+                    <li><a href="#direct-competitors">1. Direct Competitors</a></li>
+                    <li><a href="#indirect-competitors">2. Indirect Competitors</a></li>
+                    <li><a href="#customer-acquisition">3. Customer Acquisition Channels</a></li>
+                    <li><a href="#market-sizing">4. Market Sizing</a></li>
+                    <li><a href="#gaps-opportunities">5. Gaps & Opportunities</a></li>
+                    <li><a href="#appendix">Appendix</a></li>
+                </ul>
+            </nav>
+
+            <main>
+                <section id="direct-competitors">
+                    <h2>1) Direct Competitors (Off‑Road / 4x4 / Overlanding)</h2>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Location</th>
+                                    <th>Services offered</th>
+                                    <th>Pricing (CAD)</th>
+                                    <th>Target audience</th>
+                                    <th>Reviews/ratings</th>
+                                    <th>Social media presence</th>
+                                    <th>Unique selling proposition (USP)</th>
+                                    <th>Sources</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><a href="https://vancouveroutdoors.ca/" target="_blank">Vancouver Outdoor Adventures</a></strong></td>
+                                    <td>Vancouver, BC</td>
+                                    <td>Guided 4‑seater off‑road ATV tour with pickup, full‑day (8–10 hrs)</td>
+                                    <td><strong>$800 per group of 4</strong> (private tour) + refundable deposit</td>
+                                    <td>Adults 21+; small groups seeking private day trip</td>
+                                    <td>TripAdvisor tour listing (ratings visible on platform)</td>
+                                    <td>Facebook page with active posts</td>
+                                    <td>Private, full‑day off‑road experience with door‑to‑door pickup</td>
+                                    <td><a href="https://vancouveroutdoors.ca/services/vancouver-offroad-atv-tour-4/" target="_blank">Tour page</a> · <a href="https://www.tripadvisor.com/AttractionProductReview-g154943-d32987644-ATV_Adventure_Tour-Vancouver_British_Columbia.html" target="_blank">TripAdvisor listing</a> · <a href="https://www.facebook.com/vancouveroutdoors.ca/posts/207131865674838/" target="_blank">Facebook</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://www.canadianwilderness.com/whistler/atv-tours/" target="_blank">Canadian Wilderness Adventures</a></strong></td>
+                                    <td>Whistler, BC</td>
+                                    <td>ATV tours (Callaghan Cruiser, Mountain Explorer, etc.)</td>
+                                    <td><strong>$199–$219 driver</strong>; <strong>$35 collision coverage</strong></td>
+                                    <td>Families, beginners, adventure seekers</td>
+                                    <td><strong>4.9/5 on TripAdvisor</strong> (~5,800 reviews)</td>
+                                    <td>Instagram + Facebook</td>
+                                    <td>High review volume, multiple tour tiers and mountain access</td>
+                                    <td><a href="https://www.canadianwilderness.com/whistler/atv-tours/" target="_blank">ATV tours</a> · <a href="https://www.tripadvisor.com.sg/Attraction_Review-g154948-d1799618-Reviews-Canadian_Wilderness_Adventures-Whistler_British_Columbia.html" target="_blank">TripAdvisor rating</a> · <a href="https://www.instagram.com/canadianwilderness.com/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/CanadianWildernessAdventures/about/" target="_blank">Facebook</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://squamishadventure.com/portfolio/4x4-off-road-buggy/" target="_blank">Squamish Adventure</a></strong></td>
+                                    <td>Squamish / Callaghan Valley</td>
+                                    <td>4x4 off‑road buggy tours (operator‑provided vehicles)</td>
+                                    <td><strong>Pricing not listed on site</strong>; regional buggy tours typically <strong>$315–$339 per buggy</strong></td>
+                                    <td>Adventure travelers; small groups</td>
+                                    <td>TripAdvisor lists multiple Squamish 4WD/ATV tours (ratings on platform)</td>
+                                    <td>Social media spotlight & Instagram community hashtag</td>
+                                    <td>Scenic Callaghan Valley off‑road buggy routes near Sea‑to‑Sky</td>
+                                    <td><a href="https://squamishadventure.com/portfolio/4x4-off-road-buggy/" target="_blank">4x4 buggy tours</a> · <a href="https://www.whistlerblackcomb.com/explore-the-resort/activities-and-events/summer-activities/rzr-tours.aspx" target="_blank">Regional buggy price reference</a> · <a href="https://www.tripadvisor.com/Attractions-g181771-Activities-c61-t211-Squamish_British_Columbia.html" target="_blank">TripAdvisor Squamish 4WD tours</a> · <a href="https://squamishadventure.com/social-media-spotlight/" target="_blank">Social spotlight</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://www.mapleoverland.ca/" target="_blank">Maple Overland</a></strong></td>
+                                    <td>Squamish, BC</td>
+                                    <td>Jeep Wrangler rentals w/ rooftop tent, gear, itinerary planning</td>
+                                    <td><strong>$225/night</strong> (unlimited km; gear included)</td>
+                                    <td>Couples/small groups seeking self‑drive overlanding</td>
+                                    <td>Tourism Squamish listing (industry validation)</td>
+                                    <td>Instagram + Facebook</td>
+                                    <td>Fully equipped Jeep + custom trip planning</td>
+                                    <td><a href="https://www.mapleoverland.ca/book-your-4x4-adventure-in-british-columbia/" target="_blank">Pricing & booking</a> · <a href="https://www.exploresquamish.com/business/maple-overland/" target="_blank">Tourism Squamish listing</a> · <a href="https://linktr.ee/mapleoverland" target="_blank">Instagram/Linktree</a> · <a href="https://www.facebook.com/MapleOverland/" target="_blank">Facebook</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://faroutwilderness.com/" target="_blank">FarOut Wilderness</a></strong></td>
+                                    <td>Vancouver/Victoria (seasonal)</td>
+                                    <td>4x4 camper rentals w/ rooftop tent + itinerary support</td>
+                                    <td><strong>$175–$305/day</strong> (seasonal)</td>
+                                    <td>Self‑drive overlanders; families/pet‑friendly</td>
+                                    <td>No public rating found; strong social proof</td>
+                                    <td>Instagram + Facebook</td>
+                                    <td>Multiple pickup points + fully equipped overland rigs</td>
+                                    <td><a href="https://faroutwilderness.com/reservations/" target="_blank">Pricing</a> · <a href="https://www.instagram.com/farout_frhigh_days/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/faroutwilderness/" target="_blank">Facebook</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://www.westernredadventures.ca/" target="_blank">Western Red Adventures</a></strong></td>
+                                    <td>Vancouver Island, BC</td>
+                                    <td>Guided convoy overland tours (bring your own or rent)</td>
+                                    <td><strong>Pricing via inquiry</strong> (not listed)</td>
+                                    <td>Multi‑day guided overland groups</td>
+                                    <td>Not publicly listed</td>
+                                    <td>TikTok + Linktree</td>
+                                    <td>Turnkey guided convoy tours on Vancouver Island</td>
+                                    <td><a href="https://www.westernredadventures.ca/tour-packages" target="_blank">Tour packages</a> · <a href="https://www.tiktok.com/@western.red.adventures" target="_blank">TikTok</a> · <a href="https://linktr.ee/western.red.adventures" target="_blank">Linktree</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="callout key-finding">
+                        <h4>Direct‑competitor landscape takeaways:</h4>
+                        <ul>
+                            <li><strong>Most Vancouver‑area off‑road products are day‑trips</strong> (ATV/buggy tours) with pricing clustered around <strong>$199–$339</strong> per rider/buggy or <strong>$800</strong> per private group day.</li>
+                            <li><strong>Overlanding in BC is mostly self‑drive rentals</strong> (Maple Overland, FarOut Wilderness) or <strong>multi‑day convoy tours</strong> on Vancouver Island (Western Red Adventures), leaving a gap for guided <strong>overnight</strong> experiences near Vancouver.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <hr>
+
+                <section id="indirect-competitors">
+                    <h2>2) Indirect Competitors (Adjacent Experiences)</h2>
+
+                    <h3>2A) Glamping Operators (BC)</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Location</th>
+                                    <th>Offer</th>
+                                    <th>Pricing (CAD)</th>
+                                    <th>Sources</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><a href="https://www.hipcamp.com/en-CA/d/canada/british-columbia/vancouver/camping/glamping" target="_blank">Hipcamp</a> (marketplace)</strong></td>
+                                    <td>Vancouver region & BC</td>
+                                    <td>Glamping tents/cabins via marketplace</td>
+                                    <td>From <strong>$54/night</strong> for basic glamping near Vancouver</td>
+                                    <td><a href="https://www.hipcamp.com/en-CA/d/canada/british-columbia/vancouver/camping/glamping" target="_blank">Hipcamp glamping listings</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://www.little-escape-outdoors.ca/" target="_blank">Little Escape Outdoors</a></strong></td>
+                                    <td>Near Vancouver</td>
+                                    <td>All‑inclusive family‑friendly glamping</td>
+                                    <td>Pricing on request (all‑inclusive packages)</td>
+                                    <td><a href="https://www.little-escape-outdoors.ca/" target="_blank">Little Escape</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://www.wildhavens.ca/" target="_blank">Wild Havens</a></strong></td>
+                                    <td>BC (pop‑up glamping)</td>
+                                    <td>Pop‑up bell tents & event setups</td>
+                                    <td><strong>~$200–$400/night</strong> range noted in market summaries</td>
+                                    <td><a href="https://www.wildhavens.ca/" target="_blank">Wild Havens</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>2B) Adventure Tourism Operators (Competing for Spend)</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Experience</th>
+                                    <th>Pricing (CAD)</th>
+                                    <th>Sources</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><a href="https://www.grousemountain.com/zipline" target="_blank">Grouse Mountain</a></strong></td>
+                                    <td>Zipline tours (3‑line course)</td>
+                                    <td><strong>$59 online</strong></td>
+                                    <td><a href="https://www.grousemountain.com/zipline" target="_blank">Grouse Mountain zipline</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://squamish-rafting.com/day-trips/" target="_blank">Squamish Rafting Company</a></strong></td>
+                                    <td>River rafting (family + whitewater)</td>
+                                    <td><strong>$159.99–$214.99</strong> per adult</td>
+                                    <td><a href="https://squamish-rafting.com/day-trips/" target="_blank">Squamish Rafting trips</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://www.viator.com/tours/Vancouver/Vancouver-Hiking-Highlights-Day-Tour-8-Hours-incl-Grouse-Grind/d616-464214P1" target="_blank">Way Out West Tours</a></strong></td>
+                                    <td>Guided Vancouver hiking day tours</td>
+                                    <td><strong>$134–$183</strong> per adult</td>
+                                    <td><a href="https://www.viator.com/tours/Vancouver/Vancouver-Hiking-Highlights-Day-Tour-8-Hours-incl-Grouse-Grind/d616-464214P1" target="_blank">Viator listing</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>2C) Car Camping / Campervan Rental Companies</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Offer</th>
+                                    <th>Typical pricing (CAD/night)</th>
+                                    <th>Sources</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><a href="https://karmacampervans.com/locations/vancouver/" target="_blank">Karma Campervans</a></strong></td>
+                                    <td>2–3 berth campervans</td>
+                                    <td><strong>$120–$170</strong></td>
+                                    <td><a href="https://karmacampervans.com/locations/vancouver/" target="_blank">Karma Campervans</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://www.venturevans.ca/" target="_blank">Venture Vans</a></strong></td>
+                                    <td>Adventure vans + gear, unlimited km</td>
+                                    <td><strong>$120–$160</strong></td>
+                                    <td><a href="https://www.venturevans.ca/" target="_blank">Venture Vans</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://roadsurfer.com/rv-rental/canada/vancouver/" target="_blank">Roadsurfer</a></strong></td>
+                                    <td>Modern Class B/C campervans</td>
+                                    <td><strong>$115+</strong></td>
+                                    <td><a href="https://roadsurfer.com/rv-rental/canada/vancouver/" target="_blank">Roadsurfer</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://www.outdoorsy.com/l/camper-van_rental/ca_bc_vancouver" target="_blank">Outdoorsy</a> (P2P)</strong></td>
+                                    <td>Peer‑to‑peer vans/RVs</td>
+                                    <td><strong>$80–$250+</strong></td>
+                                    <td><a href="https://www.outdoorsy.com/l/camper-van_rental/ca_bc_vancouver" target="_blank">Outdoorsy Vancouver</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>2D) Outdoor Experience Gift Companies</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Offer</th>
+                                    <th>Notes</th>
+                                    <th>Sources</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><a href="https://breakawayexperiences.com/" target="_blank">Breakaway Experiences</a></strong></td>
+                                    <td>Adventure/outdoor experience gift vouchers</td>
+                                    <td>National catalog incl. outdoor adventures</td>
+                                    <td><a href="https://breakawayexperiences.com/" target="_blank">Breakaway Experiences</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://giftingowl.com/ca/" target="_blank">Gifting Owl</a></strong></td>
+                                    <td>Activity gift vouchers</td>
+                                    <td>Multi‑year validity, exchangeable</td>
+                                    <td><a href="https://giftingowl.com/ca/" target="_blank">Gifting Owl</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://epicexperiences.ca/" target="_blank">Epic Experiences</a></strong></td>
+                                    <td>Experience gifts (adventure + lifestyle)</td>
+                                    <td>Instant e‑vouchers</td>
+                                    <td><a href="https://epicexperiences.ca/" target="_blank">Epic Experiences</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><a href="https://experiencegifts.com/ca/" target="_blank">Experience Gifts Canada</a></strong></td>
+                                    <td>Experience gift marketplace</td>
+                                    <td>National coverage</td>
+                                    <td><a href="https://experiencegifts.com/ca/" target="_blank">Experience Gifts Canada</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <hr>
+
+                <section id="customer-acquisition">
+                    <h2>3) Customer Acquisition Channels (Observed)</h2>
+
+                    <ul>
+                        <li><strong>Online booking platforms:</strong> Operators and tours are widely listed on TripAdvisor, Viator, and GetYourGuide (e.g., Vancouver 4WD/ATV tours and Vancouver hiking tours). <a href="https://www.tripadvisor.ca/Attractions-g154943-Activities-c61-t211-Vancouver_British_Columbia.html" target="_blank">TripAdvisor 4WD tours</a> · <a href="https://www.viator.com/Vancouver-tours/4WD-ATV-and-Off-Road-Tours/d616-g9-c32" target="_blank">Viator 4WD tours</a> · <a href="https://www.getyourguide.com/vancouver-l189/" target="_blank">GetYourGuide</a></li>
+                        <li><strong>Social media:</strong> Active Instagram/Facebook/TikTok presence for key operators (Canadian Wilderness Adventures, Maple Overland, FarOut Wilderness, Western Red Adventures). <a href="https://www.instagram.com/canadianwilderness.com/" target="_blank">CWA Instagram</a> · <a href="https://linktr.ee/mapleoverland" target="_blank">Maple Overland Linktree</a> · <a href="https://www.instagram.com/farout_frhigh_days/" target="_blank">FarOut Instagram</a> · <a href="https://www.tiktok.com/@western.red.adventures" target="_blank">Western Red TikTok</a></li>
+                        <li><strong>SEO & content marketing:</strong> Operators publish blog/guide content (e.g., Maple Overland backcountry inspiration; Squamish Adventure social media spotlights). <a href="https://www.mapleoverland.ca/inspiration-for-your-backcountry-4x4-adventure/" target="_blank">Maple Overland blog</a> · <a href="https://squamishadventure.com/social-media-spotlight/" target="_blank">Squamish Adventure</a></li>
+                        <li><strong>Partnerships & tourism boards:</strong> Listings on local tourism sites and destination partners (Tourism Squamish; Whistler Blackcomb activities). <a href="https://www.exploresquamish.com/business/maple-overland/" target="_blank">Tourism Squamish listing</a> · <a href="https://www.whistlerblackcomb.com/explore-the-resort/activities-and-events/summer-activities/rzr-tours.aspx" target="_blank">Whistler Blackcomb activities</a></li>
+                        <li><strong>Word‑of‑mouth/reviews:</strong> High TripAdvisor review volume (e.g., <strong>~5,800 reviews</strong> for Canadian Wilderness Adventures) drives trust and conversion. <a href="https://www.tripadvisor.com.sg/Attraction_Review-g154948-d1799618-Reviews-Canadian_Wilderness_Adventures-Whistler_British_Columbia.html" target="_blank">TripAdvisor rating</a></li>
+                    </ul>
+                </section>
+
+                <hr>
+
+                <section id="market-sizing">
+                    <h2>4) Market Sizing (Vancouver + BC Adventure Tourism)</h2>
+
+                    <h3>Vancouver visitor volume & spend:</h3>
+                    <ul>
+                        <li><strong>2023:</strong> ~<strong>10.95M</strong> overnight visitors; <strong>C$8.4B</strong> visitor spending.</li>
+                        <li><strong>2024:</strong> ~<strong>11.27M</strong> overnight visitors; <strong>C$9.6B</strong> visitor spending.</li>
+                        <li><a href="https://roadgenius.com/statistics/tourism/canada/vancouver/" target="_blank">Source</a></li>
+                    </ul>
+
+                    <h3>BC adventure tourism market size:</h3>
+                    <ul>
+                        <li><strong>Adventure tourism revenue (2023): ~C$10.7B</strong> in BC.</li>
+                        <li><strong>Outdoor recreation total revenue (2023): ~C$17B</strong>; <strong>GDP contribution: C$4.8B</strong>.</li>
+                        <li><a href="https://www.destinationbc.ca/content/uploads/2025/10/Destination-BC-Sector-Profile-Outdoor-Recreation_FINAL.pdf" target="_blank">Destination BC sector profile</a> · <a href="https://www.biv.com/small-business/bc-outdoor-tourism-sector-worth-at-least-48b-says-report-11482085" target="_blank">BIV summary</a></li>
+                    </ul>
+
+                    <h3>Seasonality patterns:</h3>
+                    <ul>
+                        <li>Most adventure tours operate <strong>spring–fall</strong>, with peak demand in summer (e.g., rafting runs <strong>April–September</strong>). <a href="https://squamish-rafting.com/day-trips/" target="_blank">Squamish Rafting</a></li>
+                    </ul>
+
+                    <h3>Customer demographics (inferred from operator requirements):</h3>
+                    <ul>
+                        <li>Family‑friendly adventures start at <strong>age 5+</strong> (rafting), while <strong>drivers are 19+</strong> for ATV and <strong>21+</strong> for some off‑road tours. <a href="https://squamish-rafting.com/day-trips/" target="_blank">Rafting age</a> · <a href="https://www.canadianwilderness.com/whistler/atv-tours/" target="_blank">ATV driver minimums</a> · <a href="https://vancouveroutdoors.ca/services/vancouver-offroad-atv-tour-4/" target="_blank">Vancouver Outdoor Adventures age requirement</a></li>
+                    </ul>
+                </section>
+
+                <hr>
+
+                <section id="gaps-opportunities">
+                    <h2>5) Gaps & Opportunities</h2>
+
+                    <ol>
+                        <li><strong>Guided overnight off‑road + camping is scarce near Vancouver.</strong> Current direct competitors are either <strong>day‑only</strong> ATV/buggy tours or <strong>self‑drive rentals</strong>; guided multi‑day options are mainly <strong>Vancouver Island‑based</strong>. This leaves room for a <strong>Vancouver‑centric overnight guided off‑road + camping package</strong>. <a href="https://vancouveroutdoors.ca/services/vancouver-offroad-atv-tour-4/" target="_blank">Day tours</a> · <a href="https://faroutwilderness.com/reservations/" target="_blank">Self‑drive rentals</a> · <a href="https://www.westernredadventures.ca/tour-packages" target="_blank">Vancouver Island tours</a></li>
+                        <li><strong>Pricing gap for mid‑range multi‑day experiences.</strong> Day tours run <strong>~$199–$339</strong> per rider/buggy, while rentals are <strong>$175–$305/day</strong>. There is little in‑market pricing for <strong>2‑day guided, all‑inclusive</strong> overland experiences near Vancouver. <a href="https://www.canadianwilderness.com/whistler/atv-tours/" target="_blank">ATV pricing</a> · <a href="https://www.whistlerblackcomb.com/explore-the-resort/activities-and-events/summer-activities/rzr-tours.aspx" target="_blank">Buggy pricing ref</a> · <a href="https://faroutwilderness.com/reservations/" target="_blank">Rental pricing</a></li>
+                        <li><strong>Experience gap:</strong> operators don't combine <strong>hands‑on off‑road driving</strong> with a <strong>curated overnight camp</strong> (gear setup, meals, stargazing, local storytelling). This is a clear differentiation point versus glamping and day‑tour competition. <a href="https://www.hipcamp.com/en-CA/d/canada/british-columbia/vancouver/camping/glamping" target="_blank">Glamping market</a></li>
+                        <li><strong>Underserved segments:</strong> small groups seeking <strong>private, guided, beginner‑friendly off‑road</strong> plus <strong>comfort‑level camping</strong> could be targeted with bundled pricing and transportation from Vancouver.</li>
+                    </ol>
+                </section>
+
+                <hr>
+
+                <section id="appendix">
+                    <h2>Appendix: Additional Direct/Adjacent Players</h2>
+                    <ul>
+                        <li><strong><a href="https://xpedbc.com/" target="_blank">XpedBC (Expedition BC)</a>:</strong> community‑driven overland group (not a commercial tour operator; no published pricing). <a href="https://xpedbc.com/about/" target="_blank">About</a> · <a href="https://xpedbc.com/" target="_blank">Site</a></li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                nav.classList.remove('open');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

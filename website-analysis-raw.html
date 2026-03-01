@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Development Options for the Off-Road + Rooftop Tent Experience</title>
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Outdoorsy color palette */
+            --forest-green: #2d5016;
+            --sage: #7a9b76;
+            --earth-brown: #8b7355;
+            --warm-gray: #4a4a4a;
+            --light-gray: #f5f5f0;
+            --cream: #faf8f3;
+            --accent-orange: #d97941;
+            --text-dark: #2a2a2a;
+            --text-light: #666;
+            --border-color: #ddd;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--cream);
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--sage) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        header .meta {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 15px;
+        }
+
+        /* ===== NAVIGATION / TOC ===== */
+        nav {
+            position: sticky;
+            top: 20px;
+            min-width: 260px;
+            max-width: 280px;
+            height: fit-content;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        nav h2 {
+            font-size: 1rem;
+            color: var(--forest-green);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-bottom: 8px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--forest-green);
+            font-weight: 600;
+        }
+
+        /* Mobile: hamburger menu */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--forest-green);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            flex: 1;
+            max-width: 800px;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--forest-green);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--sage);
+            padding-bottom: 10px;
+            margin-top: 2.5em;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--earth-brown);
+        }
+
+        h4 {
+            font-size: 1.15rem;
+        }
+
+        p {
+            margin-bottom: 1.2em;
+        }
+
+        strong {
+            color: var(--forest-green);
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1.2em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 2.5em 0;
+        }
+
+        /* ===== CALLOUT BOXES ===== */
+        .callout {
+            background: var(--light-gray);
+            border-left: 4px solid var(--accent-orange);
+            padding: 20px;
+            margin: 1.5em 0;
+            border-radius: 4px;
+        }
+
+        .callout h4,
+        .callout h3 {
+            margin-top: 0;
+            color: var(--accent-orange);
+        }
+
+        .callout.key-finding {
+            border-left-color: var(--forest-green);
+        }
+
+        .callout.key-finding h4,
+        .callout.key-finding h3 {
+            color: var(--forest-green);
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5em 0;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        tr:hover {
+            background: #f0ede5;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--forest-green);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--sage);
+        }
+
+        /* ===== RESPONSIVE: TABLET ===== */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            nav {
+                position: relative;
+                top: 0;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            main {
+                padding: 30px;
+            }
+        }
+
+        /* ===== RESPONSIVE: MOBILE ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                overflow-y: auto;
+                transition: right 0.3s;
+                z-index: 999;
+                border-radius: 0;
+                padding: 80px 20px 20px 20px;
+            }
+
+            nav.open {
+                right: 0;
+            }
+
+            table {
+                min-width: 500px;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .menu-toggle,
+            .back-to-top,
+            nav {
+                display: none;
+            }
+
+            main {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            h2 {
+                page-break-before: always;
+            }
+
+            h2:first-of-type {
+                page-break-before: avoid;
+            }
+
+            .callout,
+            table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    <header>
+        <div class="container">
+            <h1>Website Development Options for the Off-Road + Rooftop Tent Experience</h1>
+            <div class="subtitle">Technical & Platform Analysis</div>
+            <div class="meta">
+                <strong>Prepared by:</strong> Kaylee, Tech Analyst
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <nav id="toc">
+                <h2>Contents</h2>
+                <ul>
+                    <li><a href="#build-from-scratch">1. Build-From-Scratch Analysis</a></li>
+                    <li><a href="#platform-comparison">2. Off-the-Shelf Platform Comparison</a></li>
+                    <li><a href="#booking-systems">3. Booking System Analysis</a></li>
+                    <li><a href="#payment-processing">4. Payment Processing & Booking Policy</a></li>
+                    <li><a href="#essential-features">5. Essential Website Features</a></li>
+                    <li><a href="#cost-comparison">6. Cost Comparison Table</a></li>
+                    <li><a href="#recommendation">7. Recommendation & Phased Approach</a></li>
+                </ul>
+            </nav>
+
+            <main>
+                <section id="build-from-scratch">
+                    <h2>1. Build-From-Scratch Analysis</h2>
+                    
+                    <h3>Recommended Tech Stack</h3>
+                    <ul>
+                        <li><strong>Frontend:</strong> Next.js or Remix with React, TypeScript, Tailwind CSS, and a component kit (e.g., Radix + Framer Motion) for highly branded storytelling pages.</li>
+                        <li><strong>Backend:</strong> Node.js (NestJS) or a lightweight serverless API (AWS Lambda / Vercel Functions) to handle booking logic, waivers, and integrations with Stripe/Square.</li>
+                        <li><strong>CMS + Content:</strong> Headless CMS such as Sanity or Contentful so non-technical teammates can update itineraries, packing lists, and blog content without redeploying code.</li>
+                        <li><strong>Infrastructure:</strong> Vercel or Netlify for hosting + CI/CD, Cloudflare for caching/edge rules, AWS S3 for media assets, and a managed database (Supabase/Postgres) for bookings/waitlists.</li>
+                    </ul>
+
+                    <h3>Cost & Timeline Estimates (CAD)</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Approach</th>
+                                    <th>Upfront Build</th>
+                                    <th>Timeline</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DIY (owner builds with templates/components)</td>
+                                    <td>$300–$1,000 (domain, premium components, SaaS)</td>
+                                    <td>4–8 weeks of part-time effort</td>
+                                    <td>Lowest cash cost but highest learning curve and maintenance burden.</td>
+                                </tr>
+                                <tr>
+                                    <td>Freelance developer</td>
+                                    <td>$1,500–$5,000 for brochure site; $5,000–$8,000 if booking flows/custom API needed</td>
+                                    <td>2–6 weeks for a small site; 6–10 weeks if custom booking integrations are included</td>
+                                    <td>Rates of $30–$75/hr are common in Canada for independent devs/designers. <a href="https://www.spaceo.ca/blog/website-development-cost/" target="_blank">SpaceO</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Boutique agency</td>
+                                    <td>$5,000–$20,000+ depending on depth of UX, branding, and complex integrations</td>
+                                    <td>6–12+ weeks due to discovery, design, development, QA</td>
+                                    <td>Agencies charge $100–$175/hr and bring specialists (UX, brand, SEO) at higher cost. <a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/" target="_blank">DigitalWebPort</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Pros</h3>
+                    <ul>
+                        <li>Full control over performance, custom booking flows, custom React components to showcase off-road shots, and unique brand storytelling.</li>
+                        <li>Own your stack (no vendor lock-in, data stays in your DB) and avoid escalating SaaS fees once volume grows.</li>
+                        <li>Easier to integrate novel experiences later (e.g., telemetry dashboards, route planners, custom waiver flows).</li>
+                    </ul>
+
+                    <h3>Cons</h3>
+                    <ul>
+                        <li>Requires upfront capital or significant founder time. Build + maintenance + DevOps will compete with running trips.</li>
+                        <li>You must manage security patches, dependency upgrades, uptime, and analytics instrumentation.</li>
+                        <li>Booking, CRM, and marketing tooling must be integrated manually (vs. turn-key tools on Squarespace/Wix).</li>
+                    </ul>
+
+                    <h3>When It Makes Sense</h3>
+                    <ul>
+                        <li>You have validated demand, need advanced workflows (dynamic pricing, real-time fleet availability, complex upsells), or plan to raise capital and scale beyond a regional operator.</li>
+                        <li>You want a premium brand experience (immersive storytelling, hero video, 3D route map) that standard templates cannot deliver.</li>
+                        <li>You have in-house technical talent or a long-term agency partner budgeted for maintenance.</li>
+                    </ul>
+                </section>
+
+                <hr>
+
+                <section id="platform-comparison">
+                    <h2>2. Off-the-Shelf Platform Comparison</h2>
+                    
+                    <h3>Snapshot</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>Monthly Cost (CAD, annual billing)</th>
+                                    <th>Booking Options</th>
+                                    <th>Payments</th>
+                                    <th>Mobile/SEO</th>
+                                    <th>Ease of Updates</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Squarespace</strong></td>
+                                    <td>$30.95 Business / $45 Basic Commerce</td>
+                                    <td>Native Acuity Scheduling ($20–$61 CAD/mo) for real-time booking, group slots, reminders. <a href="https://www.forbes.com/advisor/ca/business/software/squarespace-pricing/" target="_blank">Forbes Advisor CA</a></td>
+                                    <td>Stripe, PayPal via Acuity; taxes + deposits configurable. <a href="https://support.squarespace.com/hc/en-us/articles/360034944391-Acuity-Scheduling-pricing-billing-and-invoices" target="_blank">Squarespace Support</a></td>
+                                    <td>Responsive templates, built-in SEO metadata controls, OpenGraph settings.</td>
+                                    <td>Visual editor, sections, and campaign tools make changes simple for non-devs.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>WordPress.org + Plugins</strong></td>
+                                    <td>Hosting $3–$35+; premium booking plugins $59–$249 USD/year</td>
+                                    <td>WooCommerce Bookings, Travel Tour Booking, WP Travel Engine for capacity, tiered pricing, deposits. <a href="https://woocommerce.com/products/travel-tour-booking/" target="_blank">WooCommerce</a></td>
+                                    <td>Depends on gateway (Stripe, Square, PayPal). Full control over payment mix.</td>
+                                    <td>SEO powerhouse (Yoast/RankMath), mobile responsive themes for adventure tourism. <a href="https://wordpress.org/themes/adventure-tourism/" target="_blank">WordPress Themes</a></td>
+                                    <td>Requires maintenance (updates/backups). Page builders (Elementor, Gutenberg) simplify editing once set up.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wix</strong></td>
+                                    <td>Core $29.77 / Business $39.77 CAD with Wix Bookings included. <a href="https://www.wix.com/plans" target="_blank">Wix Pricing</a></td>
+                                    <td>Built-in Wix Bookings handles classes, group trips, deposits, staff calendars. <a href="https://www.wix.com/website/templates/html/travel-tourism/travel-services" target="_blank">Wix Bookings</a></td>
+                                    <td>Wix Payments, Stripe, PayPal; POS add-ons.</td>
+                                    <td>Strong mobile editor, SEO Wiz for structured data.</td>
+                                    <td>Drag-and-drop editor, AI text assistant, app market add-ons.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Shopify</strong></td>
+                                    <td>Basic $49 CAD/mo ($37 CAD if annual). <a href="https://www.shopify.com/ca/pricing" target="_blank">Shopify Pricing</a></td>
+                                    <td>Booking apps such as Experiences ($9–$129/mo + %), BookThatApp, Sesami for tours with reminders & POS. <a href="https://apps.shopify.com/experiences" target="_blank">Shopify App Store</a></td>
+                                    <td>Shopify Payments (2.8% + $0.30 online, 2.6% POS) or 3rd-party (extra 2%). <a href="https://avada.io/blog/shopify-pricing-canada/" target="_blank">AVADA</a></td>
+                                    <td>Mobile-first themes, robust SEO settings, fast CDN.</td>
+                                    <td>Familiar admin, easy product/experience duplication, but booking UX relies on app.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Webflow</strong></td>
+                                    <td>CMS $23 USD/mo; Ecommerce Standard $29 USD/mo (annual). <a href="https://webflow.com/pricing" target="_blank">Webflow Pricing</a></td>
+                                    <td>Requires embed/integration with booking tools (Calendly, Acuity, Checkfront). No native booking.</td>
+                                    <td>Stripe for ecommerce; 2% fee on Standard until upgrading to Plus ($74 USD/mo) for 0% fee. <a href="https://tech.co/website-builders/webflow-pricing" target="_blank">Tech.co</a></td>
+                                    <td>Pixel-perfect control, fast hosting, CMS for itineraries/blog, clean SEO controls.</td>
+                                    <td>Designer has a learning curve; Editor mode makes copy updates easy once built.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Platform Deep Dives</h3>
+                    <ul>
+                        <li><strong>Squarespace:</strong> Fluid Engine layouts + tourism templates showcase rigs, itineraries, and testimonials fast. Acuity Scheduling (free to $61 CAD/mo) plugs in for group bookings, intake forms, and automated reminders with Stripe/PayPal payments. <a href="https://support.squarespace.com/hc/en-us/articles/360034944391-Acuity-Scheduling-pricing-billing-and-invoices" target="_blank">Squarespace Support</a> Upgrading to Commerce removes the 3% transaction fee on Business plans.</li>
+                        <li><strong>WordPress + Plugins:</strong> Pair managed hosting (SiteGround promo $2.99 CAD/mo, renews $17.99; WP Engine $34 CAD/mo steady) <a href="https://www.siteground.com/wordpress-hosting.htm" target="_blank">SiteGround</a> <a href="https://wpengine.com/ca/plans/" target="_blank">WP Engine</a> with adventure tourism themes (Adventure Tourism, Adventure Tour) that already include galleries, FAQs, and CTA blocks. <a href="https://wordpress.org/themes/adventure-tourism/" target="_blank">WordPress Themes</a> WooCommerce Bookings ($249 USD/yr), Travel Tour Booking ($59 USD/yr), or WpTravelly ($69 USD/yr) add per-person pricing, deposits, and automated emails. <a href="https://woocommerce.com/products/travel-tour-booking/" target="_blank">WooCommerce</a> <a href="https://mage-people.com/product/woocommerce-tour-and-travel-booking-manager-pro/" target="_blank">MagePeople</a></li>
+                        <li><strong>Wix:</strong> Core/Business plans ($29.77–$39.77 CAD/mo) include Wix Bookings for capacity caps, deposits, staff calendars, SMS reminders, and membership packs. <a href="https://www.wix.com/plans" target="_blank">Wix Pricing</a> Huge template marketplace (Adventure Tour Company, Outdoor Rentals) lets you personalize quickly. <a href="https://www.wix.com/website/templates/html/travel-tourism/travel-services" target="_blank">Wix Templates</a></li>
+                        <li><strong>Shopify:</strong> Choose Basic ($49 CAD/mo) and add a booking app (Experiences $9–$129/mo + % or BookThatApp). These apps pump bookings into Shopify orders, support POS check-in, SMS/email reminders, Zapier workflows, and calendar sync. <a href="https://apps.shopify.com/experiences" target="_blank">Shopify App Store</a> Shopify Payments fees apply (2.8% + $0.30 CAD online; 2.6% POS; +2% if you use PayPal externally). <a href="https://avada.io/blog/shopify-pricing-canada/" target="_blank">AVADA</a></li>
+                        <li><strong>Webflow:</strong> CMS ($23 USD/mo) or Ecommerce ($29–$74 USD/mo) plans give total design control, CMS collections for itineraries/blogs, and fast AWS hosting. <a href="https://webflow.com/pricing" target="_blank">Webflow Pricing</a> There's no native booking, so embed Checkfront, FareHarbor, Calendly, or Acuity via HTML/CMS, or connect to Zapier/Make for automation.</li>
+                    </ul>
+
+                    <h3>Integrated vs. Standalone Booking Approaches</h3>
+                    <ul>
+                        <li><strong>Integrated (Squarespace + Acuity, Wix Bookings, Shopify apps, WordPress plugins):</strong> Best when you want everything under one login. Ideal for one-to-two tour offerings because pricing is predictable and setup is wizard-driven. Limitation: if you later need OTA distribution, multi-day manifesting, or wholesale partners, these tools cap out quickly.</li>
+                        <li><strong>Standalone (Checkfront, FareHarbor, Peek Pro, Bookeo, Rezdy):</strong> Purpose-built for tours/activities with robust manifests, reseller networks, reseller accounts, waivers, and channel management. They embed into any site and connect to POS/payment processors. Costs are higher (monthly fee or booking commission), but they future-proof scaling.</li>
+                    </ul>
+                </section>
+
+                <section id="booking-systems">
+                    <h2>3. Booking System Analysis</h2>
+                    
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>System</th>
+                                    <th>Pricing Model</th>
+                                    <th>Features for Off-Road Tours</th>
+                                    <th>Integrations & Fit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Checkfront</strong></td>
+                                    <td>$149/month + 3% online booking fee (pass to guest or absorb). No setup/OTA fees. <a href="https://www.checkfront.com/pricing/" target="_blank">Checkfront</a></td>
+                                    <td>Custom packages, automated waivers, dynamic availability, multi-day inventory, flexible payments, Apple/Google Pay support. Strong automation keeps waivers + reminders tight.</td>
+                                    <td>Embeds on any site, Zapier/Make, deep WordPress plugin, partner APIs. Great long-term option if you outgrow Acuity/Wix because data portability is solid.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FareHarbor</strong></td>
+                                    <td>No subscription; up to ~6% booking fee (usually passed to customer) + ~1.9% + $0.30 processing fee absorbed by operator. <a href="https://www.bokun.io/fareharbor-pricing" target="_blank">Bokun</a></td>
+                                    <td>Extensive OTA distribution, resource management, guide scheduling, waivers, multilingual checkouts.</td>
+                                    <td>Works via embeddable widgets + hosted checkout. Ideal when you want marketing reach and don't mind visible service fees to guests.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Peek Pro</strong></td>
+                                    <td>6–8% per booking + ~2.3% + $0.30 card fee; negotiable but opaque. <a href="https://www.bokun.io/peek-pro-pricing" target="_blank">Peek</a></td>
+                                    <td>Slick mobile UI, resource calendars, upsells, Zapier, text reminders, tipping, kiosk mode.</td>
+                                    <td>Embeds into any site + branded checkout links. Good if aesthetics + upsells matter, but fees are among the highest.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bookeo (Tours & Activities)</strong></td>
+                                    <td>Flat $39.95 / $79.95 / $119.95 USD per month tiers, 30-day trial, optional waivers add-on from $9/mo. <a href="https://www.bookeo.com/tours/pricing/" target="_blank">Bookeo</a></td>
+                                    <td>Up to 60 guides/vehicles, 3,000 bookings/mo, vouchers, packages, recurring trips, SMS reminders.</td>
+                                    <td>Embed widgets, integrates with WordPress, Squarespace (code block), Shopify (app), Zapier. Predictable cost for small operators.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Rezdy</strong></td>
+                                    <td>$49 / $99 / $249 USD per month + 3% booking fee + $1-$0.70 offline booking fee. <a href="https://rezdy.com/pricing/" target="_blank">Rezdy</a></td>
+                                    <td>Channel manager to 40k+ resellers, packages/extras, API/webhooks, advanced reporting, waivers, manifesting.</td>
+                                    <td>Embeds anywhere, syncs with Google Things To Do, OTAs, and payment gateways. Strong choice for scaling + B2B wholesale.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="callout">
+                        <h4>Feature Gaps to Watch:</h4>
+                        <p>Checkfront + Rezdy handle multi-day trips and multi-vehicle inventory best. FareHarbor/Peek help with OTA sales but add customer-visible fees. Bookeo is cost-effective but lighter on automation + reseller channels.</p>
+                    </div>
+                </section>
+
+                <section id="payment-processing">
+                    <h2>4. Payment Processing & Booking Policy Considerations</h2>
+                    
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Processor</th>
+                                    <th>Standard Canadian Fees</th>
+                                    <th>Why/When to use</th>
+                                    <th>Deposit vs Full Payment</th>
+                                    <th>Cancellation & Refund Handling</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Stripe</strong></td>
+                                    <td>2.9% + $0.30 CAD online; +0.8% for international cards; 2.7% + $0.05 in-person; 0.5% extra for keyed transactions. <a href="https://stripe.com/en-ca/pricing" target="_blank">Stripe</a></td>
+                                    <td>Pairs with Squarespace/Acuity, WordPress, Shopify apps, Checkfront, Rezdy. Offers Payment Links, subscriptions, BNPL, and Tap to Pay.</td>
+                                    <td>Acuity, WooCommerce, and Checkfront let you capture deposits (e.g., 30%) and auto-charge balances via Stripe.</td>
+                                    <td>Dashboard supports partial refunds, automated cancellation emails, and dispute workflows (CA$15 fee if customer files a chargeback).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Square</strong></td>
+                                    <td>2.5% tap/chip credit, 0.75% + $0.07 Interac debit, 2.8% + $0.30 online, 3.3% + $0.15 keyed, +1.5% for international cards. <a href="https://squareup.com/ca/en/payments/our-fees" target="_blank">Square</a></td>
+                                    <td>Strong if you want Square POS for merch or on-site add-ons; integrates with Wix (native), Squarespace (via Acuity), and WordPress through plugins.</td>
+                                    <td>Square Online Checkout + Square Appointments support deposits or pay-in-full toggles.</td>
+                                    <td>Offers instant refunds to cards, cancellation automation through Square Appointments, and easy export for GST/HST accounting.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>PayPal</strong></td>
+                                    <td>2.9% + $0.30 CAD domestic commercial; +0.8% (US) or +1% (other countries) cross-border; 3–4% FX spread. <a href="https://www.paypalobjects.com/marketing/ua/pdf/CA/en/ca-en-merchant-fees-15-oct-2024.pdf" target="_blank">PayPal</a></td>
+                                    <td>Needed if your audience prefers PayPal or buys from overseas; embeds on Squarespace, Shopify, WordPress, Wix.</td>
+                                    <td>PayPal buttons can request deposits but management is clunkier vs. Stripe/Square.</td>
+                                    <td>Partial refunds cost nothing; instant bank withdrawals cost 1.75%. Make sure cancellation windows are spelled out to avoid disputes.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Policy Tips:</h3>
+                    <ul>
+                        <li>Use deposits (25–50%) to secure bookings while keeping flexibility for weather; capture balances 7 days before departure via Stripe/Square automation.</li>
+                        <li>Publish cancellation tiers (e.g., full refund >14 days, 50% refund 7–13 days, no refund <7 days) and sync them with booking software so refunds trigger automatically.</li>
+                        <li>Automate reminder + prep emails (what to pack, meeting point GPS, waiver link) 48 hours in advance.</li>
+                    </ul>
+                </section>
+
+                <section id="essential-features">
+                    <h2>5. Essential Website Features for This Business</h2>
+                    
+                    <ol>
+                        <li><strong>Hero media + gallery</strong> – High-resolution shots of Toyota rigs, rooftop tents, night skies, recovery gear, and happy guests to build trust.</li>
+                        <li><strong>Availability calendar + booking CTA</strong> – Show open weekends/months with live inventory embedded above the fold; allow group selection up to five seats.</li>
+                        <li><strong>Experience breakdowns</strong> – Detail itinerary, driving difficulty, camp amenities, menu, what's included / optional add-ons, and min/max skill level.</li>
+                        <li><strong>Safety & prep section</strong> – Gear checklist, licensing requirements, waivers, insurance coverage, weather considerations, and guide credentials.</li>
+                        <li><strong>Testimonials & social proof</strong> – Embed Google/TripAdvisor reviews, Instagram reels, and UGC featuring the vehicles.</li>
+                        <li><strong>FAQ + policies</strong> – Answer top concerns (bathrooms, weather cancellations, dietary needs, alcohol, wildlife) and list cancellation/deposit rules.</li>
+                        <li><strong>Blog / field notes</strong> – Publish trip recaps, trail spotlights, maintenance tips, and seasonal planning to drive SEO for "off-road tours Vancouver," etc.</li>
+                        <li><strong>Contact + inquiry form</strong> – Offer WhatsApp/text CTA for quick questions plus email form with dropdown for private group requests.</li>
+                        <li><strong>Mobile-first UX</strong> – Optimize for social traffic (Instagram, TikTok) with sticky book button and quick-dial link.</li>
+                    </ol>
+                </section>
+
+                <section id="cost-comparison">
+                    <h2>6. Cost Comparison Table (CAD unless noted)</h2>
+                    
+                    <p>Assumptions: Prices use annual billing when available and USD amounts converted at 1 USD ≈ 1.35 CAD for comparison. Payment processing fees are per-transaction (variable) but noted for awareness.</p>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Year 1 Fixed Cost</th>
+                                    <th>Year 2+ Fixed Cost</th>
+                                    <th>Booking Stack</th>
+                                    <th>Payment Fees</th>
+                                    <th>Owner Time</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Custom DIY (Next.js + headless)</strong></td>
+                                    <td>~$600 (domain, Vercel pro, headless CMS seats, design assets) + sweat equity</td>
+                                    <td>~$600</td>
+                                    <td>Stripe or Square via custom integration</td>
+                                    <td>Stripe 2.9% + $0.30</td>
+                                    <td>120–160 hrs build + maintenance</td>
+                                    <td>Highest control, but opportunity cost is high while business is pre-launch.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Custom via Freelancer</strong></td>
+                                    <td>$3,000–$8,000 upfront + ~$600 hosting/tooling</td>
+                                    <td>$600–$1,200 maintenance retainers</td>
+                                    <td>Same as above</td>
+                                    <td>Stripe/Square negotiated</td>
+                                    <td>20–30 hrs for approvals/content</td>
+                                    <td>Pay once for bespoke UX; budget for ongoing bug fixes + updates. <a href="https://www.spaceo.ca/blog/website-development-cost/" target="_blank">SpaceO</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Custom via Agency</strong></td>
+                                    <td>$10,000–$25,000+ including strategy + content + QA</td>
+                                    <td>$2,000–$5,000/yr support</td>
+                                    <td>Enterprise booking (Checkfront/Rezdy) layered on</td>
+                                    <td>Stripe/Square enterprise rates</td>
+                                    <td>30–50 hrs stakeholder time</td>
+                                    <td>Best for funded phase or national expansion. <a href="https://digitalwebport.com/best-web-design-companies-toronto-vs-freelance-designers-cost-comparison/" target="_blank">DigitalWebPort</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Squarespace Business + Acuity Growing</strong></td>
+                                    <td>$30.95×12 + ~$36×12 ≈ <strong>$804</strong></td>
+                                    <td>Same</td>
+                                    <td>Acuity Scheduling</td>
+                                    <td>Stripe/PayPal 2.9% + $0.30</td>
+                                    <td>20–30 hrs setup & copy</td>
+                                    <td>Fastest to market, includes email + analytics. Transaction fee 3% on Business unless you upgrade to Commerce plan.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Squarespace Commerce Basic + Acuity Growing</strong></td>
+                                    <td>($45×12) + ($36×12) ≈ <strong>$972</strong></td>
+                                    <td>Same</td>
+                                    <td>Acuity Scheduling</td>
+                                    <td>Stripe/PayPal</td>
+                                    <td>20–30 hrs</td>
+                                    <td>Removes 3% transaction fee, worth it once bookings ramp.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>WordPress (SiteGround year 1) + WooCommerce Bookings</strong></td>
+                                    <td>Hosting promo ($2.99×12 ≈ $36) + plugin $249 USD (~$336 CAD) + premium theme ~$100 CAD ⇒ <strong>~$472</strong></td>
+                                    <td>Renewal hosting $216 + plugin renewal $336 + theme renewals (~$100) ⇒ <strong>~$652</strong></td>
+                                    <td>WooCommerce Bookings / Travel Tour Booking</td>
+                                    <td>Stripe/Square/PayPal</td>
+                                    <td>40–60 hrs setup + plugin tuning</td>
+                                    <td>Low cash but higher time. Switch to WP Engine ($34/mo) for better uptime once traffic grows. <a href="https://www.siteground.com/wordpress-hosting.htm" target="_blank">SiteGround</a> <a href="https://woocommerce.com/products/travel-tour-booking/" target="_blank">WooCommerce</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wix Business</strong></td>
+                                    <td>$39.77×12 ≈ <strong>$477</strong></td>
+                                    <td>Same</td>
+                                    <td>Wix Bookings (included)</td>
+                                    <td>Wix Payments / Stripe 2.9% + $0.30</td>
+                                    <td>15–20 hrs</td>
+                                    <td>No hidden booking fees; app market add-ons optional. <a href="https://www.wix.com/plans" target="_blank">Wix Pricing</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Shopify Basic + Experiences app</strong></td>
+                                    <td>$49×12 = <strong>$588</strong> + Experiences Premium $39×12 ≈ $468 + rev share (0.75%–1%)</td>
+                                    <td>Same</td>
+                                    <td>Experiences / BookThatApp / Sesami</td>
+                                    <td>Shopify Payments 2.8% + $0.30 (+2% if external gateway)</td>
+                                    <td>25–35 hrs</td>
+                                    <td>Factor extra % fee on every booking. Strong path if you also sell merch.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Webflow CMS + Checkfront</strong></td>
+                                    <td>($23 USD×12 ≈ $372 CAD) + Checkfront ($149×12 = $1,788) + 3% booking fee</td>
+                                    <td>Same</td>
+                                    <td>Checkfront embedded</td>
+                                    <td>Stripe/Square via Checkfront</td>
+                                    <td>40–60 hrs (designer + setup)</td>
+                                    <td>Premium look + enterprise-grade booking. Fees higher but scalable.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bookeo + existing site</strong></td>
+                                    <td>Bookeo Standard $39.95 USD/mo (~$54 CAD) ⇒ <strong>$648</strong></td>
+                                    <td>Same</td>
+                                    <td>Bookeo embed</td>
+                                    <td>Stripe/Square/PayPal</td>
+                                    <td>10–15 hrs to embed</td>
+                                    <td>Predictable SaaS; pair with Squarespace/Wix if you need more automation than native booking.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Rezdy + existing site</strong></td>
+                                    <td>$49 USD/mo (~$66 CAD) + 3% fee + offline per-booking fee</td>
+                                    <td>Same</td>
+                                    <td>Rezdy embed</td>
+                                    <td>Stripe/Square etc.</td>
+                                    <td>20–30 hrs to configure</td>
+                                    <td>Adds OTA distribution + reseller network when you're ready for scale.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p><em>Time cost is estimated owner effort for copy, media, and QA; it excludes photography/video shoots.</em></p>
+                </section>
+
+                <section id="recommendation">
+                    <h2>7. Recommendation & Phased Approach</h2>
+                    
+                    <div class="callout key-finding">
+                        <h3>Recommendation:</h3>
+                        <p>Launch on <strong>Squarespace Commerce Basic + Acuity Growing</strong> now, then graduate to <strong>WordPress or Webflow + Checkfront/Rezdy</strong> once demand and partnerships justify higher investment.</p>
+                    </div>
+
+                    <h3>Why Squarespace + Acuity first?</h3>
+                    <ul>
+                        <li>Fastest build: you can repurpose brand photography, drop in itinerary blocks, and enable bookings without code.</li>
+                        <li>Canadian-friendly payments via Stripe/PayPal with CAD pricing and tax collection.</li>
+                        <li>Acuity handles up to five guests per outing, automated reminders, waiver/intake forms, coupon codes, packages, and deposits—all critical for weather-dependent tours.</li>
+                        <li>Built-in email campaigns + blog + analytics keep marketing simple while you validate pricing and operations.</li>
+                    </ul>
+
+                    <h3>Phase Plan</h3>
+                    <ol>
+                        <li><strong>Phase 0 (Week 1–2)</strong> – Gather assets, finalize itinerary copy, choose Squarespace template, configure Commerce Basic plan, hook up Stripe + PayPal, and embed Acuity offerings (public + private group). Publish essential pages (Home, Trips, About/Guides, Safety, FAQ, Blog intro, Contact). Enable Google Analytics + Search Console.</li>
+                        <li><strong>Phase 1 (Month 1–2)</strong> – Add blog posts (trail spotlights), publish a packing checklist download, integrate social proof (Google reviews, Instagram feed), and launch paid ads / partnerships. Use Acuity packages for multi-day trips and enable 30% deposits with balance auto-charge.</li>
+                        <li><strong>Phase 2 (Month 3–6)</strong> – Introduce Bookeo or Checkfront if you need richer manifests, reseller logins, or OTA distribution. Embed the widget on Squarespace or build a lightweight WordPress landing hub while keeping Squarespace live for content.</li>
+                        <li><strong>Phase 3 (Year 2)</strong> – Once bookings exceed ~400/year or you expand to multi-vehicle fleets, migrate to a custom WordPress or Webflow build backed by Checkfront/Rezdy. Use headless CMS content migration tools or Webflow's CSV importer to bring over itineraries/blog posts. Keep Acuity as a waitlist/consultation scheduler even after adopting a dedicated booking engine.</li>
+                    </ol>
+
+                    <h3>Migration Path Considerations</h3>
+                    <ul>
+                        <li>Maintain all copy + assets in a shared CMS (Notion, headless) so moving platforms is mostly a front-end rebuild.</li>
+                        <li>Choose a booking system (Checkfront or Rezdy) that offers embed codes + API; you can swap website platforms without touching customer history.</li>
+                        <li>Continue using Stripe or Square across platforms to avoid re-onboarding and to keep historical payout data intact.</li>
+                        <li>When moving to WordPress/Webflow, start with a subdomain pilot (e.g., beta.offroadglamp.ca) to ensure SEO + tracking survive cutover.</li>
+                    </ul>
+
+                    <h3>When to Reconsider</h3>
+                    <ul>
+                        <li>If you plan to wholesale through OTAs quickly (e.g., TripAdvisor, GetYourGuide), consider going straight to WordPress/Webflow + Rezdy/Checkfront so you don't rebuild twice.</li>
+                        <li>If merchandise/gear becomes a major revenue stream, Shopify + Experiences might be better despite stacking app fees because its inventory + POS story is strongest.</li>
+                    </ul>
+
+                    <p>With this path you get a branded, mobile-first, SEO-friendly site live in weeks, validate packages/pricing, and retain the option to graduate to a more complex stack once revenue supports it.</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                nav.classList.remove('open');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Active nav link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

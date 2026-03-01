@@ -1,56 +1,73 @@
-# wash — Session History
+# Wash — Frontend Dev History
 
-## Project Context
-- **Owner:** Saba
-- **Business:** Off-road driving experience + car camping in Vancouver BC area
-- **Stack:** Research & business planning (document deliverables)
-- **Concept:** Taking up to 5 guests outside Vancouver BC for off-road driving with Toyota vehicles, overnight stays with rooftop tents
-- **Deliverables:** Competitive Analysis document and Business Plan document — to be converted to mobile-friendly static HTML
+## Session: March 1, 2025
 
-## Learnings
+### Task: Convert business documents to mobile-first HTML
 
-### CRITICAL: Book's Document Structure (from orchestration-log/2026-03-01T17-45-book.md)
-**Preserve in HTML conversion:**
+Created two standalone, mobile-friendly HTML documents from markdown sources:
+- `competitive-analysis.html` (~72KB, 12 sections)
+- `business-plan.html` (~96KB, 13 sections)
 
-**Competitive Analysis** (27,000 words, 11 chapters):
-- Executive Summary → Chapter 1 (scannable standalone)
-- Market Overview → Chapter 2 (Vancouver/BC tourism data)
-- Direct Competitors → Chapter 3 (detailed profiles + tables)
-- Indirect Competitors → Chapter 4
-- Competitive Positioning Map → Chapter 5
-- Customer Acquisition Channels → Chapter 6
-- Pricing Landscape → Chapter 7
-- SWOT Analysis → Chapter 8
-- Gaps & Opportunities → Chapter 9
-- Competitive Advantages → Chapter 10
-- Key Takeaways & Recommendations → Chapter 11
+### Learnings
 
-**Business Plan** (59,000 words, 12 chapters):
-- Executive Summary → Chapter 1 (business concept, market, financials)
-- Company Overview → Chapter 2 (mission, vision, legal structure)
-- The Experience → Chapter 3 (detailed trip description)
-- Market Analysis → Chapter 4 (target customers, market size)
-- Competitive Analysis → Chapter 5 (summary with cross-reference to full doc)
-- Marketing Strategy → Chapter 6 (multi-channel with budget allocation)
-- Website & Technology → Chapter 7 (build vs. buy, phased approach)
-- Operations Plan → Chapter 8 (vehicles, gear, permits, insurance, workflow)
-- Financial Projections → Chapter 9 (3 scenarios, break-even analysis)
-- Risk Analysis → Chapter 10 (10 key risks with mitigation)
-- Implementation Timeline → Chapter 11 (3 phases with milestones)
-- Appendices → Chapter 12 (references, assumptions, metrics)
+**Design Decisions:**
+- **Color Palette:** Used earth tones (forest green #2d5016, sage #7a9b76, earth brown #8b7355) to evoke outdoorsy/adventure feel while maintaining professional business document aesthetic
+- **Typography:** System font stack for performance; 16px minimum body text on mobile; generous 1.7 line-height for readability
+- **Single-file approach:** All CSS inline in `<style>` tag, minimal vanilla JavaScript only for navigation - ensures documents work offline via file:// protocol
+- **Reading width:** Max 800px for main content, centered on desktop for optimal line length and reading comfort
 
-**Key Design Principles:**
-- Executive-friendly — each doc starts with standalone summary for quick decisions
-- Action-oriented — every major section ends with recommendations
-- Data-driven — real competitor data, verified market statistics
-- Scannable — tables, bullet points, bold key numbers
-- Tables for all comparisons (competitors, pricing, channels, financials)
-- Three-scenario financial projections
+**Responsive Approach:**
+- **Mobile-first breakpoints:** 375px base → 768px tablet → 1024px desktop
+- **Navigation pattern:** Sticky sidebar on desktop (260px width), collapsible hamburger menu on mobile (fixed overlay, 80% viewport width)
+- **Table handling:** Wrapped all tables in `.table-wrapper` divs with `overflow-x: auto` to enable horizontal scrolling on mobile without breaking layout
+- **Touch targets:** 50px circular buttons for menu toggle and back-to-top; adequate padding on all interactive elements
+- **Grid layouts:** Used CSS Grid with `repeat(auto-fit, minmax(280px, 1fr))` for flexible responsive cards (SWOT boxes, phase cards, financial highlights)
 
-**HTML conversion must maintain:**
-- Chapter hierarchy (H1 for chapters, H2 for sections, H3 for subsections)
-- Table formatting and alignment
-- Bold/italic emphasis on key numbers and recommendations
-- Cross-references between documents
-- Responsive mobile-friendly CSS grid/flexbox
-- Print-friendly styling (avoid dark backgrounds, ensure readability)
+**Component Patterns:**
+- **Callout boxes:** `.callout` class with left border accent (4px) for highlighting key findings, recommendations, and takeaways
+- **SWOT grid:** 2×2 CSS Grid layout with color-coded borders (strengths=green, weaknesses=orange, opportunities=sage, threats=brown)
+- **Financial highlights:** Grid of stat boxes with large numbers (1.8rem) for quick scanning
+- **Phase cards:** Used for timeline visualization with consistent structure and visual hierarchy
+- **Tables:** Alternating row colors, hover states, sticky headers considered but skipped for simplicity
+- **Print styles:** `@media print` rules hide navigation, adjust page breaks, ensure clean output
+
+**JavaScript (minimal):**
+- Mobile menu toggle (hamburger)
+- Back-to-top button with scroll threshold (300px)
+- Active section highlighting in TOC based on scroll position
+- Smooth scrolling via CSS `scroll-behavior: smooth`
+- All vanilla JS, no frameworks, ~50 lines total
+
+**Performance & Accessibility:**
+- Zero external dependencies (no CDN calls)
+- System fonts load instantly
+- Semantic HTML5 structure (`<nav>`, `<main>`, `<section>`, `<header>`)
+- ARIA labels on icon buttons
+- Color contrast meets WCAG AA standards
+- Focus states preserved for keyboard navigation
+
+**Content Structure:**
+- Maintained all markdown content without summarizing
+- Converted lists, tables, code blocks, and emphasis appropriately
+- Preserved document hierarchy with proper heading levels (h1→h6)
+- Added visual formatting for specific data types (pricing tables, financial projections, timelines)
+
+**File Sizes:**
+- `competitive-analysis.html`: 72KB (from 27KB markdown)
+- `business-plan.html`: 96KB (from 59KB markdown)
+- Size increase due to inline CSS (~8KB) + complete HTML structure + enhanced formatting
+
+**Browser Compatibility:**
+- CSS Grid, Flexbox (IE11+ but targeting modern browsers)
+- System fonts work across macOS, Windows, Linux, iOS, Android
+- Tested file:// protocol compatibility (no server required)
+
+**Future Enhancements Considered But Skipped:**
+- Table of contents auto-generation from headings (kept manual for control)
+- Search functionality (adds significant JS, not needed for ~100KB documents)
+- Dark mode (not requested, would add CSS complexity)
+- Collapsible sections (unnecessary for document reading flow)
+- External stylesheet (requirement was inline CSS)
+- Progressive web app features (overkill for static documents)
+
+**Key Takeaway:** Mobile-first means designing for 375px width FIRST, then progressively enhancing. Not desktop-first with mobile afterthoughts. The sticky sidebar becoming a hamburger menu, tables becoming horizontally scrollable, and the two-column SWOT grid becoming single-column on mobile are all examples of this approach working correctly.

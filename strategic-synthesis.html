@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Synthesis: Off-Road Glamping Experience — Vancouver, BC</title>
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Outdoorsy color palette */
+            --forest-green: #2d5016;
+            --sage: #7a9b76;
+            --earth-brown: #8b7355;
+            --warm-gray: #4a4a4a;
+            --light-gray: #f5f5f0;
+            --cream: #faf8f3;
+            --accent-orange: #d97941;
+            --text-dark: #2a2a2a;
+            --text-light: #666;
+            --border-color: #ddd;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--cream);
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--sage) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        header .meta {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 15px;
+        }
+
+        /* ===== NAVIGATION / TOC ===== */
+        nav {
+            position: sticky;
+            top: 20px;
+            min-width: 260px;
+            max-width: 280px;
+            height: fit-content;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        nav h2 {
+            font-size: 1rem;
+            color: var(--forest-green);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-bottom: 8px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--forest-green);
+            font-weight: 600;
+        }
+
+        /* Mobile: hamburger menu */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--forest-green);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            flex: 1;
+            max-width: 800px;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--forest-green);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--sage);
+            padding-bottom: 10px;
+            margin-top: 2.5em;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--earth-brown);
+        }
+
+        h4 {
+            font-size: 1.15rem;
+        }
+
+        p {
+            margin-bottom: 1.2em;
+        }
+
+        strong {
+            color: var(--forest-green);
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1.2em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 2.5em 0;
+        }
+
+        /* ===== CALLOUT BOXES ===== */
+        .callout {
+            background: var(--light-gray);
+            border-left: 4px solid var(--accent-orange);
+            padding: 20px;
+            margin: 1.5em 0;
+            border-radius: 4px;
+        }
+
+        .callout h4,
+        .callout h3 {
+            margin-top: 0;
+            color: var(--accent-orange);
+        }
+
+        .callout.key-finding {
+            border-left-color: var(--forest-green);
+        }
+
+        .callout.key-finding h4,
+        .callout.key-finding h3 {
+            color: var(--forest-green);
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5em 0;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        tr:hover {
+            background: #f0ede5;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--forest-green);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--sage);
+        }
+
+        /* ===== RESPONSIVE: TABLET ===== */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            nav {
+                position: relative;
+                top: 0;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            main {
+                padding: 30px;
+            }
+        }
+
+        /* ===== RESPONSIVE: MOBILE ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                overflow-y: auto;
+                transition: right 0.3s;
+                z-index: 999;
+                border-radius: 0;
+                padding: 80px 20px 20px 20px;
+            }
+
+            nav.open {
+                right: 0;
+            }
+
+            table {
+                min-width: 500px;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .menu-toggle,
+            .back-to-top,
+            nav {
+                display: none;
+            }
+
+            main {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            h2 {
+                page-break-before: always;
+            }
+
+            h2:first-of-type {
+                page-break-before: avoid;
+            }
+
+            .callout,
+            table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    <header>
+        <div class="container">
+            <h1>Strategic Synthesis: Off-Road Glamping Experience</h1>
+            <div class="subtitle">Vancouver, British Columbia</div>
+            <div class="meta">
+                <strong>Prepared by:</strong> Mal, Lead Strategist<br>
+                <strong>Sources:</strong> Competitive Analysis (Zoe), Marketing Strategy (Inara), Website/Tech Analysis (Kaylee)
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <nav id="toc">
+                <h2>Contents</h2>
+                <ul>
+                    <li><a href="#executive-summary">1. Executive Summary</a></li>
+                    <li><a href="#market-position">2. Market Position Assessment</a></li>
+                    <li><a href="#go-to-market">3. Go-to-Market Strategy</a></li>
+                    <li><a href="#technology">4. Technology Recommendation</a></li>
+                    <li><a href="#pricing">5. Pricing Strategy</a></li>
+                    <li><a href="#risk-assessment">6. Risk Assessment</a></li>
+                    <li><a href="#path-forward">7. Recommended Path Forward</a></li>
+                </ul>
+            </nav>
+
+            <main>
+                <section id="executive-summary">
+                    <h2>1. Executive Summary</h2>
+                    
+                    <p>There is a clear gap in the Vancouver adventure tourism market: <strong>nobody is combining guided off-road driving with curated overnight camping as a single bookable experience.</strong> Existing operators are either day-trip ATV tours ($199–$339/person) or self-drive overlanding rentals ($175–$305/night) — nobody is doing the full-service, guided, overnight off-road package within striking distance of Vancouver. This is a premium experience that can command $350–$500/person for a 2-day trip, targeting small groups of 2–5 guests who want adventure without the hassle of owning gear or planning routes. The market is real: BC adventure tourism generates $10.7B annually, Vancouver sees 11M+ overnight visitors, and the "experience economy" trend is strongly in your favor.</p>
+                </section>
+
+                <hr>
+
+                <section id="market-position">
+                    <h2>2. Market Position Assessment</h2>
+                    
+                    <h3>Where You Fit</h3>
+                    <p>You occupy <strong>white space</strong> in the competitive landscape. The market breaks into three buckets, and you sit between all of them:</p>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Segment</th>
+                                    <th>Who's There</th>
+                                    <th>What They're Missing</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Day-trip ATV/buggy tours</td>
+                                    <td>Canadian Wilderness Adventures, Squamish Adventure, Vancouver Outdoor Adventures</td>
+                                    <td>No overnight. No "real" driving — it's a theme park ride.</td>
+                                </tr>
+                                <tr>
+                                    <td>Self-drive overland rentals</td>
+                                    <td><a href="https://mapleoverland.com" target="_blank">Maple Overland</a> ($225/night), <a href="https://faroutwilderness.com" target="_blank">FarOut Wilderness</a> ($175–$305/day)</td>
+                                    <td>No guide. Customer does all the work. Intimidating for beginners.</td>
+                                </tr>
+                                <tr>
+                                    <td>Multi-day guided tours</td>
+                                    <td>Western Red Adventures (Vancouver Island only)</td>
+                                    <td>Wrong geography — they're on the Island, not near Vancouver.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Unique Value Proposition</h3>
+                    <div class="callout key-finding">
+                        <h4>"The only guided off-road driving + overnight camping experience within 2 hours of Vancouver."</h4>
+                    </div>
+
+                    <p>This is not an ATV tour. This is not a rental. You provide: real off-road driving in Toyota vehicles → guided by an experienced driver → to a curated campsite → with rooftop tents, meals, and gear handled. The guest shows up, drives, camps, and goes home with stories. Zero logistics on their end.</p>
+
+                    <h3>Competitive Advantages</h3>
+                    <ol>
+                        <li><strong>First-mover in a defined niche</strong> — nobody else is doing this exact thing near Vancouver.</li>
+                        <li><strong>Low capital barrier</strong> — Toyota vehicles + rooftop tents vs. building a lodge or buying ATVs.</li>
+                        <li><strong>High perceived value</strong> — combines two premium experiences (off-road driving + glamping) into one.</li>
+                        <li><strong>Small group intimacy</strong> — max 5 guests = premium feel, strong word-of-mouth.</li>
+                        <li><strong>Year-round potential</strong> — winter off-roading + snow camping is a real product (with right positioning).</li>
+                    </ol>
+
+                    <h3>Competitive Disadvantages</h3>
+                    <ol>
+                        <li><strong>No brand recognition</strong> — starting from zero in a market where Canadian Wilderness Adventures has 5,800 reviews.</li>
+                        <li><strong>Weather dependency</strong> — BC weather can wreck trips, and you can't control it.</li>
+                        <li><strong>Capacity constraint</strong> — max 5 guests/trip caps revenue per outing.</li>
+                        <li><strong>Vehicle maintenance costs</strong> — off-road driving is hard on vehicles. Budget accordingly.</li>
+                    </ol>
+
+                    <h3>Recommended Positioning</h3>
+                    <p><strong>Premium adventure experience, not budget tour.</strong> Position above the day-trip ATV crowd and above self-drive rentals. You are selling an <em>experience</em>, not a rental and not a ride. Closest comparable: high-end guided fishing or heli-skiing — small groups, expert guides, all-inclusive, premium pricing.</p>
+                </section>
+
+                <hr>
+
+                <section id="go-to-market">
+                    <h2>3. Go-to-Market Strategy</h2>
+                    
+                    <h3>Top 3 Customer Acquisition Channels</h3>
+
+                    <h4>1. Instagram (Organic + Reels) — Start here, day one.</h4>
+                    <p>This product is inherently visual. Off-road footage, rooftop tent sunrises, campfire dinners in BC backcountry — this content sells itself. 70% of effort on Reels for reach, 20% on feed for depth, 10% on Stories for trust. Post 3–4 Reels/week minimum. This is your storefront before you have a storefront.</p>
+
+                    <h4>2. Google Business Profile + Local SEO — The trust foundation.</h4>
+                    <p>Free, immediate, and critical. Claim GBP, get your first 10+ five-star reviews from soft-launch guests, and own "off road tours Vancouver" in local search. This is the lowest-cost, highest-trust channel available.</p>
+
+                    <h4>3. Micro-influencer seeding — Trade trips for content.</h4>
+                    <p>Invite 3–5 local micro-influencers (5K–50K followers) on midweek trips in exchange for content. Your cost is fuel + food. Their content becomes your social proof and reaches their niche outdoor audience. This is how you build credibility before you have 100 reviews.</p>
+
+                    <h3>Launch vs. Growth Phase</h3>
+
+                    <h4>Launch (Months 1–6): Awareness & proof.</h4>
+                    <ul>
+                        <li>Spend 15–20% of projected revenue on marketing.</li>
+                        <li>40% on content production (you need professional photos/video — this is non-negotiable).</li>
+                        <li>30% on social ads to jumpstart reach.</li>
+                        <li>20% on influencer/barter trips.</li>
+                        <li>10% on tools (booking platform, email, Canva).</li>
+                    </ul>
+
+                    <h4>Growth (Months 6–18): Efficiency & scale.</h4>
+                    <ul>
+                        <li>Drop to 10–12% of revenue.</li>
+                        <li>50% on paid ads (scale what's working).</li>
+                        <li>25% on SEO/content (blog posts compound over time).</li>
+                        <li>15% on partnership commissions (hotels, concierges).</li>
+                        <li>10% on email/retention (repeat bookings, referrals).</li>
+                    </ul>
+
+                    <h3>Budget Allocation (Launch Phase)</h3>
+                    <p>Assuming $3,000–$5,000/month marketing budget at launch:</p>
+                    <ul>
+                        <li>Content production: $1,200–$2,000</li>
+                        <li>Social/Google ads: $900–$1,500</li>
+                        <li>Influencer trips: $600–$1,000 (mostly cost-of-goods)</li>
+                        <li>Tools & software: $300–$500</li>
+                    </ul>
+
+                    <h3>Key Marketing Risks</h3>
+                    <ol>
+                        <li><strong>Content quality risk</strong> — Bad photos = no bookings. Invest in a shooter for the first 3 trips minimum.</li>
+                        <li><strong>Review velocity risk</strong> — You need reviews fast. If first guests have a bad experience, it's very hard to recover.</li>
+                        <li><strong>Seasonality risk</strong> — Marketing spend in winter may not convert if you don't have a compelling winter product.</li>
+                        <li><strong>Platform dependency</strong> — Instagram algorithm changes could tank organic reach overnight. Diversify to SEO early.</li>
+                    </ol>
+                </section>
+
+                <hr>
+
+                <section id="technology">
+                    <h2>4. Technology Recommendation</h2>
+                    
+                    <h3>Verdict: Buy first, build later.</h3>
+
+                    <div class="callout key-finding">
+                        <h4>Launch on Squarespace Commerce Basic ($45/mo) + Acuity Scheduling Growing ($36/mo) = ~$972 CAD/year.</h4>
+                    </div>
+
+                    <p>Rationale: You are pre-revenue. Every hour spent building a custom website is an hour not spent running trips and building your brand. Squarespace + Acuity gets you live in 2 weeks with:</p>
+                    <ul>
+                        <li>Professional templates designed for experiential businesses</li>
+                        <li>Real-time booking with group capacity (up to 5 guests)</li>
+                        <li>30% deposits + automatic balance collection via Stripe</li>
+                        <li>Automated reminders, waiver/intake forms, coupon codes</li>
+                        <li>Built-in blog, email campaigns, and analytics</li>
+                        <li>Canadian-friendly Stripe/PayPal payments with CAD pricing</li>
+                    </ul>
+
+                    <p><strong>Do NOT build custom.</strong> Not at this stage. A custom Next.js build is $3,000–$8,000+ and 6–10 weeks with a freelancer, or 120–160 hours of your own time. That time is better spent on the first 20 trips.</p>
+
+                    <h3>Phased Technology Roadmap</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Phase</th>
+                                    <th>Timeline</th>
+                                    <th>Platform</th>
+                                    <th>Trigger to Move</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Phase 0</strong></td>
+                                    <td>Weeks 1–2</td>
+                                    <td>Squarespace + Acuity + Stripe</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Phase 1</strong></td>
+                                    <td>Months 1–6</td>
+                                    <td>Add blog content, social proof integrations, Google Analytics</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Phase 2</strong></td>
+                                    <td>Months 6–12</td>
+                                    <td>Evaluate Checkfront or Rezdy if you need OTA distribution, reseller logins, or richer manifests</td>
+                                    <td>100+ bookings or OTA partnerships</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Phase 3</strong></td>
+                                    <td>Year 2+</td>
+                                    <td>Migrate to WordPress/Webflow + Checkfront/Rezdy for full control</td>
+                                    <td>400+ bookings/year or multi-vehicle fleet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Budget Implications</h3>
+                    <ul>
+                        <li>Year 1 total platform cost: ~$972 + Stripe fees (2.9% + $0.30/transaction)</li>
+                        <li>Year 2+ if you stay on Squarespace: same ~$972</li>
+                        <li>Migration to WordPress/Webflow + Checkfront: $2,000–$5,000 one-time + ~$2,400/year ongoing</li>
+                    </ul>
+                </section>
+
+                <hr>
+
+                <section id="pricing">
+                    <h2>5. Pricing Strategy</h2>
+                    
+                    <h3>Recommended Price Points</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price (CAD)</th>
+                                    <th>Rationale</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>2-Day/1-Night Experience (per person)</strong></td>
+                                    <td><strong>$399</strong></td>
+                                    <td>Sits above day tours ($199–$339) and above rental rates ($175–$305/night). Justified by all-inclusive value: driving, guide, camp, gear, meals.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Private Group Booking (up to 5)</strong></td>
+                                    <td><strong>$1,595</strong> (= $319/person at 5 pax)</td>
+                                    <td>Group discount baked in. Encourages full-capacity bookings. Comparable to Vancouver Outdoor Adventures' $800/group for a day trip — you're offering 2x the experience.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Premium Add-On: Winter/Snow Experience</strong></td>
+                                    <td><strong>$449/person</strong></td>
+                                    <td>Higher price for higher difficulty, rarer experience, and additional gear costs.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Pricing Model</h3>
+                    <p><strong>Per-person pricing as the default</strong>, with a private group flat rate as the upsell. This is cleaner than per-vehicle or tiered pricing. Guests understand per-person pricing intuitively.</p>
+                    <ul>
+                        <li><strong>Minimum booking:</strong> 2 guests (otherwise unit economics don't work at $399/person)</li>
+                        <li><strong>Solo travelers:</strong> $599 solo surcharge or waitlist to join an existing group</li>
+                        <li><strong>Deposit:</strong> 30% at booking ($120/person), balance auto-charged 7 days before departure</li>
+                    </ul>
+
+                    <h3>Seasonal Pricing</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Season</th>
+                                    <th>Pricing</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Peak (Jun–Sep)</strong></td>
+                                    <td>Full price ($399/person)</td>
+                                    <td>No discounts needed — demand should carry.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Shoulder (Apr–May, Oct)</strong></td>
+                                    <td>10–15% off ($349/person)</td>
+                                    <td>Drive bookings in shoulder months.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Off-peak (Nov–Mar)</strong></td>
+                                    <td>Winter experience at $449 OR promotional rate at $299</td>
+                                    <td>Either premium winter product or discounted to fill capacity.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Midweek</strong></td>
+                                    <td>15% discount ($339/person)</td>
+                                    <td>Incentivize Wed–Thu departures to improve utilization.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <hr>
+
+                <section id="risk-assessment">
+                    <h2>6. Risk Assessment</h2>
+                    
+                    <h3>Top 5 Business Risks</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Risk</th>
+                                    <th>Severity</th>
+                                    <th>Mitigation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><strong>Weather cancellations erode revenue and reputation</strong></td>
+                                    <td>High</td>
+                                    <td>Clear cancellation tiers (full refund >14 days, 50% at 7–13 days). Offer free rebooking for weather cancellations. Build "rain contingency" into the experience (tarps, covered cooking, campfire under cover).</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><strong>Vehicle damage/breakdown on trail</strong></td>
+                                    <td>High</td>
+                                    <td>Carry recovery gear on every trip. Budget $5,000–$10,000/year for maintenance/repairs. Have a backup vehicle arrangement. Get proper commercial vehicle insurance.</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><strong>Guest injury/liability</strong></td>
+                                    <td>High</td>
+                                    <td>Require signed waivers before every trip. Carry commercial general liability insurance ($2M+ minimum). Brief guests on safety protocols. Consider additional umbrella coverage.</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><strong>Slow initial demand / can't fill trips</strong></td>
+                                    <td>Medium</td>
+                                    <td>Keep fixed costs low (Squarespace, not custom build). Run midweek trips for influencers. Offer early-bird pricing. Don't quit your day job until you're consistently filling 3+ trips/month.</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><strong>Regulatory/permitting issues</strong></td>
+                                    <td>Medium</td>
+                                    <td>Research BC Crown land use permits, commercial recreation tenure requirements, and municipal bylaws for camping. Get ahead of this — don't get shut down after launch.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Regulatory & Insurance Considerations (BC)</h3>
+                    <ul>
+                        <li><strong>Commercial Recreation Tenure:</strong> Operating commercial tours on BC Crown land requires a tenure or license from the Province. Apply through BC's Lands Branch. This is not optional.</li>
+                        <li><strong>Commercial Vehicle Insurance:</strong> ICBC commercial auto insurance is required for any vehicle carrying paying passengers. Budget $3,000–$6,000/year per vehicle.</li>
+                        <li><strong>Commercial General Liability (CGL):</strong> Minimum $2M coverage. Adventure tourism operators in BC typically carry $5M. Get quotes from brokers who specialize in adventure/outdoor recreation.</li>
+                        <li><strong>WorkSafeBC:</strong> If you hire guides, you need WorkSafeBC coverage.</li>
+                        <li><strong>Food safety:</strong> If you're providing meals, check BC food safety regulations for outdoor/mobile food service.</li>
+                    </ul>
+
+                    <h3>Weather & Seasonal Risk</h3>
+                    <p>BC's shoulder and off-peak seasons (Oct–Apr) bring rain, snow, and shorter days. This limits trip frequency and increases cancellation risk.</p>
+                    <p><strong>Mitigation:</strong> Build a genuine winter product (snow off-roading + winter camping) or accept seasonal revenue swings and budget accordingly. Don't try to force summer pricing on a winter product that isn't differentiated.</p>
+
+                    <h3>Vehicle Maintenance & Liability</h3>
+                    <ul>
+                        <li>Off-road driving accelerates wear on suspension, tires, undercarriage, and drivetrain. Budget 2–3x normal maintenance costs.</li>
+                        <li>Carry a recovery kit (winch, tow straps, shovel, tire repair) on every trip.</li>
+                        <li>Document vehicle condition before/after every trip with photos. This protects you in insurance claims.</li>
+                    </ul>
+                </section>
+
+                <hr>
+
+                <section id="path-forward">
+                    <h2>7. Recommended Path Forward</h2>
+                    
+                    <h3>Phase 1: Foundation (Months 1–3)</h3>
+
+                    <p><strong>Objective:</strong> Get live, get reviews, validate pricing.</p>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Week</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1–2</td>
+                                    <td>Set up Squarespace + Acuity. Claim Google Business Profile. Set up Stripe. Finalize one core 2-day/1-night itinerary.</td>
+                                </tr>
+                                <tr>
+                                    <td>3–4</td>
+                                    <td>Run 2–3 "friends & family" soft-launch trips at cost. Collect Google reviews, photos, and video.</td>
+                                </tr>
+                                <tr>
+                                    <td>5–6</td>
+                                    <td>Launch publicly at $399/person. Start Instagram posting (3–4 Reels/week). Turn on Google Ads at $500/month on high-intent keywords.</td>
+                                </tr>
+                                <tr>
+                                    <td>7–8</td>
+                                    <td>Host 2–3 micro-influencer trips. Refine itinerary based on feedback.</td>
+                                </tr>
+                                <tr>
+                                    <td>9–12</td>
+                                    <td>Optimize: What content converts? What's the actual CAC? Adjust pricing if needed. Apply for commercial recreation tenure if not already done.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p><strong>Phase 1 Milestone:</strong> 15–20 paid bookings. 20+ Google reviews at 4.8+ stars. Instagram at 1,000+ followers.</p>
+
+                    <h3>Phase 2: Growth (Months 3–6)</h3>
+
+                    <p><strong>Objective:</strong> Fill trips consistently, diversify channels, add a second product.</p>
+
+                    <ul>
+                        <li>Scale paid ads on channels that are converting (likely Instagram + Google).</li>
+                        <li>Launch hotel/hostel partnership program (10–15% concierge commission).</li>
+                        <li>Add a second itinerary (different route/difficulty level or a winter product).</li>
+                        <li>List on Viator/TripAdvisor Experiences to test OTA demand (accept the 20–30% commission as customer acquisition cost).</li>
+                        <li>Start blog content for SEO (target 2 posts/month on "off-road trails Vancouver," "camping near Squamish," etc.).</li>
+                        <li>Evaluate Checkfront/Rezdy if OTA distribution or group manifesting becomes a pain point.</li>
+                    </ul>
+
+                    <p><strong>Phase 2 Milestone:</strong> 8–12 trips/month in peak season. Revenue run rate of $5,000–$8,000/month. At least one hotel partnership generating referrals.</p>
+
+                    <h3>Phase 3: Scale (Months 6–12)</h3>
+
+                    <p><strong>Objective:</strong> Maximize capacity utilization, consider second vehicle, build moat.</p>
+
+                    <ul>
+                        <li>If demand justifies it, add a second vehicle to run parallel trips or back-to-back days.</li>
+                        <li>Hire a part-time guide to run trips you're not on.</li>
+                        <li>Migrate to a more robust booking system (Checkfront or Rezdy) for multi-vehicle inventory management.</li>
+                        <li>Build corporate/team-building packages ($2,000–$3,000 for private group experiences).</li>
+                        <li>Create gift card/voucher program for holiday season (Nov–Dec push).</li>
+                        <li>Evaluate expansion: new routes, 3-day trips, partnerships with Indigenous tourism operators.</li>
+                    </ul>
+
+                    <p><strong>Phase 3 Milestone:</strong> 15–20 trips/month in peak season. Revenue run rate of $10,000–$15,000/month. Second vehicle operational. Corporate clients representing 20%+ of bookings.</p>
+
+                    <h3>Key Decision Points</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Decision</th>
+                                    <th>Trigger</th>
+                                    <th>Recommendation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Add second vehicle</td>
+                                    <td>Turning away 5+ bookings/month</td>
+                                    <td>Buy, don't lease. Toyota holds value.</td>
+                                </tr>
+                                <tr>
+                                    <td>Hire a guide</td>
+                                    <td>Running 12+ trips/month</td>
+                                    <td>Start part-time. Train extensively before solo trips.</td>
+                                </tr>
+                                <tr>
+                                    <td>Switch booking platform</td>
+                                    <td>OTA distribution needed or 100+ bookings/year</td>
+                                    <td>Move to Checkfront ($149/mo) or Rezdy ($49–$99/mo).</td>
+                                </tr>
+                                <tr>
+                                    <td>Rebuild website</td>
+                                    <td>400+ bookings/year</td>
+                                    <td>WordPress or Webflow + dedicated booking system.</td>
+                                </tr>
+                                <tr>
+                                    <td>Raise prices</td>
+                                    <td>Consistently selling out 2+ weeks in advance</td>
+                                    <td>You're underpriced. Raise $50/person and monitor.</td>
+                                </tr>
+                                <tr>
+                                    <td>Add winter product</td>
+                                    <td>Demand exists OR summer revenue needs smoothing</td>
+                                    <td>Price at $449+. Requires additional gear investment.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr>
+
+                    <div class="callout">
+                        <p><em>Bottom line: You have a real opportunity in a defined gap. The playbook is simple — launch lean, get reviews fast, let the visuals sell the experience, and scale only when demand proves it. Don't overbuild anything until you've run 50 trips.</em></p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                nav.classList.remove('open');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Active nav link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

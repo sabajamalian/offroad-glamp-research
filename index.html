@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off-Road Glamping Experience — Vancouver BC | Research Hub</title>
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Outdoorsy color palette */
+            --forest-green: #2d5016;
+            --sage: #7a9b76;
+            --earth-brown: #8b7355;
+            --warm-gray: #4a4a4a;
+            --light-gray: #f5f5f0;
+            --cream: #faf8f3;
+            --accent-orange: #d97941;
+            --text-dark: #2a2a2a;
+            --text-light: #666;
+            --border-color: #ddd;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--cream);
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER / HERO ===== */
+        header {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--sage) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        header .tagline {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--forest-green);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        section .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* ===== DOCUMENT HUB ===== */
+        .document-hub {
+            background: white;
+        }
+
+        .document-group {
+            margin-bottom: 50px;
+        }
+
+        .document-group h3 {
+            font-size: 1.5rem;
+            color: var(--earth-brown);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .document-cards {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .document-cards.primary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .document-cards.secondary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .document-cards.secondary {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .doc-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .doc-card.primary {
+            border-width: 2px;
+            border-color: var(--accent-orange);
+            padding: 35px;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .doc-card h4 {
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            margin-bottom: 12px;
+        }
+
+        .doc-card.primary h4 {
+            font-size: 1.75rem;
+        }
+
+        .doc-card .description {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .doc-card .meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .doc-card .meta strong {
+            color: var(--text-dark);
+        }
+
+        .doc-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: gap 0.2s ease;
+        }
+
+        .doc-card a:hover {
+            gap: 12px;
+        }
+
+        /* ===== KEY HIGHLIGHTS ===== */
+        .highlights {
+            background: var(--light-gray);
+        }
+
+        .highlight-grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 640px) {
+            .highlight-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .highlight-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .highlight-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .highlight-card .stat {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .highlight-card .label {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team {
+            background: white;
+        }
+
+        .team-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 640px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .team-member {
+            background: var(--light-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .team-member .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .team-member .name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            margin-bottom: 5px;
+        }
+
+        .team-member .role {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .team-member .model {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--warm-gray);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-orange);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== MOBILE ADJUSTMENTS ===== */
+        @media (max-width: 767px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .tagline {
+                font-size: 1.1rem;
+            }
+
+            section h2 {
+                font-size: 1.75rem;
+            }
+
+            .doc-card.primary h4 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Off-Road Glamping Experience — Vancouver BC</h1>
+            <p class="tagline">Combining guided 4x4 off-road driving with overnight wilderness camping. A unique adventure tourism concept in the Vancouver market.</p>
+        </div>
+    </header>
+
+    <section class="document-hub">
+        <div class="container">
+            <h2>Research & Planning Documents</h2>
+            <p class="section-subtitle">Comprehensive analysis and strategy for launching an off-road glamping business in Vancouver, BC</p>
+
+            <div class="document-group">
+                <h3>📋 Final Documents</h3>
+                <div class="document-cards primary">
+                    <div class="doc-card primary">
+                        <h4>Competitive Analysis</h4>
+                        <p class="description">In-depth competitive landscape analysis covering pricing, positioning, and market gaps. Examines 6 key competitors and identifies the unique opportunity in combining off-road driving with overnight camping.</p>
+                        <div class="meta">
+                            <strong>Author:</strong> Zoe (Market Researcher)<br>
+                            <strong>Model:</strong> GPT-5.2-Codex
+                        </div>
+                        <a href="competitive-analysis.html">View Document →</a>
+                    </div>
+
+                    <div class="doc-card primary">
+                        <h4>Business Plan</h4>
+                        <p class="description">Complete business plan including market analysis, operations, financials, marketing strategy, and implementation roadmap. Ready-to-execute plan with detailed cost breakdowns and revenue projections.</p>
+                        <div class="meta">
+                            <strong>Author:</strong> Book (Business Writer)<br>
+                            <strong>Model:</strong> Claude Sonnet 4.5
+                        </div>
+                        <a href="business-plan.html">View Document →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="document-group">
+                <h3>📊 Supporting Research</h3>
+                <div class="document-cards secondary">
+                    <div class="doc-card">
+                        <h4>Competitive Research (Raw Data)</h4>
+                        <p class="description">Raw competitive intelligence data including detailed competitor profiles, pricing structures, and market positioning.</p>
+                        <div class="meta">
+                            <strong>Author:</strong> Zoe (Market Researcher)<br>
+                            <strong>Model:</strong> GPT-5.2-Codex
+                        </div>
+                        <a href="competitive-research-raw.html">View Document →</a>
+                    </div>
+
+                    <div class="doc-card">
+                        <h4>Marketing Strategy Research</h4>
+                        <p class="description">Digital marketing channel analysis, content strategy recommendations, and customer acquisition tactics tailored for adventure tourism.</p>
+                        <div class="meta">
+                            <strong>Author:</strong> Inara (Marketing Specialist)<br>
+                            <strong>Model:</strong> Gemini 3 Pro
+                        </div>
+                        <a href="marketing-strategy-raw.html">View Document →</a>
+                    </div>
+
+                    <div class="doc-card">
+                        <h4>Website & Technology Analysis</h4>
+                        <p class="description">Technology stack evaluation, platform recommendations (Squarespace vs custom), and web development cost analysis.</p>
+                        <div class="meta">
+                            <strong>Author:</strong> Kaylee (Web/Tech Advisor)<br>
+                            <strong>Model:</strong> GPT-5.1-Codex
+                        </div>
+                        <a href="website-analysis-raw.html">View Document →</a>
+                    </div>
+
+                    <div class="doc-card">
+                        <h4>Strategic Synthesis</h4>
+                        <p class="description">High-level strategic overview synthesizing insights from all research streams into actionable recommendations.</p>
+                        <div class="meta">
+                            <strong>Author:</strong> Mal (Lead / Strategist)<br>
+                            <strong>Model:</strong> Claude Opus 4.6
+                        </div>
+                        <a href="strategic-synthesis.html">View Document →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlights">
+        <div class="container">
+            <h2>Key Findings at a Glance</h2>
+            <p class="section-subtitle">Critical insights from our research</p>
+
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <span class="stat">~$399</span>
+                    <p class="label">Recommended Price Per Person</p>
+                </div>
+
+                <div class="highlight-card">
+                    <span class="stat">~$972</span>
+                    <p class="label">Annual Tech Stack Cost<br>(Squarespace + Acuity)</p>
+                </div>
+
+                <div class="highlight-card">
+                    <span class="stat">~50 Trips</span>
+                    <p class="label">Break-Even Point</p>
+                </div>
+
+                <div class="highlight-card">
+                    <span class="stat">Zero</span>
+                    <p class="label">Direct Competitors in Market<br>(Off-Road + Overnight)</p>
+                </div>
+
+                <div class="highlight-card">
+                    <span class="stat">3 Channels</span>
+                    <p class="label">Primary Marketing Focus<br>(Instagram, Google, Influencers)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="container">
+            <h2>The Squad</h2>
+            <p class="section-subtitle">AI team that produced this research</p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <span class="emoji">🏗️</span>
+                    <div class="name">Mal</div>
+                    <div class="role">Lead / Strategist</div>
+                    <div class="model">Claude Opus 4.6</div>
+                </div>
+
+                <div class="team-member">
+                    <span class="emoji">📊</span>
+                    <div class="name">Zoe</div>
+                    <div class="role">Market Researcher</div>
+                    <div class="model">GPT-5.2-Codex</div>
+                </div>
+
+                <div class="team-member">
+                    <span class="emoji">📢</span>
+                    <div class="name">Inara</div>
+                    <div class="role">Marketing Specialist</div>
+                    <div class="model">Gemini 3 Pro</div>
+                </div>
+
+                <div class="team-member">
+                    <span class="emoji">⚙️</span>
+                    <div class="name">Kaylee</div>
+                    <div class="role">Web/Tech Advisor</div>
+                    <div class="model">GPT-5.1-Codex</div>
+                </div>
+
+                <div class="team-member">
+                    <span class="emoji">📝</span>
+                    <div class="name">Book</div>
+                    <div class="role">Business Writer</div>
+                    <div class="model">Claude Sonnet 4.5</div>
+                </div>
+
+                <div class="team-member">
+                    <span class="emoji">⚛️</span>
+                    <div class="name">Wash</div>
+                    <div class="role">Frontend Dev</div>
+                    <div class="model">Claude Sonnet 4.5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Generated by <strong>Squad v0.5.4</strong> — Firefly Cast</p>
+        </div>
+    </footer>
+</body>
+</html>
